@@ -42,7 +42,7 @@ export const Header = () => {
           className={s.headerLogo}
           src={headerLogo}
           alt="Header Logo"
-          width="200px"
+          height="55px"
         />
       </Link>
       <div className={s.gifBlock}>
@@ -76,6 +76,7 @@ export const Header = () => {
         <Icon
           className={s.toggleMenuButtonIcon}
           iconId={isModalOpen ? "closeModal-icon" : "openModal-icon"}
+          fill="#555555"
         />
       </Button>
       {isModalOpen && (
