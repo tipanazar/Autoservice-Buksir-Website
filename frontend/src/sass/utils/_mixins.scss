@@ -2,12 +2,13 @@
   $mobile: 470px;
   $tablet: 700px;
   $desktop: 1200px;
+
   @if $range == mobile-only {
     @media (max-width: #{$tablet - 0.02}) {
       @content;
     }
   } @else if $range == mobile {
-    @media (min-width: $mobile) {
+    @media (min-width: 0) {
       @content;
     }
   } @else if $range == tablet-only {

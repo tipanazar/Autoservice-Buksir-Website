@@ -5,13 +5,11 @@ import { Header } from "../../modules/Header/Header";
 import { LeftSidebar } from "../../modules/LeftSidebar/LeftSidebar";
 import { RightSidebar } from "../../modules/RightSidebar/RightSidebar";
 
-import styles from "./LayoutPage.module.scss";
-
 export const LayoutPage = () => {
   return (
     <>
       <Header />
-      <div className={styles.wrapper}>
+      <div className="mainContentWrapper">
         <LeftSidebar />
         <Outlet />
         <RightSidebar />
