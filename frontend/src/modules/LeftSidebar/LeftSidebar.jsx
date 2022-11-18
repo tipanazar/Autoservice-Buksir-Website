@@ -1,5 +1,23 @@
-import styles from './LeftSidebar.module.scss';
+import { Autoservice } from "../../shared/components/LeftSidebarElements/Autoservice";
+import { Contacts } from "../../shared/components/LeftSidebarElements/Contacts";
+import { Partners } from "../../shared/components/LeftSidebarElements/Partners";
+
+import s from "./LeftSidebar.module.scss";
 
 export const LeftSidebar = () => {
-  return <div className={styles.wrapper}>LEFT SIDEBAR</div>;
+  return (
+    <div className={s.wrapper}>
+      <ul>
+        <li>
+          <Autoservice />
+        </li>
+        {/* <li>
+          <Contacts />
+        </li> */}
+        <li>
+          <Partners />
+        </li>
+      </ul>
+    </div>
+  );
 };

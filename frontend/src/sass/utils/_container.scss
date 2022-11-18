@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    padding: 15px;
+
+    @include mq(tablet)  {
+        padding: 3vw;
+    }
+
+    @include mq(desktop-big) {
+        padding: 30px;
+    }
+
+    
+  }
+  

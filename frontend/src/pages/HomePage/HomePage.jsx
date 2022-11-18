@@ -1,5 +1,5 @@
-import styles from './HomePage.module.scss';
+import { Home } from "../../modules/Home";
 
 export const HomePage = () => {
-  return <div className={styles.wrapper}>HOME PAGE</div>;
+  return <Home />;
 };
