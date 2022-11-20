@@ -2,6 +2,10 @@ import { useState } from "react";
 
 import { Button } from "../../shared/components/Button";
 import { Icon } from "../../shared/components/Icon";
+import { Image } from "../../shared/components/Image";
+import autoserviceInside1 from "../../images/autoserviceInside1.jpg";
+import autoserviceInside2 from "../../images/autoserviceInside2.jpg";
+import autoserviceOutside from "../../images/autoserviceOutside.jpg";
 
 import s from "./Home.module.scss";
 
@@ -48,8 +52,16 @@ export const Home = () => {
         Буксир є сервісом з ремонту автомобілів. Ми допоможемо Вам вирішити
         практично будь-яку проблему, пов'язану з ремонтом Вашого автомобіля -
         двигуна, ходової частини, електроустаткування, все це можемо робити ми.
-        <img className={s.interiorImages} src="" alt="" />
-        <img className={s.interiorImages} src="" alt="" />
+        <Image
+          className={s.interiorImages}
+          src={autoserviceInside1}
+          alt="Інтер'єр автосервісу"
+        />
+        <Image
+          className={s.interiorImages}
+          src={autoserviceInside2}
+          alt="Інтер'єр автосервісу"
+        />
         Займаючись ремонтом автомобілів ось уже більше дев'яти років, ми
         нагромадили величезний досвід, тому довіряючи свій автомобіль нам, Ви
         можете бути впевнені, що ремонт буде виконаний якісно. Крім того,
@@ -65,7 +77,11 @@ export const Home = () => {
           розміщений у боксі чи дворі автосервісу!
         </b>
         Вартість стоянки БЕЗКОШТОВНО!
-        <img className={s.exteriorImg} />
+        <Image
+          className={s.exteriorImg}
+          src={autoserviceOutside}
+          alt="Екстер'єр автосервісу"
+        />
         Наш автосервис расположен в районе вещевого рынка, напротив Ереванского
         квартала. Ориентир - магазин запчастей "ЛАДА-ТАВРИЯ-ЛАНОС" заезд с левой
         стороны от магазина. Мы всегда рады выполнить ремонт и сервис любого
