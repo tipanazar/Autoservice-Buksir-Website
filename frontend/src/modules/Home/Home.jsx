@@ -60,11 +60,13 @@ export const Home = () => {
           <Image
             className={s.interiorImages}
             src={autoserviceInside2}
+            width="250px"
             alt="Інтер'єр автосервісу"
           />
           <Image
             className={s.interiorImages}
             src={autoserviceInside1}
+            width="250px"
             alt="Інтер'єр автосервісу"
           />
         </div>
