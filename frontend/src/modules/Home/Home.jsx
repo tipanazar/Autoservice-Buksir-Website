@@ -7,19 +7,20 @@ import autoserviceInside1 from "../../images/autoserviceInside1.jpg";
 import autoserviceInside2 from "../../images/autoserviceInside2.jpg";
 import autoserviceOutside from "../../images/autoserviceOutside.jpg";
 
+import homeMarkup from "./homeMarkup.json";
+
 import s from "./Home.module.scss";
 
 export const Home = () => {
   const [language, setLanguage] = useState(false);
   // console.log(isEngVersion)
+  const markup = language ? homeMarkup.en : homeMarkup.uk;
   return (
     <div className={s.wrapper}>
       <div className={s.description}>
         <div className={s.firstPart}>
           <div className={s.titleWrapper}>
-            <h1 className={s.mainTitle}>
-              Автосервіс у м.Славутич - автомобіль скаже Вам "ДЯКУЮ"!
-            </h1>
+            <h1 className={s.mainTitle}>{markup.mainTitle}</h1>
             <Button
               className={s.languageBtn}
               onClick={() => setLanguage(!language)}
@@ -38,24 +39,13 @@ export const Home = () => {
             </Button>
           </div>
           <ul className={s.featuresList}>
-            <li className={s.featuresListItem}>
-              Професійний ремонт автомобіля: швидко, якісно, надійно.
-            </li>
-            <li className={s.featuresListItem}>
-              Магазин автозапчастин у наявності 7000 тис. найменувань.
-            </li>
-            <li className={s.featuresListItem}>
-              Запчастини на іномарки на замовлення, доставляємо за 4-24 години.
-            </li>
+            <li className={s.featuresListItem}>{markup.featuresList[0]}</li>
+            <li className={s.featuresListItem}>{markup.featuresList[1]}</li>
+            <li className={s.featuresListItem}>{markup.featuresList[2]}</li>
           </ul>
-          <h4 className={s.secondaryTitle}>Ми на вас чекаємо!</h4>
-          <h3 className={s.descriptionTitle}>Автосервіс – наша робота.</h3>
-          <p>
-            Буксир є сервісом з ремонту автомобілів. Ми допоможемо Вам вирішити
-            практично будь-яку проблему, пов'язану з ремонтом Вашого автомобіля
-            - двигуна, ходової частини, електроустаткування, все це можемо
-            робити ми.
-          </p>
+          <h4 className={s.secondaryTitle}>{markup.secondaryTitle}</h4>
+          <h3 className={s.descriptionTitle}>{markup.descriptionTitle}</h3>
+          <p>{markup.aboutBuksir[0]}</p>
           <div className={s.imageWrapper}>
             <Image
               className={s.interiorImages}
@@ -71,45 +61,33 @@ export const Home = () => {
             />
           </div>
           <p>
-            Займаючись ремонтом автомобілів більше сімнадцяти років, ми
-            нагромадили величезний досвід, тому довіряючи свій автомобіль нам,
-            Ви можете бути впевнені, що ремонт буде виконаний якісно. Крім того,
-            "Буксир" оснащений сучасним обладнанням, що дозволяє діагностувати
-            та ремонтувати складні несправності в автомобілі.
+            {markup.aboutBuksir[1]}
             <br />
-            Кваліфікація наших працівників – це привід для заздрості наших
-            конкурентів. Ми виробляємо сервісне обслуговування та ремонт
-            вітчизняних, європейських, американських та азіатських автомобілів.
+            {markup.aboutBuksir[2]}
           </p>
         </div>
         <b className={s.descriptionBoldText}>
-          <span className={s.descriptionBoldTextAttention}>УВАГА!</span> Можна
-          залишити на ремонт свій автомобіль з вечора, він буде розміщений у
-          боксі чи дворі автосервісу!
+          <span className={s.descriptionBoldTextAttention}>
+            {markup.aboutParking[0]}
+          </span>
+          {markup.aboutParking[1]}
         </b>
         <br />
-        <span className={s.parkingPrice}>Вартість стоянки - БЕЗКОШТОВНО!</span>
+        <span className={s.parkingPrice}>{markup.aboutParking[2]}</span>
         <Image
           className={s.exteriorImg}
           src={autoserviceOutside}
           width="250px"
           alt="Екстер'єр автосервісу"
         />
-        <p>
-          Наш автосервіс розташований в районі речового ринку, навпроти
-          Єреванського. кварталу. Орієнтир - магазин запчастин
-          "ЛАДА-ТАВРІЯ-ЛАНОС" заїзд з лівої боку від магазину. Ми завжди раді
-          виконати ремонт та сервіс будь-якого автомобіля, запропонувати Вам
-          вигідні ціни та якісний авторемонт. Подивіться наш прайс-лист на
-          авторемонт, оцініть якість авторемонту.
-        </p>
+        <p>{markup.location}</p>
       </div>
       <div className={s.phoneLinksBlock}>
-        <p className={s.phoneLinksBlockTitle}>Звертайтесь за телефоном:</p>
+        <p className={s.phoneLinksBlockTitle}>{markup.contacts.title}</p>
         <ul className={s.phoneLinksList}>
           <li className={s.phoneLinksListItem}>
             <span className={s.phoneLinksOperator}>
-              Міський:&nbsp;&nbsp;
+              {markup.contacts.operator[0]}
               <a className={s.phoneLinks} href="tel:0457923933">
                 (04579) 2-39-33;
               </a>
@@ -117,7 +95,7 @@ export const Home = () => {
           </li>
           <li className={s.phoneLinksListItem}>
             <span className={s.phoneLinksOperator}>
-              Vodafone:&nbsp;&nbsp;
+              {markup.contacts.operator[1]}
               <a className={s.phoneLinks} href="tel:+380507808164">
                 +380507808164;
               </a>
