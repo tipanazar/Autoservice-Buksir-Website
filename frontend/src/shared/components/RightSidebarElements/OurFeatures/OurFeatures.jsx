@@ -15,19 +15,19 @@ export const OurFeatures = () => {
         <li className="sidebarElementListItem">
           <Link className="sidebarElementListItemLink">
             Діллерська діагностика
-            <Image className="sidebarElementImage" src={checkEngineDash} />
+            <Image className="sidebarElementImage" src={checkEngineDash} alt="Картинка"/>
           </Link>
         </li>
         <li className="sidebarElementListItem">
           <Link className="sidebarElementListItemLink">
             Діллерська діагностика
-            <Image className="sidebarElementImage" src={injector} />
+            <Image className="sidebarElementImage" src={injector} alt="Картинка"/>
           </Link>
         </li>
         <li className="sidebarElementListItem">
           <Link className="sidebarElementListItemLink">
             Діллерська діагностика
-            <Image className="sidebarElementImage" src={wheelAlignment} />
+            <Image className="sidebarElementImage" src={wheelAlignment} alt="Картинка"/>
           </Link>
         </li>
       </ul>

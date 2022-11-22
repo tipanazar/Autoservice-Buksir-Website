@@ -1,3 +1,33 @@
-// .wrapper {
-//   display: flex;
-// }
+@import "../../sass/main.scss";
+.container {
+  display: flex;
+  padding: 15px;
+
+  @include mq(tablet) {
+    padding: 3vw;
+  }
+
+  @include mq(desktop) {
+    padding: 10px;
+  }
+
+  @include mq(desktop-big) {
+    padding: 30px;
+  }
+
+  .centerContainer {
+    @include mq(desktop) {
+        padding: 0 20px;
+      }
+  }
+
+  .mainNavigationBlock {
+    @include mq(tablet) {
+      margin-bottom: 3vw;
+    }
+
+    @include mq(desktop-big) {
+      margin-bottom: 30px;
+    }
+  }
+}
