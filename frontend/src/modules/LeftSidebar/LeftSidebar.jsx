@@ -6,18 +6,16 @@ import s from "./LeftSidebar.module.scss";
 
 export const LeftSidebar = () => {
   return (
-    <div className={s.wrapper}>
       <ul>
+        <li>
+          <Contacts />
+        </li>
         <li>
           <Autoservice />
         </li>
-        {/* <li>
-          <Contacts />
-        </li> */}
         <li>
           <Partners />
         </li>
       </ul>
-    </div>
   );
 };

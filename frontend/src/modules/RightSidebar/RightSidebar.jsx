@@ -6,19 +6,16 @@ import s from "./RightSidebar.module.scss";
 
 export const RightSidebar = () => {
   return (
-    <div className={s.wrapper}>
-      <p>LEFT SIDEBAR</p>
-      <ul className={s.articlesList}>
-        <li>
-          <CarTuning />
-        </li>
-        <li>
-          <News />
-        </li>
-        <li>
-          <OurFeatures />
-        </li>
-      </ul>
-    </div>
+    <ul className={s.articlesList}>
+      <li>
+        <CarTuning />
+      </li>
+      <li>
+        <News />
+      </li>
+      <li>
+        <OurFeatures />
+      </li>
+    </ul>
   );
 };
