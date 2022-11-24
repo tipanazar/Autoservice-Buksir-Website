@@ -90,14 +90,15 @@
       padding-left: 15px;
       font-size: 15px;
       font-weight: 500;
-      font-style: italic;
 
       @include mq(tablet-only) {
         font-size: 16px;
+        padding-left: 20px;
       }
 
       @include mq(desktop) {
         margin-bottom: 15px;
+        padding-left: 20px;
       }
 
       @include mq(desktop-big) {

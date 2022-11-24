@@ -17,8 +17,9 @@
 
   .centerContainer {
     @include mq(desktop) {
-        padding: 0 20px;
-      }
+      width: fit-content;
+      padding: 0 20px;
+    }
   }
 
   .mainNavigationBlock {

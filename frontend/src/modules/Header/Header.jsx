@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../shared/components/Button/Button";
 import { Image } from "../../shared/components/Image/Image";
 import { Icon } from "../../shared/components/Icon/Icon";
-import { Modal } from "../../shared/components/Modal";
+import { HeaderMenu } from "../../modules/Header/HeaderMenu";
 import headerLogo from "../../images/headerLogo.png";
 
 // import headerMufflerGif from "../../images/headerMuffler.gif";
@@ -80,15 +80,7 @@ export const Header = () => {
         />
       </Button>
       {isModalOpen && (
-        <Modal
-          funcRef={funcRef}
-          closeModal={modalSwitcher}
-          isBackdropNeeds={false}
-        >
-          <div className={s.modalBodyBlock}>
-            <h2>MOdal!</h2>
-          </div>
-        </Modal>
+        <HeaderMenu funcRef={funcRef} modalSwitcher={modalSwitcher} />
       )}
     </div>
   );

@@ -1,17 +1,17 @@
+import { OurFeatures } from "../../shared/components/RightSidebarElements/OurFeatures/OurFeatures";
 import { Autoservice } from "../../shared/components/LeftSidebarElements/Autoservice";
-import { Contacts } from "../../shared/components/LeftSidebarElements/Contacts";
 import { Partners } from "../../shared/components/LeftSidebarElements/Partners";
 
 import s from "./LeftSidebar.module.scss";
 
 export const LeftSidebar = () => {
   return (
-      <ul>
+      <ul className={s.wrapper}>
         <li>
-          <Contacts />
+        <Autoservice />
         </li>
         <li>
-          <Autoservice />
+        {/* <OurFeatures /> */}
         </li>
         <li>
           <Partners />

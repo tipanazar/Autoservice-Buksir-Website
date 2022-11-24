@@ -10,7 +10,7 @@ export const MainNavigation = ({ className }) => {
         <NavLink className={s.link} to="/">
           Головна
         </NavLink>
-        <NavLink className={s.link}>Новини</NavLink>
+        <NavLink className={s.link}>Контакти</NavLink>
         <NavLink className={s.link}>Ціни</NavLink>
         <NavLink className={s.link}>Роботи</NavLink>
         <NavLink className={s.link}>Сертифікати</NavLink>
