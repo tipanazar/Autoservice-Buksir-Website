@@ -13,20 +13,25 @@ export const Partners = () => {
         <ul className="sidebarElementList">
           <li className="sidebarElementListItem">
             <Link className="sidebarElementListItemLink">
+              Кафе "Баку"
+            </Link>
+          </li>
+          <li className="sidebarElementListItem">
+            <Link className="sidebarElementListItemLink">
               Авіамодельний гурток
             </Link>
           </li>
           <li className="sidebarElementListItem">
             <Link className="sidebarElementListItemLink">
               Буксирування автомобіля
+              <Image
+                className="sidebarElementImage"
+                src={towSchema}
+                alt="Схема буксирування автомобіля"
+              />
             </Link>
           </li>
         </ul>
-        <Image
-          className="sidebarElementImage"
-          src={towSchema}
-          alt="Схема буксирування автомобіля"
-        />
       </div>
     </div>
   );

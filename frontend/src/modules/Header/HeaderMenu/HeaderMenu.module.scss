@@ -13,4 +13,8 @@
   @include mq(desktop) {
     display: none;
   }
+
+  .mainNavigationBlock {
+    display: flex; 
+  }
 }

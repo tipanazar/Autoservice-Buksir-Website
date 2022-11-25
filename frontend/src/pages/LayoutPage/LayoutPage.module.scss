@@ -16,14 +16,19 @@
   }
 
   .centerContainer {
+    width: 100%;
     @include mq(desktop) {
-      width: fit-content;
-      padding: 0 20px;
+      padding: 0 30px;
+    }
+    @include mq(desktop-big) {
+      padding: 0 40px;
     }
   }
 
   .mainNavigationBlock {
+    display: none;
     @include mq(tablet) {
+      display: block;
       margin-bottom: 3vw;
     }
 

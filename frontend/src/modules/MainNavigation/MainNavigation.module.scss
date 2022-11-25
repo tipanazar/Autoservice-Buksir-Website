@@ -1,14 +1,42 @@
 @import "../../sass/main.scss";
 
+%linkRules {
+  margin-right: 10px;
+  // padding: 2px 7px;
+  border-radius: 3px 3px 0 0;
+  // background-color: white;
+  height: min-content;
+  font-size: 15px;
+  font-weight: 500;
+  // color: var(--navigationBlueColor);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .wrapper {
-  display: none;
   @include mq(tablet) {
-    display: block;
+    display: flex;
+    align-items: flex-end;
     border-bottom: 3px solid var(--navigationBlueColor);
   }
 
-  .link {
+  a {
+    transition: background-color linear 100ms, color linear 100ms;
+  }
+
+  .activeLink {
+    @extend %linkRules;
+    background-color: var(--navigationBlueColor);
+    color: white;
+    padding: 4px 7px;
+  }
+
+  .inactiveLink {
+    @extend %linkRules;
+    color: var(--navigationBlueColor);
     background-color: white;
-    margin-right: 5px;
+    padding: 2px 7px;
   }
 }
