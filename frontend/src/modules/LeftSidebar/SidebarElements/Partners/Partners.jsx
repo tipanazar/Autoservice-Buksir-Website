@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Image } from "../../Image/Image";
 
+import { Image } from "../../../../shared/components/Image";
 import towSchema from "../../../../images/towSchema.jpg";
 
 import s from "./Partners.module.scss";
@@ -13,7 +13,7 @@ export const Partners = () => {
         <ul className="sidebarElementList">
           <li className="sidebarElementListItem">
             <Link className="sidebarElementListItemLink">
-              Кафе "Баку"
+              Кафе "Вогні Баку"
             </Link>
           </li>
           <li className="sidebarElementListItem">

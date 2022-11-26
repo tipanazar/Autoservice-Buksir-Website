@@ -30,7 +30,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   form: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   style: PropTypes.objectOf([
     PropTypes.string,

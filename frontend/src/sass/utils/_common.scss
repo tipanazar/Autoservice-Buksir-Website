@@ -20,20 +20,20 @@ div#root {
   background: linear-gradient(
     180deg,
     rgb(71 165 71) 0%,
-    rgb(255, 255, 255) 20%
+    rgb(255, 255, 255) 45vh
   );
   @include mq(tablet) {
     background: linear-gradient(
       180deg,
       rgb(71 165 71) 0%,
-      rgb(255, 255, 255) 30%
+      rgb(255, 255, 255) 60vh
     );
   }
   @include mq(desktop) {
     background: linear-gradient(
       180deg,
       rgb(10, 124, 10) 0%,
-      rgb(255, 255, 255) 28%
+      rgb(255, 255, 255) 65vh
     );
   }
 }
@@ -52,7 +52,9 @@ div#modalRoot {
   // // display: none;
   // align-items: center;
   // justify-content: center;
-  z-index: -1;
+  z-index: 2;
+  visibility: hidden;
+  //? z-index: -1;
   // cursor: pointer;
   // background-color: #0000003b;
 }
