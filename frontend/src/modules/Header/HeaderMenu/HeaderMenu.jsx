@@ -31,7 +31,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         />
       </Button> */}
       <div className={s.headerWrapper}>
-        <HeaderMarkup />
+        <HeaderMarkup modalSwitcher={modalSwitcher} />
         <Button className={s.toggleMenuButton} onClick={modalSwitcher}>
           <Icon
             className={s.toggleMenuButtonIcon}

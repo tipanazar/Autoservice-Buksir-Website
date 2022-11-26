@@ -12,11 +12,15 @@ import headerMuffler from "../../../images/headerMuffler2.jpg";
 
 import s from "./HeaderMarkup.module.scss";
 
-export const HeaderMarkup = () => {
+export const HeaderMarkup = (modalSwitcher) => {
   const [carMufflerToggler, setCarMufflerToggler] = useState(false);
   return (
     <div className={s.wrapper}>
-      <Link className={s.headerLogoLink} to="/">
+      <Link
+        className={s.headerLogoLink}
+        to="/"
+        onClick={() => modalSwitcher && modalSwitcher()}
+      >
         <Image
           className={s.headerLogo}
           src={headerLogo}
