@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Image } from "../../Image/Image";
+import { Image } from "../../../../shared/components/Image";
 import checkEngineDash from "../../../../images/checkEngineDash.jpg";
 import injector from "../../../../images/injector.jpg";
 import wheelAlignment from "../../../../images/wheelAlignment.jpg";

@@ -16,12 +16,6 @@ export const MainNavigation = ({ className }) => {
         <NavLink className={navLinkClassName} to="contacts">
           Контакти
         </NavLink>
-        {/* <NavLink className={navLinkClassName} to="prices">
-          Ціни
-        </NavLink>
-        <NavLink className={navLinkClassName} to="work-examples">
-          Роботи
-        </NavLink> */}
         <NavLink className={navLinkClassName} to="vacancies">
           Вакансіі
         </NavLink>

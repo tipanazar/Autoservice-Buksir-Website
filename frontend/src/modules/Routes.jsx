@@ -4,6 +4,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { LayoutPage } from "../pages/LayoutPage";
 import { HomePage } from "../pages/HomePage";
 import { ContactsPage } from "../pages/ContactsPage";
+import { VacanciesPage } from "../pages/VacanciesPage/VacanciesPage";
+import { CertificatesPage } from "../pages/CertificatesPage/CertificatesPage";
 
 export const MyRoutes = () => {
   return (
@@ -12,6 +14,8 @@ export const MyRoutes = () => {
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
           <Route path="contacts" element={<ContactsPage />} />
+          <Route path="vacancies" element={<VacanciesPage />} />
+          <Route path="certificates" element={<CertificatesPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

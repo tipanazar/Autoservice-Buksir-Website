@@ -12,6 +12,7 @@ export const Modal = ({ children, closeModal, funcRef, isBackdropNeeds }) => {
   });
 
   const close = (ev) => {
+    console.log("close")
     if (
       ev.code === "Escape" ||
       ev.target === ev.currentTarget ||

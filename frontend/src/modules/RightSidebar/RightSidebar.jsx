@@ -1,6 +1,6 @@
-import { CarTuning } from "../../shared/components/RightSidebarElements/CarTuning";
-import { OurFeatures } from "../../shared/components/RightSidebarElements/OurFeatures";
-import { News } from "../../shared/components/RightSidebarElements/News/News";
+import { CarTuning } from "./SidebarElements/CarTuning";
+import { OurFeatures } from "./SidebarElements/OurFeatures";
+import { News } from "./SidebarElements/News";
 
 import s from "./RightSidebar.module.scss";
 
