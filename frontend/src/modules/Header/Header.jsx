@@ -17,6 +17,7 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const modalSwitcher = () => {
+    console.log("dd")
     if (isModalOpen) {
       modalRoot.style.visibility = "hidden";
       body.style.overflow = "auto"
@@ -43,7 +44,7 @@ export const Header = () => {
           fill="#555555"
         />
       </Button>
-      {isModalOpen && <HeaderMenu modalSwitcher={modalSwitcher} />}
+      {isModalOpen && <HeaderMenu modalSwitcher={modalSwitcher}/>}
     </div>
   );
 };

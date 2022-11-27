@@ -13,7 +13,7 @@ const modalRoot = document.querySelector("div#modalRoot");
 const navLinkClassName = ({ isActive }) =>
   isActive ? s.activeLink : s.inactiveLink;
 
-export const HeaderMenu = ({ modalSwitcher }) => {
+export const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
   const [choosedListId, setChoosedListId] = useState(null);
   // console.log('render')
 
@@ -31,7 +31,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         />
       </Button> */}
       <div className={s.headerWrapper}>
-        <HeaderMarkup modalSwitcher={modalSwitcher} />
+        <HeaderMarkup modalSwitcher={modalSwitcher} closeModalOnLink={true}/>
         <Button className={s.toggleMenuButton} onClick={modalSwitcher}>
           <Icon
             className={s.toggleMenuButtonIcon}
