@@ -1,7 +1,8 @@
 @import "../../../sass/main.scss";
 
 %linkRules {
-  margin-bottom: 20px;
+  margin-top: 15px;
+  // margin-bottom: 20px;
   padding: 7px 5px;
   width: 100%;
   color: black;
@@ -77,9 +78,10 @@
     justify-content: center;
     align-items: center;
     transition: color linear 200ms;
+    z-index: 1;
     // color: white;
     .listButtonIcon {
-      height: 15px;
+      height: 17px;
       fill: #333333;
       width: auto;
       transition: transform linear 200ms, fill linear 200ms;
@@ -94,12 +96,34 @@
   }
 
   .list {
+    width: 100%;
     .listItem {
       // transition: opacity, linear 300ms, line-height linear 300ms;
       transition: all linear 300ms;
       opacity: 1;
+
       .listItemLink {
-        color: blue;
+        position: relative;
+        display: block;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 5px 0 5px 0;
+        color: black;
+        font-size: 14px;
+        font-weight: 500;
+        // background-color: red;
+        transition: all linear 300ms;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 110%;
+          transform: translateX(-50%);
+          outline: 1px solid #b6b6b6;
+        }
       }
     }
   }

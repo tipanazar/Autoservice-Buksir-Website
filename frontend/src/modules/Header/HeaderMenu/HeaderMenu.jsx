@@ -14,21 +14,7 @@ const testArr = [
   "Магазин запчастей",
   "Магазин запчастей",
   "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
-  "Магазин запчастей",
+
 ];
 
 const linksArr = [
@@ -69,11 +55,34 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         key={idx}
         style={
           choosedListId === 0
-            ? { opacity: 1, lineHeight: 1, visibility: "visible" }
-            : { opacity: 0, lineHeight: 0, visibility: "hidden" }
+            ? {
+                opacity: 1,
+                visibility: "visible",
+                marginBottom: 8,
+              }
+            : {
+                opacity: 0,
+                visibility: "hidden",
+                marginBottom: 0,
+              }
         }
       >
-        <Link className={s.listItemLink}>{item}</Link>
+        <Link
+          className={s.listItemLink}
+          style={
+            choosedListId === 0
+              ? {
+                  lineHeight: 1,
+                  padding: "5px 0",
+                }
+              : {
+                  lineHeight: 0,
+                  padding: 0,
+                }
+          }
+        >
+          {item}
+        </Link>
       </li>
     );
   });
