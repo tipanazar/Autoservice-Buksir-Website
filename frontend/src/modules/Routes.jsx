@@ -11,10 +11,12 @@ import { PartnersPage } from "../pages/PartnersPage";
 import { CarTunningPage } from "../pages/CarTunningPage";
 import { NewsPage } from "../pages/NewsPage";
 import { OurFeaturesPage } from "../pages/OurFeaturesPage";
+import { AdminSigninPage } from "../pages/AdminSigninPage";
+import Loader from "../shared/components/Loader/Loader";
 
 export const MyRoutes = () => {
   return (
-    <Suspense fallback={"...loading"}>
+    <Suspense fallback={<Loader backgroundColor="rgba(0, 0, 0, 0.4)" />}>
       <Routes>
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
@@ -27,8 +29,10 @@ export const MyRoutes = () => {
           <Route path="news/:article" element={<NewsPage />} />
           <Route path="our-feature/:article" element={<OurFeaturesPage />} />
         </Route>
+        <Route path="/adminsignin" element={<AdminSigninPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );
 };
+// Добавить приватные и паблик роуты для админа, + добавление статей.
