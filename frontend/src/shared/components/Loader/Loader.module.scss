@@ -1,0 +1,39 @@
+@import "../../../sass/main.scss";
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid rgb(0, 0, 0);
+    border-color: rgb(81, 0, 255) transparent rgb(255, 213, 0) transparent;
+    animation: wrapper 1.2s linear infinite;
+    @include mq(tablet) {
+    }
+    @include mq(desktop) {
+    }
+  }
+
+  @keyframes wrapper {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

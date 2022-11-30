@@ -6,6 +6,11 @@ import { HomePage } from "../pages/HomePage";
 import { ContactsPage } from "../pages/ContactsPage";
 import { VacanciesPage } from "../pages/VacanciesPage/VacanciesPage";
 import { CertificatesPage } from "../pages/CertificatesPage/CertificatesPage";
+import { CarServicePage } from "../pages/CarServicePage";
+import { PartnersPage } from "../pages/PartnersPage";
+import { CarTunningPage } from "../pages/CarTunningPage";
+import { NewsPage } from "../pages/NewsPage";
+import { OurFeaturesPage } from "../pages/OurFeaturesPage";
 
 export const MyRoutes = () => {
   return (
@@ -16,6 +21,11 @@ export const MyRoutes = () => {
           <Route path="contacts" element={<ContactsPage />} />
           <Route path="vacancies" element={<VacanciesPage />} />
           <Route path="certificates" element={<CertificatesPage />} />
+          <Route path="car-service/:article" element={<CarServicePage />} />
+          <Route path="partners/:partner" element={<PartnersPage />} />
+          <Route path="car-tunning/:article" element={<CarTunningPage />} />
+          <Route path="news/:article" element={<NewsPage />} />
+          <Route path="our-feature/:article" element={<OurFeaturesPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

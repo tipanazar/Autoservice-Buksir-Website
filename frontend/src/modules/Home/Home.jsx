@@ -10,6 +10,7 @@ import autoserviceOutside from "../../images/autoserviceOutside.jpg";
 import homeMarkup from "./homeMarkup.json";
 
 import s from "./Home.module.scss";
+import Loader from "../../shared/components/Loader/Loader";
 
 export const Home = () => {
   const [language, setLanguage] = useState(false);
@@ -103,6 +104,7 @@ export const Home = () => {
           </li>
         </ul>
       </div>
+      {/* <Loader/> */}
     </div>
   );
 };
