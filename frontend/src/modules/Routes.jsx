@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import { Loader } from "../shared/components/Loader";
 import { LayoutPage } from "../pages/LayoutPage";
 import { HomePage } from "../pages/HomePage";
 import { ContactsPage } from "../pages/ContactsPage";
@@ -12,7 +13,9 @@ import { CarTunningPage } from "../pages/CarTunningPage";
 import { NewsPage } from "../pages/NewsPage";
 import { OurFeaturesPage } from "../pages/OurFeaturesPage";
 import { AdminSigninPage } from "../pages/AdminSigninPage";
-import Loader from "../shared/components/Loader/Loader";
+import { AdminCreateArticlePage } from "../pages/AdminCreateArticlePage";
+import { PublicRoute } from "../shared/components/PublicRoute";
+import { PrivateRoute } from "../shared/components/PrivateRoute";
 
 export const MyRoutes = () => {
   return (
@@ -29,10 +32,21 @@ export const MyRoutes = () => {
           <Route path="news/:article" element={<NewsPage />} />
           <Route path="our-feature/:article" element={<OurFeaturesPage />} />
         </Route>
-        <Route path="/adminsignin" element={<AdminSigninPage />} />
+        <Route
+          path="admin"
+        >
+          <Route element={<PublicRoute />}>
+            <Route path="signin" element={<AdminSigninPage />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route
+              path="create-article"
+              element={<AdminCreateArticlePage />}
+            />
+          </Route>
+        </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );
 };
-// Добавить приватные и паблик роуты для админа, + добавление статей.
