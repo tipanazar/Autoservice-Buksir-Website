@@ -9,9 +9,10 @@ const { createError } = require("../helpers");
 
 const { SECRET_KEY } = process.env;
 
-router.post("/login", async (req, res, next) => {
+router.post("/signin", async (req, res, next) => {
   try {
-    console.log("hmmmm")
+    console.log("hmmmm");
+    const { login, password } = req.body;
   } catch (err) {
     next(err);
   }
