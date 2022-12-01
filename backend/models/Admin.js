@@ -12,12 +12,11 @@ const adminSchema = Schema(
     },
     token: {
       type: String,
-      default: "",
     },
-  }
-  //   { versionKey: false, timestamps: false }
+  },
+  { versionKey: false, timestamps: false }
 );
 
 const Admin = model("admin", adminSchema);
 
-module.exports = Admin;
+module.exports = { Admin };
