@@ -32,17 +32,12 @@ export const MyRoutes = () => {
           <Route path="news/:article" element={<NewsPage />} />
           <Route path="our-feature/:article" element={<OurFeaturesPage />} />
         </Route>
-        <Route
-          path="admin"
-        >
+        <Route path="/admin">
+          <Route element={<PrivateRoute />}>
+            <Route index element={<AdminCreateArticlePage />} />
+          </Route>
           <Route element={<PublicRoute />}>
             <Route path="signin" element={<AdminSigninPage />} />
-          </Route>
-          <Route element={<PrivateRoute />}>
-            <Route
-              path="create-article"
-              element={<AdminCreateArticlePage />}
-            />
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
