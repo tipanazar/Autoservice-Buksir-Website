@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .logoutBtnWrapper {
+    display: flex;
+    width: 100%;
+    .logoutBtn {
+      margin-left: auto;
+    }
+  }
+}

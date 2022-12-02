@@ -1,5 +1,5 @@
-import styles from './AdminCreateArticlePage.module.scss';
+import { AdminCreateArticle } from "../../modules/AdminCreateArticle/AdminCreateArticle";
 
 export const AdminCreateArticlePage = () => {
-  return <div className={styles.wrapper} style={{fontSize: 30}}>crreate</div>;
+  return <AdminCreateArticle />;
 };

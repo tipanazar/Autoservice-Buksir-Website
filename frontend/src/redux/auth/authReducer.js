@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getCurrentAdmin, signin } from "./authOperations";
+import { getCurrentAdmin, logout, signin } from "./authOperations";
 
 const initialState = {
   login: "",
@@ -39,6 +39,21 @@ const authSlice = createSlice({
       state.login = payload.login;
     });
     builder.addCase(getCurrentAdmin.rejected, (state, { payload }) => {
+      state.error = payload;
+      state.isLoading = false;
+    });
+
+    builder.addCase(logout.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(logout.fulfilled, (state) => {
+      state.isLoading = false;
+      state.isAuthorized = false;
+      state.login = "";
+      state.token = "";
+    });
+    builder.addCase(logout.rejected, (state, { payload }) => {
       state.error = payload;
       state.isLoading = false;
     });

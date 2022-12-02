@@ -1,6 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getCurrentAdminApi, signinApi } from "../../shared/api/authApi";
+import {
+  getCurrentAdminApi,
+  logoutApi,
+  signinApi,
+} from "../../shared/api/authApi";
 
 export const signin = createAsyncThunk(
   "admin/signin",
@@ -30,5 +34,16 @@ export const getCurrentAdmin = createAsyncThunk(
         return false;
       }
     },
+  }
+);
+
+export const logout = createAsyncThunk(
+  "admin/logout",
+  async (_, { rejectWithValue }) => {
+    try {
+      return await logoutApi();
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
+    }
   }
 );

@@ -18,7 +18,7 @@ export const getCurrentAdminApi = async (token) => {
 };
 
 export const logoutApi = async () => {
-  await axios.get("/logout");
-  return;
+  return await axios.get("/logout");
+
   //! NOT READY
 };

@@ -8,6 +8,7 @@ import s from "./AdminSignin.module.scss";
 import { getGlobalAdminState } from "../../redux/auth/authSelectors";
 import { Loader } from "../../shared/components/Loader";
 import { useRef } from "react";
+import { Header } from "../Header";
 
 export const AdminSignin = () => {
   const dispatch = useDispatch();
@@ -33,48 +34,53 @@ export const AdminSignin = () => {
   }
 
   return (
-    <div className={s.wrapper}>
-      {error ? (
-        <p className={s.text} style={{ textDecoration: "underline" }}>{error}</p>
-      ) : (
-        <p className={s.text}>
-          Вхід <span style={{ textDecoration: "underline" }}>виключно</span> для
-          адміністратора, якщо знайшли - молодець!😉
-        </p>
-      )}
-      <form className={s.form} onSubmit={handleSubmit}>
-        <label className={s.formLabel} htmlFor="login">
-          Логін
-        </label>
-        <input
-          className={s.formInput}
-          id="login"
-          type="text"
-          placeholder="Логін"
-          autoComplete="true"
-          name="login"
-          ref={loginInputRef}
-          // autoFocus
-          required
-        />
-        <label className={s.formLabel} htmlFor="password">
-          Пароль
-        </label>
-        <input
-          className={s.formInput}
-          id="password"
-          type="text"
-          placeholder="Пароль"
-          autoComplete="true"
-          name="password"
-          ref={passwordInputRef}
-          required
-        />
-        <Button className={s.submitFormBtn} type="submit">
-          Увійти
-        </Button>
-        {isLoading && <Loader />}
-      </form>
-    </div>
+    <>
+      <Header />
+      <div className={s.wrapper}>
+        {error ? (
+          <p className={s.text} style={{ textDecoration: "underline" }}>
+            {error}
+          </p>
+        ) : (
+          <p className={s.text}>
+            Вхід <span style={{ textDecoration: "underline" }}>виключно</span>{" "}
+            для адміністратора, якщо знайшли - молодець!😉
+          </p>
+        )}
+        <form className={s.form} onSubmit={handleSubmit}>
+          <label className={s.formLabel} htmlFor="login">
+            Логін
+          </label>
+          <input
+            className={s.formInput}
+            id="login"
+            type="text"
+            placeholder="Логін"
+            autoComplete="true"
+            name="login"
+            ref={loginInputRef}
+            // autoFocus
+            required
+          />
+          <label className={s.formLabel} htmlFor="password">
+            Пароль
+          </label>
+          <input
+            className={s.formInput}
+            id="password"
+            type="text"
+            placeholder="Пароль"
+            autoComplete="true"
+            name="password"
+            ref={passwordInputRef}
+            required
+          />
+          <Button className={s.submitFormBtn} type="submit">
+            Увійти
+          </Button>
+          {isLoading && <Loader />}
+        </form>
+      </div>
+    </>
   );
 };
