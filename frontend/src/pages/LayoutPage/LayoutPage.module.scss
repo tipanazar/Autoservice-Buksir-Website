@@ -1,0 +1,39 @@
+@import "../../sass/main.scss";
+.container {
+  display: flex;
+  padding: 15px;
+
+  @include mq(tablet) {
+    padding: 3vw;
+  }
+
+  @include mq(desktop) {
+    padding: 10px;
+  }
+
+  @include mq(desktop-big) {
+    padding: 30px;
+  }
+
+  .centerContainer {
+    width: 100%;
+    @include mq(desktop) {
+      padding: 0 30px;
+    }
+    @include mq(desktop-big) {
+      padding: 0 40px;
+    }
+  }
+
+  .mainNavigationBlock {
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      margin-bottom: 3vw;
+    }
+
+    @include mq(desktop-big) {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../sass/main.scss";
+
+.wrapper {
+  display: none;
+  @include mq(desktop) {
+    display: block;
+    // width: 17vw;
+    // min-width: 120px;
+    // width: max-content;
+    // background-color: red;
+  }
+}

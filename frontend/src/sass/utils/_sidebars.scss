@@ -1,0 +1,86 @@
+%afterRules {
+  position: absolute;
+  content: "";
+  outline: 1px solid #003eff47;
+  width: 90%;
+  transform: translateX(-50%);
+  height: 0;
+  bottom: 0;
+  left: 50%;
+  transition: outline-color linear 70ms;
+}
+
+div.sidebarElementMainBlock {
+  width: 170px;
+  @include mq(desktop-big) {
+    width: 200px;
+  }
+
+  h4.sidebarElementTitle {
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: var(--navigationBlueColor);
+    box-shadow: 0px -2px 7px 3px rgba(34, 60, 80, 0.2);
+    color: white;
+    font-size: 14px;
+    @include mq(desktop-big) {
+      font-size: 16px;
+    }
+  }
+
+  .sidebarElementList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3px;
+    margin-bottom: 30px;
+    width: 100%;
+    li.sidebarElementListItem {
+      position: relative;
+      width: 100%;
+      margin-bottom: 7px;
+      border-radius: 3px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a.sidebarElementListItemLink {
+        text-align: center;
+        display: block;
+        color: #000;
+        font-weight: 500;
+        transition: color linear 70ms;
+        padding: 5px 6px 4px 6px;
+        font-size: 13px;
+
+        @include mq(desktop-big) {
+          padding: 6px 10px 5px 10px;
+          font-size: 14px;
+        }
+
+        &::after {
+          @extend %afterRules;
+        }
+
+        &:hover {
+          color: var(--linksHoverColor);
+          > span {
+            color: var(--linksHoverColor);
+            &::before {
+              outline-color: #0900d996;
+            }
+          }
+          &::after {
+            outline-color: #0900d9b3;
+          }
+        }
+
+        .sidebarElementImage {
+          width: 90%;
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+}

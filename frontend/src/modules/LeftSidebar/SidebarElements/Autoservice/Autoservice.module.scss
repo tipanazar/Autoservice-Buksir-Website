@@ -1,0 +1,8 @@
+.wrapper {
+  .navList {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: nowrap;
+    width: max-content;
+  }
+}
