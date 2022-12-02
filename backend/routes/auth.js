@@ -20,16 +20,12 @@ router.post("/signin", async (req, res, next) => {
       throw createError(404, "Такого користувача не знайдено!");
     }
     if (password !== admin.password) {
-      throw createError(401, "Неправильний пароль!");
+      throw createError(401, "Невірний пароль!");
     }
     const token = jwt.sign({ id: admin.id }, SECRET_KEY, { expiresIn: "5h" });
-    const result = await Admin.findByIdAndUpdate(
-      admin.id,
-      { token },
-      { new: true }
-    );
+    const result = await Admin.findByIdAndUpdate(admin.id, { token });
     res.json({
-      token: result.token,
+      token: token,
       login: result.login,
     });
   } catch (err) {
@@ -41,7 +37,6 @@ router.get("/current", auth, async (req, res, next) => {
   try {
     res.json({
       login: req.admin.login,
-      token: req.admin.token,
     });
   } catch (err) {
     next(err);

@@ -1,14 +1,34 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const adminSignin = createAsyncThunk(
+import { getCurrentAdminApi, signinApi } from "../../shared/api/authApi";
+
+export const signin = createAsyncThunk(
   "admin/signin",
   async (formData, { rejectWithValue }) => {
     try {
-      const { login, password } = formData;
-      console.log(login, password);
-      return "done";
-    } catch (err) {
-      return rejectWithValue(err);
+      return await signinApi(formData);
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
     }
+  }
+);
+
+export const getCurrentAdmin = createAsyncThunk(
+  "admin/getCurrentAdmin",
+  async (_, { getState, rejectWithValue }) => {
+    try {
+      const { auth } = getState();
+      return await getCurrentAdminApi(auth.token);
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
+    }
+  },
+  {
+    condition: (_, { getState }) => {
+      const { auth } = getState();
+      if (!auth.token) {
+        return false;
+      }
+    },
   }
 );

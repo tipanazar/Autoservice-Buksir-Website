@@ -9,11 +9,11 @@ const auth = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
     if (!authorization) {
-      throw createError(401, "Токен - обов'язковий");
+      throw createError(401, "Токен є обов'язковим");
     }
     const [bearer, token] = authorization.split(" ");
     if (bearer !== "Bearer") {
-      throw createError(401, "Токен - обов'язковий");
+      throw createError(401, "Токен є обов'язковим");
     }
     try {
       const { id } = jwt.verify(token, SECRET_KEY);

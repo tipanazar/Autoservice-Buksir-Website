@@ -1,5 +1,5 @@
-import styles from './AdminSigninPage.module.scss';
+import { AdminSignin } from "../../modules/AdminSignin";
 
 export const AdminSigninPage = () => {
-  return <div className={styles.wrapper}>signin</div>;
+  return <AdminSignin />;
 };
