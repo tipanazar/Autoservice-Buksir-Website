@@ -16,16 +16,43 @@ router.post("/signin", async (req, res, next) => {
       throw createError(400);
     }
     const admin = await Admin.findOne({ login });
-    console.log(admin);
     if (!admin) {
       throw createError(404, "Такого користувача не знайдено!");
     }
     if (password !== admin.password) {
       throw createError(401, "Неправильний пароль!");
     }
-    const token = jwt.sign(admin._id, SECRET_KEY, { expiresIn: "5h" });
-    console.log(token);
-    res.status(200).json({});
+    const token = jwt.sign({ id: admin.id }, SECRET_KEY, { expiresIn: "5h" });
+    const result = await Admin.findByIdAndUpdate(
+      admin.id,
+      { token },
+      { new: true }
+    );
+    res.json({
+      token: result.token,
+      login: result.login,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/current", auth, async (req, res, next) => {
+  try {
+    res.json({
+      login: req.admin.login,
+      token: req.admin.token,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/logout", auth, async (req, res, next) => {
+  try {
+    const { id } = req.admin;
+    await Admin.findByIdAndUpdate(id, { token: "" });
+    res.json({});
   } catch (err) {
     next(err);
   }

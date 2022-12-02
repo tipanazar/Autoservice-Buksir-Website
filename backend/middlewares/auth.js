@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const { Admin } = require("../models/Admin");
-const { createError } = require("../helpers/createError");
+const { createError } = require("../helpers");
 
 const { SECRET_KEY } = process.env;
 
@@ -9,11 +9,11 @@ const auth = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
     if (!authorization) {
-      throw createError(401, "Token is required");
+      throw createError(401, "Токен - обов'язковий");
     }
     const [bearer, token] = authorization.split(" ");
     if (bearer !== "Bearer") {
-      throw createError(401, "Token is required");
+      throw createError(401, "Токен - обов'язковий");
     }
     try {
       const { id } = jwt.verify(token, SECRET_KEY);
@@ -23,8 +23,8 @@ const auth = async (req, res, next) => {
       }
       req.admin = admin;
       next();
-    } catch {
-      throw createError(401);
+    } catch (err) {
+      throw createError(401, err);
     }
   } catch (err) {
     next(err);
