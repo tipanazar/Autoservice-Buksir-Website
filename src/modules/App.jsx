@@ -12,14 +12,10 @@ import { PartnersPage } from "../pages/PartnersPage";
 import { CarTunningPage } from "../pages/CarTunningPage";
 import { NewsPage } from "../pages/NewsPage";
 import { OurFeaturesPage } from "../pages/OurFeaturesPage";
-import { AdminSigninPage } from "../pages/AdminSigninPage";
-import { AdminCreateArticlePage } from "../pages/AdminCreateArticlePage";
-import { PublicRoute } from "../shared/components/PublicRoute";
-import { PrivateRoute } from "../shared/components/PrivateRoute";
 
-export const MyRoutes = () => {
+const App = () => {
   return (
-    <Suspense fallback={<Loader backgroundColor="rgba(0, 0, 0, 0.4)" />}>
+    <Suspense fallback={<Loader backgroundColor="rgb(255, 255, 255)" />}>
       <Routes>
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
@@ -32,16 +28,10 @@ export const MyRoutes = () => {
           <Route path="news/:article" element={<NewsPage />} />
           <Route path="our-feature/:article" element={<OurFeaturesPage />} />
         </Route>
-        <Route path="/admin">
-          <Route element={<PrivateRoute />}>
-            <Route index element={<AdminCreateArticlePage />} />
-          </Route>
-          <Route element={<PublicRoute />}>
-            <Route path="signin" element={<AdminSigninPage />} />
-          </Route>
-        </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );
 };
+
+export default App;
