@@ -1,3 +1,4 @@
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logout } from "../../redux/auth/authOperations";
@@ -10,6 +11,8 @@ import s from "./AdminCreateArticle.module.scss";
 export const AdminCreateArticle = () => {
   const error = useSelector(getError);
   const dispatch = useDispatch();
+  // const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
   return (
     <div className={s.wrapper}>
       <Header />
@@ -19,8 +22,6 @@ export const AdminCreateArticle = () => {
           Вийти з акаунта
         </Button>
       </div>
-      <p>Написати статтю</p>
-      <textarea></textarea>
     </div>
   );
 };
