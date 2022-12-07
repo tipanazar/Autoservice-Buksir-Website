@@ -55,6 +55,12 @@
   align-items: center;
   // padding: 30px 10px;
 
+  .navLinksDisplayClass {
+    @include mq(tablet) {
+      display: none
+    }
+  }
+
   .activeLink {
     @extend %linkRules;
     width: fit-content;

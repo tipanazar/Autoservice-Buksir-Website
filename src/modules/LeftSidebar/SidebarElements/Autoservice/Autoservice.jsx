@@ -6,7 +6,9 @@ export const Autoservice = () => {
       <h4 className="sidebarElementTitle">Автосервіс</h4>
       <ul className="sidebarElementList">
         <li className="sidebarElementListItem">
-          <Link className="sidebarElementListItemLink">Магазин запчастей</Link>
+          <Link className="sidebarElementListItemLink" to="/car-service/test">
+            Магазин запчастей
+          </Link>
         </li>
         <li className="sidebarElementListItem">
           <Link className="sidebarElementListItemLink">Магазин запчастей</Link>

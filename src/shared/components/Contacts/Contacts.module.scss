@@ -1,0 +1,161 @@
+@import "../../../sass/main.scss";
+
+.wrapperBig {
+  .phoneLinksBlockTitleBig {
+    font-size: 20px;
+    font-weight: 500;
+
+    @include mq(tablet) {
+      font-size: 24px;
+    }
+  }
+
+  .phoneListBig {
+    list-style: disc;
+    padding-left: 18px;
+    margin-bottom: 20px;
+
+    .phoneListItemBig {
+      font-size: 16px;
+      font-weight: 500;
+
+      @include mq(tablet) {
+        font-size: 18px;
+      }
+
+      &:first-child {
+        margin: 5px 0;
+      }
+
+      .phoneListItemLinkBig {
+        font-weight: 400;
+        margin-left: 5px;
+        text-decoration: underline;
+        color: var(--linksColor);
+        transition: color linear 100ms;
+
+        @include mq(tablet) {
+          margin-left: 8px;
+        }
+
+        &:hover {
+          color: var(--linksHoverColor);
+        }
+      }
+    }
+  }
+
+  .mapLinkBig {
+    display: block;
+    margin-bottom: 7px;
+    text-decoration: underline;
+    color: var(--linksColor);
+    width: fit-content;
+
+    @include mq(tablet) {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      color: var(--linksHoverColor);
+    }
+  }
+
+  .mapBig {
+    display: block;
+    // width: 85vw;
+    // height: 85vw;
+    width: 100%;
+    height: 85vw;
+    max-height: 400px;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px 1px rgba($color: #000000, $alpha: 0.2);
+    @include mq(desktop) {
+      border-radius: 3px;
+      width: 100%;
+    }
+  }
+}
+
+.wrapperSmall {
+  .phoneLinksBlockTitleSmall {
+    font-size: 18px;
+    font-weight: 600;
+
+    @include mq(tablet) {
+      font-size: 22px;
+    }
+  }
+
+  .phoneListSmall {
+    list-style: disc;
+    padding-left: 18px;
+    margin-bottom: 15px;
+
+    .phoneListItemSmall {
+      font-size: 15px;
+      font-weight: 500;
+
+      @include mq(tablet) {
+        font-size: 17px;
+      }
+
+      &:first-child {
+        margin: 5px 0;
+      }
+
+      .phoneListItemLinkSmall {
+        font-weight: 400;
+        margin-left: 5px;
+        text-decoration: underline;
+        color: var(--linksColor);
+        transition: color linear 100ms;
+
+        @include mq(tablet) {
+          margin-left: 8px;
+        }
+
+        &:hover {
+          color: var(--linksHoverColor);
+        }
+      }
+    }
+  }
+
+  .mapLinkSmall {
+    display: block;
+    margin-bottom: 7px;
+    text-decoration: underline;
+    color: var(--linksColor);
+    width: fit-content;
+
+    @include mq(tablet) {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      color: var(--linksHoverColor);
+    }
+  }
+
+  .mapSmall {
+    display: block;
+    // width: 85vw;
+    // height: 85vw;
+    width: 100%;
+    height: 85vw;
+    max-height: 400px;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px 1px rgba($color: #000000, $alpha: 0.2);
+    @include mq(desktop) {
+      border-radius: 3px;
+      width: 100%;
+    }
+  }
+}

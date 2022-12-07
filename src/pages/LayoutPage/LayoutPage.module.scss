@@ -28,8 +28,10 @@
   .mainNavigationBlock {
     display: none;
     @include mq(tablet) {
-      display: block;
+      display: flex;
+      align-items: flex-end;
       margin-bottom: 3vw;
+      border-bottom: 3px solid var(--navigationBlueColor);
     }
 
     @include mq(desktop-big) {

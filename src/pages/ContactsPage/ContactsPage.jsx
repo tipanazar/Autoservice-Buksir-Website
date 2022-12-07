@@ -1,5 +1,5 @@
-import { Contacts } from "../../modules/Contacts";
+import { Contacts } from "../../shared/components/Contacts";
 
 export const ContactsPage = () => {
-  return <Contacts />;
+  return <Contacts isBigDesign={true}/>;
 };

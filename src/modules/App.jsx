@@ -4,8 +4,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Loader } from "../shared/components/Loader";
 import { LayoutPage } from "../pages/LayoutPage";
 import { HomePage } from "../pages/HomePage";
+import { SparePartsShopPage } from "../pages/SparePartsShopPage";
 import { ContactsPage } from "../pages/ContactsPage";
-import { VacanciesPage } from "../pages/VacanciesPage/VacanciesPage";
 import { CertificatesPage } from "../pages/CertificatesPage/CertificatesPage";
 import { CarServicePage } from "../pages/CarServicePage";
 import { PartnersPage } from "../pages/PartnersPage";
@@ -19,8 +19,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
+          <Route path="spare-parts-shop" element={<SparePartsShopPage />} />
           <Route path="contacts" element={<ContactsPage />} />
-          <Route path="vacancies" element={<VacanciesPage />} />
           <Route path="certificates" element={<CertificatesPage />} />
           <Route path="car-service/:article" element={<CarServicePage />} />
           <Route path="partners/:partner" element={<PartnersPage />} />

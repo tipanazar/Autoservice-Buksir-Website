@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import s from "./HeaderMenu.module.scss";
 import { Icon } from "../../../shared/components/Icon/Icon";
+import { MainNavigation } from "../../../shared/components/MainNavigation/MainNavigation";
 
 const testArr = [
   "Магазин запчастей",
@@ -14,14 +15,6 @@ const testArr = [
   "Магазин запчастей",
   "Магазин запчастей",
   "Магазин запчастей",
-
-];
-
-const linksArr = [
-  { name: "Головна", path: "/" },
-  { name: "Контакти", path: "contacts" },
-  { name: "Вакансіі", path: "vacancies" },
-  { name: "Сертифікати", path: "certificates" },
 ];
 
 const navLinkClassName = ({ isActive }) =>
@@ -35,18 +28,6 @@ export const HeaderMenu = ({ modalSwitcher }) => {
   const choosedListIdHandler = (id) => {
     choosedListId === id ? setChoosedListId(null) : setChoosedListId(id);
   };
-
-  const linksMarkup = linksArr.map((item) => {
-    return (
-      <NavLink
-        className={navLinkClassName}
-        to={item.path}
-        onClick={() => modalSwitcher()}
-      >
-        {item.name}
-      </NavLink>
-    );
-  });
 
   const listMarkup = testArr.map((item, idx) => {
     return (
@@ -89,8 +70,11 @@ export const HeaderMenu = ({ modalSwitcher }) => {
 
   return (
     <div className={s.modalBodyBlock}>
-      <nav className={s.mainNavigationBlock}>
-        {linksMarkup}
+      <MainNavigation
+        className={s.mainNavigationBlock}
+        modalSwitcher={modalSwitcher}
+        linksDisplayClass={s.navLinksDisplayClass}
+      >
         <Button
           className={s.listButton}
           style={{ color: choosedListId === 0 ? "#00009fde" : "initial" }}
@@ -132,7 +116,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         >
           Автосервіс
         </Button>
-      </nav>
+      </MainNavigation>
     </div>
   );
 };
