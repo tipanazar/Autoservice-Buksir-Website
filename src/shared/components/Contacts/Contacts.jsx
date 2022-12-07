@@ -4,7 +4,7 @@ import s from "./Contacts.module.scss";
 
 export const Contacts = ({ isBigDesign }) => {
   return (
-    <div className={isBigDesign ? s.wrapperBig : s.wrapperSmall}>
+    <>
       <h3
         className={
           isBigDesign ? s.phoneLinksBlockTitleBig : s.phoneLinksBlockTitleSmall
@@ -15,23 +15,13 @@ export const Contacts = ({ isBigDesign }) => {
       <ul className={isBigDesign ? s.phoneListBig : s.phoneListSmall}>
         <li className={isBigDesign ? s.phoneListItemBig : s.phoneListItemSmall}>
           Міський:
-          <a
-            className={
-              isBigDesign ? s.phoneListItemLinkBig : s.phoneListItemLinkSmall
-            }
-            href="tel:+380457923933"
-          >
+          <a className={s.phoneListItemLink} href="tel:+380457923933">
             +38 04579 2-39-33
           </a>
         </li>
         <li className={isBigDesign ? s.phoneListItemBig : s.phoneListItemSmall}>
           Vodafone:
-          <a
-            className={
-              isBigDesign ? s.phoneListItemLinkBig : s.phoneListItemLinkSmall
-            }
-            href="tel:+380507808164"
-          >
+          <a className={s.phoneListItemLink} href="tel:+380507808164">
             +38 050 78 08 164
           </a>
         </li>
@@ -43,7 +33,7 @@ export const Contacts = ({ isBigDesign }) => {
         м .Славутич, Привокзальна 11, маг. "Лада-Таврія-Ланос"
       </a>
       <iframe
-        className={isBigDesign ? s.mapBig : s.mapSmall}
+        className={s.map}
         title="map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1317.7287605662157!2d30.757934357570164!3d51.515835801160975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b95ae90c6ec2456!2z0KHQotCeICLQkdGD0LrRgdC40YAi!5e1!3m2!1sru!2spt!4v1669233724567!5m2!1sru!2spt"
         height="85%"
@@ -52,7 +42,7 @@ export const Contacts = ({ isBigDesign }) => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-    </div>
+    </>
   );
 };
 
