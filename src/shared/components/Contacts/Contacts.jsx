@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 
 import s from "./Contacts.module.scss";
 
-export const Contacts = ({ isBigDesign }) => {
+import contactsMarkup from "./contactsMarkup.json";
+export const Contacts = ({ isBigDesign, isEnglish }) => {
+  const markup = isEnglish ? contactsMarkup.en : contactsMarkup.uk;
   return (
     <>
       <h3
@@ -10,17 +12,17 @@ export const Contacts = ({ isBigDesign }) => {
           isBigDesign ? s.phoneLinksBlockTitleBig : s.phoneLinksBlockTitleSmall
         }
       >
-        Телефон автосервісу/автомагазину:
+        {markup.title}
       </h3>
       <ul className={isBigDesign ? s.phoneListBig : s.phoneListSmall}>
         <li className={isBigDesign ? s.phoneListItemBig : s.phoneListItemSmall}>
-          Міський:
+          {markup.operator[0]}
           <a className={s.phoneListItemLink} href="tel:+380457923933">
             +38 04579 2-39-33
           </a>
         </li>
         <li className={isBigDesign ? s.phoneListItemBig : s.phoneListItemSmall}>
-          Vodafone:
+          {markup.operator[1]}
           <a className={s.phoneListItemLink} href="tel:+380507808164">
             +38 050 78 08 164
           </a>
@@ -30,7 +32,7 @@ export const Contacts = ({ isBigDesign }) => {
         className={isBigDesign ? s.mapLinkBig : s.mapLinkSmall}
         href="https://goo.gl/maps/D7JUbuXKeXXrqcPR7"
       >
-        м .Славутич, Привокзальна 11, маг. "Лада-Таврія-Ланос"
+        {markup.address}
       </a>
       <iframe
         className={s.map}
@@ -48,4 +50,5 @@ export const Contacts = ({ isBigDesign }) => {
 
 Contacts.propTypes = {
   isBigDesign: PropTypes.bool.isRequired,
+  isEnglish: PropTypes.bool.isRequired,
 };

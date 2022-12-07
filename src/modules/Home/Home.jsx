@@ -13,9 +13,9 @@ import homeMarkup from "./homeMarkup.json";
 import s from "./Home.module.scss";
 
 export const Home = () => {
-  const [language, setLanguage] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
   // console.log(isEngVersion)
-  const markup = language ? homeMarkup.en : homeMarkup.uk;
+  const markup = isEnglish ? homeMarkup.en : homeMarkup.uk;
   return (
     <div className={s.description}>
       <div className={s.firstPart}>
@@ -23,9 +23,9 @@ export const Home = () => {
           <h1 className={s.mainTitle}>{markup.mainTitle}</h1>
           <Button
             className={s.languageBtn}
-            onClick={() => setLanguage(!language)}
+            onClick={() => setIsEnglish(!isEnglish)}
           >
-            {language ? (
+            {isEnglish ? (
               <>
                 <Icon className={s.icon} iconId="uaFlag-icon" />
                 Змінити Мову
@@ -105,7 +105,7 @@ export const Home = () => {
         </li>
         </ul>
       </div> */}
-        <Contacts isBigDesign={false} />
+        <Contacts isBigDesign={false} isEnglish={isEnglish}/>
       </div>
     </div>
   );
