@@ -19,7 +19,6 @@ export const FullscreenImg = ({ src, closeModal }) => {
   });
 
   const close = (ev) => {
-    console.log("close");
     if (
       ev.code === "Escape" ||
       ev.target === ev.currentTarget ||
@@ -39,7 +38,6 @@ export const FullscreenImg = ({ src, closeModal }) => {
       </Button>
       <Image className={s.image} src={src} alt="Повноекранне зображення" />
     </div>,
-
     modalRoot
   );
 };
