@@ -4,8 +4,15 @@ import autoserviceOutside from "../../images/homePage/autoserviceOutside.jpg";
 
 import s from "./SparePartsShop.module.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FullscreenImg } from "../../shared/components/FullscreenImg/FullscreenImg";
 
 export const SparePartsShop = () => {
+  const [fullscreenSrc, setFullscreenSrc] = useState(null);
+
+  const closeModal = () => {
+    setFullscreenSrc(null);
+  };
   return (
     <article>
       <h1 className={s.title}>
@@ -30,7 +37,16 @@ export const SparePartsShop = () => {
       <Link className={s.contactsLink} to="/contacts">
         Контакти австосервісу/автомагазину
       </Link>
-      <Image className={s.image} src={autoserviceOutside} width="90%" alt="Екстер'эр" />
+      <Image
+        className={s.image}
+        src={autoserviceOutside}
+        width="90%"
+        alt="Екстер'эр"
+        onClick={() => setFullscreenSrc(autoserviceOutside)}
+      />
+      {fullscreenSrc && (
+        <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
+      )}
     </article>
   );
 };

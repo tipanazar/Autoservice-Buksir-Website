@@ -157,6 +157,7 @@
       max-width: 320px;
       border-radius: 3px;
       box-shadow: 0px 0px 14px 5px rgba(172, 172, 172, 0.3);
+      cursor: zoom-in;
       &:first-child {
         margin-bottom: 15px;
       }
@@ -190,6 +191,7 @@
     max-width: 530px;
     box-shadow: 0px 0px 14px 5px rgba(172, 172, 172, 0.3);
     border-radius: 3px;
+    cursor: zoom-in;
 
     @include mq(tablet) {
       margin: 20px auto;

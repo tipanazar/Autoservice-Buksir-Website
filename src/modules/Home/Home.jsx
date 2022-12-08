@@ -11,11 +11,17 @@ import autoserviceOutside from "../../images/homePage/autoserviceOutside.jpg";
 import homeMarkup from "./homeMarkup.json";
 
 import s from "./Home.module.scss";
+import { FullscreenImg } from "../../shared/components/FullscreenImg/FullscreenImg";
 
 export const Home = () => {
   const [isEnglish, setIsEnglish] = useState(false);
-  // console.log(isEngVersion)
   const markup = isEnglish ? homeMarkup.en : homeMarkup.uk;
+  const [fullscreenSrc, setFullscreenSrc] = useState(null);
+
+  const closeModal = () => {
+    setFullscreenSrc(null);
+  };
+
   return (
     <div className={s.description}>
       <div className={s.firstPart}>
@@ -52,12 +58,14 @@ export const Home = () => {
             src={autoserviceInside2}
             width="250px"
             alt="Інтер'єр автосервісу"
+            onClick={() => setFullscreenSrc(autoserviceInside2)}
           />
           <Image
             className={s.interiorImages}
             src={autoserviceInside1}
             width="250px"
             alt="Інтер'єр автосервісу"
+            onClick={() => setFullscreenSrc(autoserviceInside1)}
           />
         </div>
         <p>
@@ -80,12 +88,16 @@ export const Home = () => {
           src={autoserviceOutside}
           width="250px"
           alt="Екстер'єр автосервісу"
+          onClick={() => setFullscreenSrc(autoserviceOutside)}
         />
         <p>{markup.location}</p>
       </div>
       <div className={s.thirdPart}>
         <Contacts isBigDesign={false} isEnglish={isEnglish} />
       </div>
+      {fullscreenSrc && (
+        <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
+      )}
     </div>
   );
 };
