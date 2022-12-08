@@ -6,11 +6,9 @@ import { Image } from "../../shared/components/Image/Image";
 import { Icon } from "../../shared/components/Icon/Icon";
 import { HeaderMenu } from "../../modules/Header/HeaderMenu";
 
-import headerLogo from "../../images/headerLogo.png";
-// import headerMufflerGif from "../../images/headerMuffler.gif";
-// import headerMuffler from "../../images/headerMuffler.jpg";
-import headerMufflerGif from "../../images/headerMuffler2.gif";
-import headerMuffler from "../../images/headerMuffler2.jpg";
+import headerLogo from "../../images/header/headerLogo.png";
+import headerMufflerGif from "../../images/header/headerMuffler.gif";
+import headerMuffler from "../../images/header/headerMuffler.jpg";
 
 import s from "./Header.module.scss";
 

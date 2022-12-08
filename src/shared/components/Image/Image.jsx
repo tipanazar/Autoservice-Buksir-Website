@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const Image = ({ src, alt, width, height, className }) => {
+export const Image = ({ src, alt, width, height, className, onClick }) => {
   return (
     <img
       className={className}
@@ -8,6 +8,8 @@ export const Image = ({ src, alt, width, height, className }) => {
       alt={alt}
       width={width}
       height={height}
+      onClick={onClick}
+      loading="lazy"
     />
   );
 };

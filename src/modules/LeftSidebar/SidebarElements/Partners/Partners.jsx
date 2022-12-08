@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Image } from "../../../../shared/components/Image";
-import towSchema from "../../../../images/towSchema.jpg";
+import towSchema from "../../../../images/sidebars/towSchema.jpg";
 
 import s from "./Partners.module.scss";
 

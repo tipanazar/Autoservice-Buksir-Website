@@ -4,9 +4,9 @@ import { Button } from "../../shared/components/Button";
 import { Icon } from "../../shared/components/Icon";
 import { Image } from "../../shared/components/Image";
 import { Contacts } from "../../shared/components/Contacts";
-import autoserviceInside1 from "../../images/autoserviceInside1.jpg";
-import autoserviceInside2 from "../../images/autoserviceInside2.jpg";
-import autoserviceOutside from "../../images/autoserviceOutside.jpg";
+import autoserviceInside1 from "../../images/homePage/autoserviceInside1.jpg";
+import autoserviceInside2 from "../../images/homePage/autoserviceInside2.jpg";
+import autoserviceOutside from "../../images/homePage/autoserviceOutside.jpg";
 
 import homeMarkup from "./homeMarkup.json";
 
@@ -84,28 +84,7 @@ export const Home = () => {
         <p>{markup.location}</p>
       </div>
       <div className={s.thirdPart}>
-        {/* <div className={s.phoneLinksBlock}>
-        <p className={s.phoneLinksBlockTitle}>{markup.contacts.title}</p>
-        <ul className={s.phoneLinksList}>
-        <li className={s.phoneLinksListItem}>
-        <span className={s.phoneLinksOperator}>
-        {markup.contacts.operator[0]}
-        <a className={s.phoneLinks} href="tel:0457923933">
-        (04579) 2-39-33;
-        </a>
-        </span>
-        </li>
-        <li className={s.phoneLinksListItem}>
-        <span className={s.phoneLinksOperator}>
-        {markup.contacts.operator[1]}
-        <a className={s.phoneLinks} href="tel:+380507808164">
-        +380507808164;
-        </a>
-        </span>
-        </li>
-        </ul>
-      </div> */}
-        <Contacts isBigDesign={false} isEnglish={isEnglish}/>
+        <Contacts isBigDesign={false} isEnglish={isEnglish} />
       </div>
     </div>
   );
