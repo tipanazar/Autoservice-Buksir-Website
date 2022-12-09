@@ -19,7 +19,9 @@ export const LayoutPage = () => {
             className={s.mainNavigationBlock}
             linksDisplayClass=""
           />
-          <Outlet />
+          <main>
+            <Outlet />
+          </main>
         </section>
         <RightSidebar />
       </section>

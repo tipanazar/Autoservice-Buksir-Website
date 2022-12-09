@@ -1,6 +1,6 @@
 @import "../../sass/main.scss";
 
-.description {
+.wrapper {
   font-size: 15px;
   @include mq(tablet-only) {
     font-size: 17px;
@@ -13,10 +13,6 @@
 
   .firstSection {
     margin-bottom: 22px;
-  }
-
-  .secondSection {
-    //
   }
 
   .thirdSection {

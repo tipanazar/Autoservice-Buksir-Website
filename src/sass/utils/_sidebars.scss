@@ -65,7 +65,7 @@ div.sidebarElementMainBlock {
 
         &:hover {
           color: var(--linksHoverColor);
-          > span {
+          > time {
             color: var(--linksHoverColor);
             &::before {
               outline-color: #0900d996;

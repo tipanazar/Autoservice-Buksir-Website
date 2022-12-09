@@ -23,7 +23,7 @@ export const Home = () => {
   };
 
   return (
-    <div className={s.description}>
+    <div className={s.wrapper} lang={isEnglish ? "en" : "uk"}>
       <section className={s.firstSection}>
         <div className={s.titleWrapper}>
           <h1 className={s.mainTitle}>{markup.mainTitle}</h1>
@@ -52,7 +52,7 @@ export const Home = () => {
         <p className={s.secondaryTitle}>{markup.secondaryTitle}</p>
       </section>
       <section className={s.secondSection}>
-        <h5 className={s.descriptionTitle}>{markup.descriptionTitle}</h5>
+        <h2 className={s.descriptionTitle}>{markup.descriptionTitle}</h2>
         <p>{markup.aboutBuksir[0]}</p>
         <div className={s.imageWrapper}>
           <Image
@@ -76,7 +76,7 @@ export const Home = () => {
           {markup.aboutBuksir[2]}
         </p>
       </section>
-      <section className={s.thirdSection}>
+      <div className={s.thirdSection}>
         <b className={s.descriptionBoldText}>
           <span className={s.descriptionBoldTextAttention}>
             {markup.aboutParking[0]}
@@ -93,10 +93,10 @@ export const Home = () => {
           onClick={() => setFullscreenSrc(autoserviceOutside)}
         />
         <p>{markup.location}</p>
-      </section>
-      <section className={s.fourthSection}>
-        <Contacts isBigDesign={false} isEnglish={isEnglish} />
-      </section>
+      </div>
+      {/* <section className={s.fourthSection}> */}
+      <Contacts isBigDesign={false} isEnglish={isEnglish} />
+      {/* </section> */}
       {fullscreenSrc && (
         <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
       )}

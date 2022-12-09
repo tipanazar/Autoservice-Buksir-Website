@@ -34,7 +34,7 @@ export const Header = () => {
   };
 
   return (
-    <>
+    <header>
       <div className={s.wrapper}>
         <Link
           className={s.headerLogoLink}
@@ -79,6 +79,6 @@ export const Header = () => {
         </Button>
       </div>
       {isModalOpen && <HeaderMenu modalSwitcher={modalSwitcher} />}
-    </>
+    </header>
   );
 };

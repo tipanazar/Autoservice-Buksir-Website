@@ -13,7 +13,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
         <li className="sidebarElementListItem">
@@ -23,7 +23,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
         <li className="sidebarElementListItem">
@@ -33,7 +33,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
         <li className="sidebarElementListItem">
@@ -43,7 +43,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
         <li className="sidebarElementListItem">
@@ -53,7 +53,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
         <li className="sidebarElementListItem">
@@ -63,7 +63,7 @@ export const News = () => {
           >
             Моторное масло, зачем ассортимент?
             <br />
-            <span className={s.newsDate}>28.09.2022</span>
+            <time className={s.newsDate}>28.09.2022</time>
           </Link>
         </li>
       </ul>
