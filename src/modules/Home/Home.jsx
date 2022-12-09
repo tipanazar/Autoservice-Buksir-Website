@@ -94,9 +94,7 @@ export const Home = () => {
         />
         <p>{markup.location}</p>
       </div>
-      {/* <section className={s.fourthSection}> */}
       <Contacts isBigDesign={false} isEnglish={isEnglish} />
-      {/* </section> */}
       {fullscreenSrc && (
         <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
       )}

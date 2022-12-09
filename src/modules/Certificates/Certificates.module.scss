@@ -25,7 +25,7 @@
 
   .listItem {
     .listItemImage {
-      box-shadow: 0px 0px 10px 3px rgba(172, 172, 172, 0.3);
+      box-shadow: var(--imageShadow);
       border-radius: 5px;
       width: 100%;
       height: 100%;
