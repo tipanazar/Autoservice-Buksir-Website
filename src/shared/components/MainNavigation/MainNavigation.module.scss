@@ -1,8 +1,8 @@
 @import "../../../sass/main.scss";
 
 %linkRules {
-  margin-top: 15px;
-  // margin-bottom: 20px;
+  // margin-top: 15px;
+  margin-bottom: 10px;
   padding: 7px 5px;
   width: 100%;
   color: black;
@@ -10,10 +10,10 @@
   text-align: center;
   font-size: 19px;
   font-weight: 500;
-  &:first-child {
+  &:first-of-type {
     margin-top: 30px;
   }
-  &:last-child {
+  &:last-of-type {
     margin-bottom: 0;
   }
 
@@ -21,16 +21,17 @@
     margin-top: 0;
     margin-right: 10px;
     border-radius: 3px 3px 0 0;
+    margin-bottom: 0;
     height: min-content;
     width: fit-content;
     font-size: 15px;
     transition: background-color linear 100ms, color linear 100ms;
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 0;
     }
 
-    &:last-child {
+    &:last-of-type {
       margin-right: 0;
     }
   }

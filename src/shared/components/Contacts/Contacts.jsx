@@ -6,7 +6,7 @@ import contactsMarkup from "./contactsMarkup.json";
 export const Contacts = ({ isBigDesign, isEnglish }) => {
   const markup = isEnglish ? contactsMarkup.en : contactsMarkup.uk;
   return (
-    <>
+    <address style={{fontStyle: "normal"}}>
       <h3
         className={
           isBigDesign ? s.phoneLinksBlockTitleBig : s.phoneLinksBlockTitleSmall
@@ -44,7 +44,7 @@ export const Contacts = ({ isBigDesign, isEnglish }) => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-    </>
+    </address>
   );
 };
 

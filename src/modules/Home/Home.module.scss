@@ -11,7 +11,15 @@
     font-size: 16px;
   }
 
-  .secondPart {
+  .firstSection {
+    margin-bottom: 22px;
+  }
+
+  .secondSection {
+    //
+  }
+
+  .thirdSection {
     margin: 20px 0;
     @include mq(desktop) {
       margin: 25px 0;
@@ -107,7 +115,6 @@
   .secondaryTitle {
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 22px;
     text-decoration: underline;
     color: var(--boldTextColor);
 

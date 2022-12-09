@@ -24,7 +24,7 @@ export const Home = () => {
 
   return (
     <div className={s.description}>
-      <div className={s.firstPart}>
+      <section className={s.firstSection}>
         <div className={s.titleWrapper}>
           <h1 className={s.mainTitle}>{markup.mainTitle}</h1>
           <Button
@@ -49,8 +49,10 @@ export const Home = () => {
           <li className={s.featuresListItem}>{markup.featuresList[1]}</li>
           <li className={s.featuresListItem}>{markup.featuresList[2]}</li>
         </ul>
-        <h4 className={s.secondaryTitle}>{markup.secondaryTitle}</h4>
-        <h3 className={s.descriptionTitle}>{markup.descriptionTitle}</h3>
+        <p className={s.secondaryTitle}>{markup.secondaryTitle}</p>
+      </section>
+      <section className={s.secondSection}>
+        <h5 className={s.descriptionTitle}>{markup.descriptionTitle}</h5>
         <p>{markup.aboutBuksir[0]}</p>
         <div className={s.imageWrapper}>
           <Image
@@ -73,8 +75,8 @@ export const Home = () => {
           <br />
           {markup.aboutBuksir[2]}
         </p>
-      </div>
-      <div className={s.secondPart}>
+      </section>
+      <section className={s.thirdSection}>
         <b className={s.descriptionBoldText}>
           <span className={s.descriptionBoldTextAttention}>
             {markup.aboutParking[0]}
@@ -91,10 +93,10 @@ export const Home = () => {
           onClick={() => setFullscreenSrc(autoserviceOutside)}
         />
         <p>{markup.location}</p>
-      </div>
-      <div className={s.thirdPart}>
+      </section>
+      <section className={s.fourthSection}>
         <Contacts isBigDesign={false} isEnglish={isEnglish} />
-      </div>
+      </section>
       {fullscreenSrc && (
         <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
       )}
