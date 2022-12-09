@@ -1,7 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
@@ -16,7 +20,7 @@ body {
 div#root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: inherit;
   background: linear-gradient(
     180deg,
     rgb(71 165 71) 0%,
@@ -38,31 +42,19 @@ div#root {
   }
 }
 
-div.mainContentWrapper {
-  display: flex;
-  flex-grow: 1;
-}
-
 div#modalRoot {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  // display: none;
-  // align-items: center;
-  // justify-content: center;
   z-index: 2;
   visibility: hidden;
-  //? z-index: -1;
-  // cursor: pointer;
-  // background-color: #0000003b;
 }
 
 img {
   display: block;
-  // height: auto;
-  // box-shadow: 0px 0px 14px 5px rgba(172, 172, 172, 0.3);
+  height: auto;
 }
 
 h1,

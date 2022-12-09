@@ -1,7 +1,8 @@
 @import "../../../sass/main.scss";
 
 %linkRules {
-  // margin-top: 15px;
+  display: inline-block;
+  max-width: 95vw;
   margin-bottom: 10px;
   padding: 7px 5px;
   width: 100%;
@@ -28,7 +29,7 @@
     transition: background-color linear 100ms, color linear 100ms;
 
     &:first-of-type {
-      margin-top: 0;
+      margin-top: inherit;
     }
 
     &:last-of-type {
@@ -40,8 +41,7 @@
 .activeLink {
   @extend %linkRules;
   width: fit-content;
-  // width: 50%;
-  padding: 5px 80px;
+  padding: 5px 50px;
   border-radius: 15px;
   color: white;
   background-color: var(--navigationBlueColor);

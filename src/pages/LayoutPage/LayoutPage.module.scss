@@ -1,6 +1,8 @@
 @import "../../sass/main.scss";
+
 .container {
   display: flex;
+  flex-grow: 1;
   padding: 15px;
 
   @include mq(tablet) {
