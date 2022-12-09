@@ -47,88 +47,83 @@
   @include mq(desktop) {
     display: none;
   }
-}
 
-.mainNavigationBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // padding: 30px 10px;
-
-  .navLinksDisplayClass {
-    @include mq(tablet) {
-      display: none
-    }
-  }
-
-  .activeLink {
-    @extend %linkRules;
-    width: fit-content;
-    // width: 50%;
-    padding: 5px 80px;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--navigationBlueColor);
-  }
-
-  .inactiveLink {
-    @extend %linkRules;
-    // color: var(--navigationBlueColor);
-    // background-color: white
-  }
-
-  .listButton {
-    @extend %linkRules;
-    border: 0;
+  .mainNavigationBlock {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    transition: color linear 200ms;
-    z-index: 1;
-    // color: white;
-    .listButtonIcon {
-      height: 17px;
-      fill: #333333;
-      width: auto;
-      transition: transform linear 200ms, fill linear 200ms;
 
-      &:first-of-type {
-        margin-right: 20px;
-      }
-      &:last-of-type {
-        margin-left: 20px;
+    .navLinksDisplayClass {
+      @include mq(tablet) {
+        display: none;
       }
     }
-  }
 
-  .list {
-    width: 100%;
-    .listItem {
-      // transition: opacity, linear 300ms, line-height linear 300ms;
-      transition: all linear 300ms;
-      opacity: 1;
+    .activeLink {
+      @extend %linkRules;
+      width: fit-content;
+      padding: 5px 80px;
+      border-radius: 15px;
+      color: white;
+      background-color: var(--navigationBlueColor);
+    }
 
-      .listItemLink {
-        position: relative;
-        display: block;
-        text-align: center;
-        width: fit-content;
-        margin: 0 auto;
-        padding: 5px 0 5px 0;
-        color: black;
-        font-size: 14px;
-        font-weight: 500;
-        // background-color: red;
+    .inactiveLink {
+      @extend %linkRules;
+    }
+
+    .listButton {
+      @extend %linkRules;
+      border: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: color linear 200ms;
+      z-index: 1;
+
+      .listButtonIcon {
+        height: 17px;
+        fill: #333333;
+        width: auto;
+        transition: transform linear 200ms, fill linear 200ms;
+
+        &:first-of-type {
+          margin-right: 20px;
+        }
+        &:last-of-type {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .list {
+      width: 100%;
+      .listItem {
         transition: all linear 300ms;
+        opacity: 1;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 110%;
-          transform: translateX(-50%);
-          outline: 1px solid #b6b6b6;
+        .listItemLink {
+          position: relative;
+          display: block;
+          text-align: center;
+          width: fit-content;
+          margin: 0 auto;
+          padding: 5px 0 5px 0;
+          color: black;
+          font-size: 14px;
+          font-weight: 500;
+          // background-color: red;
+          transition: all linear 300ms;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 110%;
+            transform: translateX(-50%);
+            outline: 1px solid #b6b6b6;
+          }
         }
       }
     }
