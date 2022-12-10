@@ -6,43 +6,52 @@ import s from "./MainNavigation.module.scss";
 export const MainNavigation = ({
   className,
   modalSwitcher,
-  linksDisplayClass,
+  listItemDisplayClass,
   children,
 }) => {
   const navLinkClassName = ({ isActive }) =>
-    isActive
-      ? `${s.activeLink} ${linksDisplayClass}`
-      : `${s.inactiveLink} ${linksDisplayClass}`;
+    isActive ? s.activeLink : s.inactiveLink;
   return (
     <nav className={className}>
-      <NavLink
-        className={navLinkClassName}
-        to="/"
-        onClick={() => modalSwitcher && modalSwitcher()}
-      >
-        Головна
-      </NavLink>
-      <NavLink
-        className={navLinkClassName}
-        to="spare-parts-shop"
-        onClick={() => modalSwitcher && modalSwitcher()}
-      >
-        Магазин Запчастин
-      </NavLink>
-      <NavLink
-        className={navLinkClassName}
-        to="contacts"
-        onClick={() => modalSwitcher && modalSwitcher()}
-      >
-        Контакти
-      </NavLink>
-      <NavLink
-        className={navLinkClassName}
-        to="certificates"
-        onClick={() => modalSwitcher && modalSwitcher()}
-      >
-        Сертифікати
-      </NavLink>
+      <ul className={s.linksList}>
+        <li className={`${s.linksListItem} ${listItemDisplayClass}`}>
+          <NavLink
+            className={navLinkClassName}
+            to="/"
+            onClick={() => modalSwitcher && modalSwitcher()}
+          >
+            Головна
+          </NavLink>
+        </li>
+        <li className={`${s.linksListItem} ${listItemDisplayClass}`}>
+          <NavLink
+            className={navLinkClassName}
+            to="spare-parts-shop"
+            onClick={() => modalSwitcher && modalSwitcher()}
+          >
+            Магазин Запчастин
+          </NavLink>
+        </li>
+        <li className={`${s.linksListItem} ${listItemDisplayClass}`}>
+          <NavLink
+            className={navLinkClassName}
+            to="contacts"
+            onClick={() => modalSwitcher && modalSwitcher()}
+          >
+            Контакти
+          </NavLink>
+        </li>
+        <li className={`${s.linksListItem} ${listItemDisplayClass}`}>
+          <NavLink
+            className={navLinkClassName}
+            to="certificates"
+            onClick={() => modalSwitcher && modalSwitcher()}
+          >
+            Сертифікати
+          </NavLink>
+        </li>
+      </ul>
+
       {children}
     </nav>
   );
@@ -50,6 +59,6 @@ export const MainNavigation = ({
 
 MainNavigation.propTypes = {
   className: PropTypes.string.isRequired,
-  linksDisplayClass: PropTypes.string.isRequired,
+  listItemDisplayClass: PropTypes.string.isRequired,
   modalSwitcher: PropTypes.func,
 };

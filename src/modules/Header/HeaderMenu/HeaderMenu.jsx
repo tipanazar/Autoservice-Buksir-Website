@@ -73,7 +73,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
       <MainNavigation
         className={s.mainNavigationBlock}
         modalSwitcher={modalSwitcher}
-        linksDisplayClass={s.navLinksDisplayClass}
+        listItemDisplayClass={s.listItemDisplayClass}
       >
         <Button
           className={s.listButton}
