@@ -10,6 +10,30 @@
   transition: outline-color linear 70ms;
 }
 
+%linkRules {
+  text-align: center;
+  display: block;
+  color: #000;
+  font-weight: 500;
+  transition: color linear 70ms;
+  padding: 5px 6px 4px 6px;
+  font-size: 13px;
+
+  @include mq(desktop-big) {
+    padding: 6px 10px 5px 10px;
+    font-size: 14px;
+  }
+
+  &::after {
+    @extend %afterRules;
+  }
+
+  .sidebarElementImage {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
 div.sidebarElementMainBlock {
   width: 170px;
   @include mq(desktop-big) {
@@ -36,49 +60,40 @@ div.sidebarElementMainBlock {
     padding-top: 3px;
     margin-bottom: 30px;
     width: 100%;
+    
     li.sidebarElementListItem {
       position: relative;
       width: 100%;
       margin-bottom: 7px;
-      border-radius: 3px;
+      // border-radius: 3px;
       &:last-child {
         margin-bottom: 0;
       }
 
-      a.sidebarElementListItemLink {
-        text-align: center;
-        display: block;
-        color: #000;
-        font-weight: 500;
-        transition: color linear 70ms;
-        padding: 5px 6px 4px 6px;
-        font-size: 13px;
+      a.sidebarElementListItemLinkActive {
+        @extend %linkRules;
 
-        @include mq(desktop-big) {
-          padding: 6px 10px 5px 10px;
-          font-size: 14px;
-        }
-
+        color: var(--linksHoverColor);
         &::after {
-          @extend %afterRules;
+          outline-color: #0900d9b3;
         }
+      }
+      a.sidebarElementListItemLinkInactive {
+        @extend %linkRules;
 
         &:hover {
           color: var(--linksHoverColor);
-          > time {
-            color: var(--linksHoverColor);
-            &::before {
-              outline-color: #0900d996;
-            }
-          }
           &::after {
             outline-color: #0900d9b3;
           }
-        }
 
-        .sidebarElementImage {
-          width: 90%;
-          margin: 10px auto;
+          // > time {
+          //   color: var(--linksHoverColor);
+          //   &::before,
+          //   &::after {
+          //     outline-color: #0900d996;
+          //   }
+          // }
         }
       }
     }

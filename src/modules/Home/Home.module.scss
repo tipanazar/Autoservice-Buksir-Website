@@ -25,11 +25,12 @@
   .titleWrapper {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
 
     .mainTitle {
       font-size: 18px;
       font-weight: 700;
-      margin: 0 10px 15px 0;
+      margin-right: 10px;
       color: var(--boldTextColor);
       @include mq(tablet) {
         font-size: 20px;

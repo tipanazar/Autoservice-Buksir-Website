@@ -7,15 +7,12 @@ import s from "./RightSidebar.module.scss";
 export const RightSidebar = () => {
   return (
     <ul className={s.wrapper}>
-      {/* <li>
-        <Autoservice />
-      </li> */}
       <li>
         <CarTuning />
       </li>
-      <li>
+      {/* <li>
         <News />
-      </li>
+      </li> */}
       <li>
         <OurFeatures />
       </li>

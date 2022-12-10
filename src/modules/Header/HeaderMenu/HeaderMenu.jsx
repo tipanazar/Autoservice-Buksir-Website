@@ -2,6 +2,10 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "../../../shared/components/Button";
 import { Link } from "react-router-dom";
+import { Autoservice } from "../../LeftSidebar/SidebarElements/Autoservice/Autoservice";
+import { CarTuning } from "../../RightSidebar/SidebarElements/CarTuning/CarTuning";
+import { OurFeatures } from "../../RightSidebar/SidebarElements/OurFeatures/OurFeatures";
+import { Partners } from "../../LeftSidebar/SidebarElements/Partners/Partners";
 
 import s from "./HeaderMenu.module.scss";
 import { Icon } from "../../../shared/components/Icon/Icon";
@@ -68,6 +72,46 @@ export const HeaderMenu = ({ modalSwitcher }) => {
     );
   });
 
+  const buttons = [" ", " "].map((item) => {
+    console.log("render")
+    return (
+      <Button
+        className={choosedListId === 0 ? s.listButtonOpen : s.listButtonClosed}
+        ariaLabel="Відкрити список статей категорії автосервис"
+        // style={{ color: choosedListId === 0 ? "#00009fde" : "initial" }}
+        onClick={() => choosedListIdHandler(0)}
+      >
+        <Icon
+          className={
+            choosedListId === 0 ? s.listButtonIconOpen : s.listButtonIconClosed
+          }
+          iconId="listArrow-icon"
+          height={10}
+          width={10}
+          // style={
+          //   choosedListId === 0
+          //     ? { fill: "#00009fde", transform: "rotate(-180deg)" }
+          //     : { color: "initial", fill: "initial" }
+          // }
+        />
+        Автосервіс
+        <Icon
+          className={
+            choosedListId === 0 ? s.listButtonIconOpen : s.listButtonIconClosed
+          }
+          iconId="listArrow-icon"
+          height={10}
+          width={10}
+          // style={
+          //   choosedListId === 0
+          //     ? { fill: "#00009fde", transform: "rotate(180deg)" }
+          //     : { color: "initial", fill: "initial" }
+          // }
+        />
+      </Button>
+    );
+  });
+
   return (
     <div className={s.modalBodyBlock}>
       <MainNavigation
@@ -75,49 +119,24 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         modalSwitcher={modalSwitcher}
         listItemDisplayClass={s.listItemDisplayClass}
       >
-        <Button
-          className={s.listButton}
-          ariaLabel="Відкрити список статей категорії автосервис"
-          style={{ color: choosedListId === 0 ? "#00009fde" : "initial" }}
-          onClick={() => choosedListIdHandler(0)}
-        >
-          <Icon
-            className={s.listButtonIcon}
-            iconId="listArrow-icon"
-            height={10}
-            width={10}
-            style={
-              choosedListId === 0
-                ? { fill: "#00009fde", transform: "rotate(-180deg)" }
-                : { color: "initial", fill: "initial" }
-            }
-          />
-          Автосервіс
-          <Icon
-            className={s.listButtonIcon}
-            iconId="listArrow-icon"
-            height={10}
-            width={10}
-            style={
-              choosedListId === 0
-                ? { fill: "#00009fde", transform: "rotate(180deg)" }
-                : { color: "initial", fill: "initial" }
-            }
-          />
-        </Button>
-        <ul className={s.list}>{listMarkup}</ul>
+        <Autoservice isSmallScreen={true} />
+        <CarTuning isSmallScreen={true} />
+        <OurFeatures isSmallScreen={true} />
+        <Partners isSmallScreen={true} />
+        {/* {buttons} */}
+        {/* <ul className={s.list}>{listMarkup}</ul> */}
         {/* <ul className={s.list}>
           <li className={s.listItem}>
             <Link className={s.listItemLink}>sfasfasfasf</Link>
           </li>
         </ul> */}
-        <Button
+        {/* <Button
           className={s.listButton}
           ariaLabel="Відкрити список статей категорії автосервис"
           onClick={() => choosedListIdHandler(0)}
         >
           Автосервіс
-        </Button>
+        </Button> */}
       </MainNavigation>
     </div>
   );

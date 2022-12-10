@@ -1,38 +1,77 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
+import { Button } from "../../../../shared/components/Button";
 import { Image } from "../../../../shared/components/Image";
 import towSchema from "../../../../images/sidebars/towSchema.jpg";
+import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
+import { Icon } from "../../../../shared/components/Icon/Icon";
+import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
-import s from "./Partners.module.scss";
+export const Partners = ({ isSmallScreen }) => {
+  const [isListOpen, setIsListOpen] = useState(false);
+  const markupParams = {
+    isSmallScreen,
+    isListOpen,
+    isImageNeeds: true,
+    data: linksData.partners,
+    imageParams: [
+      null,
+      null,
+      {
+        src: towSchema,
+        alt: "Схема буксирування",
+        width: "140px",
+      },
+    ],
+  };
 
-export const Partners = () => {
-  return (
+  return isSmallScreen ? (
+    <>
+      <Button
+        className="headerMenuOpenListBtn"
+        ariaLabel="Відкрити список статей категорії партнери"
+        style={{ color: isListOpen ? "#00009fde" : "initial" }}
+        onClick={() => setIsListOpen(!isListOpen)}
+      >
+        <Icon
+          className="headerMenuOpenListBtnIconc"
+          iconId="listArrow-icon"
+          height={10}
+          width={10}
+          style={
+            isListOpen
+              ? { fill: "#00009fde", transform: "rotate(-180deg)" }
+              : { color: "initial", fill: "initial" }
+          }
+        />
+        Партнери
+        <Icon
+          className="headerMenuOpenListBtnIcon"
+          iconId="listArrow-icon"
+          height={10}
+          width={10}
+          style={
+            isListOpen
+              ? { fill: "#00009fde", transform: "rotate(-180deg)" }
+              : { color: "initial", fill: "initial" }
+          }
+        />
+      </Button>
+      <ul className="headerMenuList">{listMarkup({ ...markupParams })}</ul>
+    </>
+  ) : (
     <div className="sidebarElementMainBlock">
       <h4 className="sidebarElementTitle">Партнери</h4>
       <div>
         <ul className="sidebarElementList">
-          <li className="sidebarElementListItem">
-            <Link className="sidebarElementListItemLink">
-              Кафе "Вогні Баку"
-            </Link>
-          </li>
-          <li className="sidebarElementListItem">
-            <Link className="sidebarElementListItemLink">
-              Авіамодельний гурток
-            </Link>
-          </li>
-          <li className="sidebarElementListItem">
-            <Link className="sidebarElementListItemLink">
-              Буксирування автомобіля
-              <Image
-                className="sidebarElementImage"
-                src={towSchema}
-                alt="Схема буксирування автомобіля"
-              />
-            </Link>
-          </li>
+          {listMarkup({ ...markupParams })}
         </ul>
       </div>
     </div>
   );
+};
+
+Partners.propTypes = {
+  isSmallScreen: PropTypes.bool,
 };

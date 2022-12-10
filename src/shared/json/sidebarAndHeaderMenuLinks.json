@@ -1,0 +1,112 @@
+{
+  "autoservice": [
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    },
+    {
+      "text": "Магазин Запчастин",
+      "path": "/car-service/test"
+    }
+  ],
+
+  "carTunning": [
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    },
+    {
+      "text": "Подсветка Днища",
+      "path": "/car-tunning/test"
+    }
+  ],
+
+  "ourFeatures": [
+    {
+      "text": "Діллерська діагностика",
+      "withImage": true,
+      "path": "/our-feature/test"
+    },
+    {
+      "text": "Промивання форсунок",
+      "withImage": true,
+      "path": "/our-feature/test"
+    },
+    {
+      "text": "Розвал-сходження авто висотою до 3м.",
+      "withImage": true,
+      "path": "/our-feature/test"
+    }
+  ],
+  "partners": [
+    {
+      "text": "Кафе \"Вогні Баку\"",
+      "path": "/partners/cafe-vohni-baku"
+    },
+    {
+      "text": "Авіамодельний гурток",
+      "path": "/partners/aviahurtok"
+    },
+    {
+      "text": "Буксирування автомобіля",
+      "withImage": true,
+      "path": "/partners/buksyruvannya-avto"
+    }
+  ]
+}

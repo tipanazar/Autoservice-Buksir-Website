@@ -20,7 +20,7 @@ export const Button = ({
       id={id}
       disabled={disabled}
       style={style}
-      ariaLabel={ariaLabel}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
