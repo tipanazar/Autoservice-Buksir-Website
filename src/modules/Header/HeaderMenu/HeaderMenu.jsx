@@ -77,6 +77,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
       >
         <Button
           className={s.listButton}
+          ariaLabel="Відкрити список статей категорії автосервис"
           style={{ color: choosedListId === 0 ? "#00009fde" : "initial" }}
           onClick={() => choosedListIdHandler(0)}
         >
@@ -112,6 +113,7 @@ export const HeaderMenu = ({ modalSwitcher }) => {
         </ul> */}
         <Button
           className={s.listButton}
+          ariaLabel="Відкрити список статей категорії автосервис"
           onClick={() => choosedListIdHandler(0)}
         >
           Автосервіс

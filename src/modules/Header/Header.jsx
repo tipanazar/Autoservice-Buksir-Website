@@ -70,7 +70,11 @@ export const Header = () => {
             />
           </Button>
         </div>
-        <Button className={s.toggleMenuButton} onClick={modalSwitcher}>
+        <Button
+          className={s.toggleMenuButton}
+          ariaLabel={isModalOpen ? "Закрити меню" : "Відкрити меню"}
+          onClick={modalSwitcher}
+        >
           <Icon
             className={s.toggleMenuButtonIcon}
             iconId={isModalOpen ? "closeModal-icon" : "openModal-icon"}

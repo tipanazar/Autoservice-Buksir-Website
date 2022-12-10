@@ -9,6 +9,7 @@ export const Button = ({
   id,
   disabled,
   style,
+  ariaLabel,
 }) => {
   return (
     <button
@@ -19,6 +20,7 @@ export const Button = ({
       id={id}
       disabled={disabled}
       style={style}
+      ariaLabel={ariaLabel}
     >
       {children}
     </button>
@@ -37,5 +39,6 @@ Button.propTypes = {
     PropTypes.number,
     PropTypes.bool,
   ]),
+  ariaLabel: PropTypes.string,
   children: PropTypes.node,
 };
