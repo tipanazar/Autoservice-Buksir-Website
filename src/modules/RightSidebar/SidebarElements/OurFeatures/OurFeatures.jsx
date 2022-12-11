@@ -2,7 +2,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
-import { Image } from "../../../../shared/components/Image";
 import checkEngineDash from "../../../../images/sidebars/checkEngineDash.jpg";
 import injector from "../../../../images/sidebars/injector.jpg";
 import wheelAlignment from "../../../../images/sidebars/wheelAlignment.jpg";
@@ -38,33 +37,24 @@ export const OurFeatures = ({ isSmallScreen = false }) => {
   return isSmallScreen ? (
     <>
       <Button
-        className="headerMenuOpenListBtn"
+        className={
+          isListOpen ? "headerMenuOpenListBtn" : "headerMenuClosedListBtn"
+        }
         ariaLabel="Відкрити список статей категорії наша фішка"
-        style={{ color: isListOpen ? "#00009fde" : "initial" }}
         onClick={() => setIsListOpen(!isListOpen)}
       >
         <Icon
-          className="headerMenuOpenListBtnIcon"
+          className="headerMenuListBtnIcon"
           iconId="listArrow-icon"
-          height={10}
-          width={10}
-          style={
-            isListOpen
-              ? { fill: "#00009fde", transform: "rotate(-180deg)" }
-              : { color: "initial", fill: "initial" }
-          }
+          height={15}
+          width={15}
         />
         Наша Фішка
         <Icon
-          className="headerMenuOpenListBtnIcon"
+          className="headerMenuListBtnIcon"
           iconId="listArrow-icon"
-          height={10}
-          width={10}
-          style={
-            isListOpen
-              ? { fill: "#00009fde", transform: "rotate(180deg)" }
-              : { color: "initial", fill: "initial" }
-          }
+          height={15}
+          width={15}
         />
       </Button>
       <ul className="headerMenuList">{listMarkup({ ...markupParams })}</ul>

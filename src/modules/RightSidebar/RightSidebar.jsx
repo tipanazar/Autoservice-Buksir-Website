@@ -1,5 +1,5 @@
 import { CarTuning } from "./SidebarElements/CarTuning";
-import { OurFeatures } from "./SidebarElements/OurFeatures";
+import { OurFeatures } from "./SidebarElements/OurFeatures/OurFeatures";
 import { News } from "./SidebarElements/News";
 
 import s from "./RightSidebar.module.scss";

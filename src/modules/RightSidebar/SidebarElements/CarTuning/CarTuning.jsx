@@ -16,33 +16,24 @@ export const CarTuning = ({ isSmallScreen = false }) => {
   return isSmallScreen ? (
     <>
       <Button
-        className="headerMenuOpenListBtn"
+        className={
+          isListOpen ? "headerMenuOpenListBtn" : "headerMenuClosedListBtn"
+        }
         ariaLabel="Відкрити список статей категорії тюнинг автомобілів"
-        style={{ color: isListOpen ? "#00009fde" : "initial" }}
         onClick={() => setIsListOpen(!isListOpen)}
       >
         <Icon
-          className="headerMenuOpenListBtnIcon"
+          className="headerMenuListBtnIcon"
           iconId="listArrow-icon"
-          height={10}
-          width={10}
-          style={
-            isListOpen
-              ? { fill: "#00009fde", transform: "rotate(-180deg)" }
-              : { color: "initial", fill: "initial" }
-          }
+          height={15}
+          width={15}
         />
         Тюнинг автомобілів
         <Icon
-          className="headerMenuOpenListBtnIcon"
+          className="headerMenuListBtnIcon"
           iconId="listArrow-icon"
-          height={10}
-          width={10}
-          style={
-            isListOpen
-              ? { fill: "#00009fde", transform: "rotate(180deg)" }
-              : { color: "initial", fill: "initial" }
-          }
+          height={15}
+          width={15}
         />
       </Button>
       <ul className="headerMenuList">{listMarkup({ ...markupParams })}</ul>

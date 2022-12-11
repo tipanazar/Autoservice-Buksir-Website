@@ -1,6 +1,5 @@
-// import { OurFeatures } from "./SidebarElements/OurFeatures";
 import { Autoservice } from "./SidebarElements/Autoservice";
-import { Partners } from "./SidebarElements/Partners";
+import { Partners } from "./SidebarElements/Partners/Partners";
 
 import s from "./LeftSidebar.module.scss";
 
@@ -10,7 +9,6 @@ export const LeftSidebar = () => {
       <li>
         <Autoservice />
       </li>
-      <li>{/* <OurFeatures /> */}</li>
       <li>
         <Partners />
       </li>
