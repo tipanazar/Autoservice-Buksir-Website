@@ -13,16 +13,22 @@ export function listMarkup({
   isSmallScreen,
   isImageNeeds = false,
   isListOpen,
+  modalSwitcher = null,
   data,
   imageParams = null,
 }) {
+  // console.log('render')
   if (isSmallScreen) {
     if (isImageNeeds) {
       if (isListOpen) {
         return data.map((item, idx) => {
           return (
             <li className="headerMenuListItemOpen" key={idx}>
-              <NavLink className={smallScreenNavLinkClassName} to={item.path}>
+              <NavLink
+                className={smallScreenNavLinkClassName}
+                to={item.path}
+                onClick={modalSwitcher}
+              >
                 {item.text}
                 {imageParams[idx] && (
                   <Image
@@ -38,7 +44,11 @@ export function listMarkup({
         return data.map((item, idx) => {
           return (
             <li className="headerMenuListItemClosed" key={idx}>
-              <NavLink className={smallScreenNavLinkClassName} to={item.path}>
+              <NavLink
+                className={smallScreenNavLinkClassName}
+                to={item.path}
+                onClick={modalSwitcher}
+              >
                 {item.text}
                 {imageParams[idx] && (
                   <Image
@@ -56,7 +66,11 @@ export function listMarkup({
         return data.map((item, idx) => {
           return (
             <li className="headerMenuListItemOpen" key={idx}>
-              <NavLink className={smallScreenNavLinkClassName} to={item.path}>
+              <NavLink
+                className={smallScreenNavLinkClassName}
+                to={item.path}
+                onClick={modalSwitcher}
+              >
                 {item.text}
               </NavLink>
             </li>
@@ -66,7 +80,11 @@ export function listMarkup({
         return data.map((item, idx) => {
           return (
             <li className="headerMenuListItemClosed" key={idx}>
-              <NavLink className={smallScreenNavLinkClassName} to={item.path}>
+              <NavLink
+                className={smallScreenNavLinkClassName}
+                to={item.path}
+                onClick={modalSwitcher}
+              >
                 {item.text}
               </NavLink>
             </li>

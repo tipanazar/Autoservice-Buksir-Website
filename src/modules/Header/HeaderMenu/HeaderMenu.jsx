@@ -5,19 +5,28 @@ import { OurFeatures } from "../../RightSidebar/SidebarElements/OurFeatures/OurF
 import { Partners } from "../../LeftSidebar/SidebarElements/Partners/Partners";
 
 import s from "./HeaderMenu.module.scss";
+import { memo } from "react";
 
-export const HeaderMenu = ({ modalSwitcher }) => {
+const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
+  console.log("render");
   return (
-    <div className={s.modalBodyBlock}>
+    <div
+      className={s.modalBodyBlock}
+      style={
+        isModalOpen ? { zIndex: 1, opacity: 1 } : { zIndex: -1, opacity: 0 }
+      }
+    >
       <MainNavigation
         modalSwitcher={modalSwitcher}
         listItemDisplayClass={s.listItemDisplayClass}
       >
-        <Autoservice isSmallScreen={true} />
-        <CarTuning isSmallScreen={true} />
-        <OurFeatures isSmallScreen={true} />
-        <Partners isSmallScreen={true} />
+        <Autoservice modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        <CarTuning modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        <Partners modalSwitcher={modalSwitcher} isSmallScreen={true} />
       </MainNavigation>
     </div>
   );
 };
+
+export default memo(HeaderMenu);

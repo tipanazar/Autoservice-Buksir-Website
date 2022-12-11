@@ -6,6 +6,10 @@
   padding-top: 30px;
   height: calc(100vh - 62px);
   width: 100vw;
+  bottom: 0;
+  left: 0;
+  // opacity: 0;
+  transition: all linear 200ms;
   background: linear-gradient(
     180deg,
     rgb(71 165 71) -60px,

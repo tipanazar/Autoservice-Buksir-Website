@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
@@ -9,12 +10,17 @@ import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
-export const OurFeatures = ({ isSmallScreen = false }) => {
+export const OurFeatures = ({ modalSwitcher, isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
+  // const location = useLocation();
+  // useEffect(() => {
+  //   location.pathname.split("/")[1] === "our-feature" && setIsListOpen(true);
+  // }, [location.pathname]);
   const markupParams = {
     isSmallScreen,
     isListOpen,
     isImageNeeds: true,
+    modalSwitcher,
     data: linksData.ourFeatures,
     imageParams: [
       {
