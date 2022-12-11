@@ -1,8 +1,8 @@
 @import "../../../sass/main.scss";
 
-%linkRules {
-  display: block;
-  padding: 7px 5px;
+%mainNavigationLinkRules {
+  display: inline-block;
+  padding: 5px 50px;
   width: 100%;
   border-radius: 15px;
   color: black;
@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 
   @include mq(tablet) {
     flex-direction: row;
@@ -33,10 +34,6 @@
   .linksListItem {
     max-width: 95vw;
     margin-bottom: 10px;
-
-    &:first-of-type {
-      margin-top: 30px;
-    }
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -56,9 +53,9 @@
     }
 
     .activeLink {
-      @extend %linkRules;
-      width: fit-content;
-      padding: 5px 50px;
+      @extend %mainNavigationLinkRules;
+      // width: fit-content;
+      // padding: 5px 50px;
       color: white;
       background-color: var(--navigationBlueColor);
 
@@ -68,7 +65,7 @@
     }
 
     .inactiveLink {
-      @extend %linkRules;
+      @extend %mainNavigationLinkRules;
 
       @include mq(mobile-only) {
         border-radius: 0;
@@ -78,6 +75,7 @@
         color: var(--navigationBlueColor);
         background-color: white;
         padding: 2px 7px;
+        margin-top: 4px;
       }
     }
   }

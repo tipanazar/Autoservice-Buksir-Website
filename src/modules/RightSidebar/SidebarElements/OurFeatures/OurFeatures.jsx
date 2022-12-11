@@ -10,7 +10,7 @@ import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
-export const OurFeatures = ({ isSmallScreen }) => {
+export const OurFeatures = ({ isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const markupParams = {
     isSmallScreen,

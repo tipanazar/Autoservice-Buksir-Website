@@ -34,11 +34,7 @@ Button.propTypes = {
   form: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
-  style: PropTypes.objectOf([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.bool,
-  ]),
+  style: PropTypes.shape([PropTypes.string, PropTypes.number]),
   ariaLabel: PropTypes.string,
   children: PropTypes.node,
 };

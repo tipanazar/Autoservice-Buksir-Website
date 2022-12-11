@@ -58,7 +58,7 @@ export const MainNavigation = ({
 };
 
 MainNavigation.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   listItemDisplayClass: PropTypes.string.isRequired,
   modalSwitcher: PropTypes.func,
 };

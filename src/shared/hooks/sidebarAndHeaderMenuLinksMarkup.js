@@ -16,7 +16,6 @@ export function listMarkup({
   data,
   imageParams = null,
 }) {
-  console.log(isSmallScreen, isImageNeeds, isListOpen, data, imageParams);
   if (isSmallScreen) {
     if (isImageNeeds) {
       if (isListOpen) {

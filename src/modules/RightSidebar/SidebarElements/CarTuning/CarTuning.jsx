@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
-import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
+import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 
-export const CarTuning = ({ isSmallScreen }) => {
+export const CarTuning = ({ isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const markupParams = {
     isSmallScreen,

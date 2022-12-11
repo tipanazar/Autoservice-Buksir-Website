@@ -1,16 +1,16 @@
 %afterRules {
   position: absolute;
   content: "";
-  outline: 1px solid #003eff47;
   width: 90%;
   transform: translateX(-50%);
   height: 0;
   bottom: 0;
   left: 50%;
   transition: outline-color linear 70ms;
+  outline: 1px solid;
 }
 
-%linkRules {
+%sidebarLinkRules {
   text-align: center;
   display: block;
   color: #000;
@@ -60,27 +60,28 @@ div.sidebarElementMainBlock {
     padding-top: 3px;
     margin-bottom: 30px;
     width: 100%;
-    
+
     li.sidebarElementListItem {
       position: relative;
       width: 100%;
       margin-bottom: 7px;
-      // border-radius: 3px;
       &:last-child {
         margin-bottom: 0;
       }
 
       a.sidebarElementListItemLinkActive {
-        @extend %linkRules;
-
+        @extend %sidebarLinkRules;
         color: var(--linksHoverColor);
         &::after {
           outline-color: #0900d9b3;
         }
       }
-      a.sidebarElementListItemLinkInactive {
-        @extend %linkRules;
 
+      a.sidebarElementListItemLinkInactive {
+        @extend %sidebarLinkRules;
+        &::after {
+          outline-color: #003eff47;
+        }
         &:hover {
           color: var(--linksHoverColor);
           &::after {

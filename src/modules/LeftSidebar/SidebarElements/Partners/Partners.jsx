@@ -2,13 +2,12 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
-import { Image } from "../../../../shared/components/Image";
 import towSchema from "../../../../images/sidebars/towSchema.jpg";
 import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
-export const Partners = ({ isSmallScreen }) => {
+export const Partners = ({ isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const markupParams = {
     isSmallScreen,
@@ -35,7 +34,7 @@ export const Partners = ({ isSmallScreen }) => {
         onClick={() => setIsListOpen(!isListOpen)}
       >
         <Icon
-          className="headerMenuOpenListBtnIconc"
+          className="headerMenuOpenListBtnIcon"
           iconId="listArrow-icon"
           height={10}
           width={10}
