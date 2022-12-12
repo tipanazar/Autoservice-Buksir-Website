@@ -1,11 +1,11 @@
-import { Autoservice } from "./SidebarElements/Autoservice";
+import { CarService } from "./SidebarElements/CarService";
 import { Partners } from "./SidebarElements/Partners/Partners";
 
 export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
     <ul className={sidebarWrapperClass}>
       <li>
-        <Autoservice />
+        <CarService />
       </li>
       <li>
         <Partners />

@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { MainNavigation } from "../../../shared/components/MainNavigation/MainNavigation";
-import { Autoservice } from "../../LeftSidebar/SidebarElements/Autoservice/Autoservice";
+import { CarService } from "../../LeftSidebar/SidebarElements/CarService";
 import { CarTuning } from "../../RightSidebar/SidebarElements/CarTuning/CarTuning";
 import { OurFeatures } from "../../RightSidebar/SidebarElements/OurFeatures/OurFeatures";
 import { Partners } from "../../LeftSidebar/SidebarElements/Partners/Partners";
@@ -20,7 +20,7 @@ const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
         modalSwitcher={modalSwitcher}
         listItemDisplayClass={s.listItemDisplayClass}
       >
-        <Autoservice modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        <CarService modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <CarTuning modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <Partners modalSwitcher={modalSwitcher} isSmallScreen={true} />
