@@ -4,17 +4,21 @@
   display: flex;
   flex-grow: 1;
   padding: 15px;
-
   @include mq(tablet) {
     padding: 3vw;
   }
-
   @include mq(desktop) {
     padding: 10px;
   }
-
   @include mq(desktop-big) {
     padding: 30px;
+  }
+
+  .sidebarWrapperClass {
+    display: none;
+    @include mq(desktop) {
+      display: block;
+    }
   }
 
   .centerContainer {

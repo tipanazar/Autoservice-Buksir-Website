@@ -1,21 +1,19 @@
-%headerListItemRules {
-  transition: all linear 300ms;
-  padding: 0 10vw;
-}
-
 %headerListButtonRules {
   border: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: color linear 200ms;
-  padding: 7px 5px;
-  width: 100%;
-  // color: black;
+  padding: 5px 0;
+  width: 95vw;
   background-color: rgba($color: #000000, $alpha: 0);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+  @include mq(tablet) {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
 
   svg.headerMenuListBtnIcon {
     height: 15px;
@@ -23,12 +21,16 @@
     transition: all linear 200ms;
 
     &:first-of-type {
-      margin-right: 20px;
+      margin-right: 25px;
     }
     &:last-of-type {
-      margin-left: 20px;
+      margin-left: 25px;
     }
   }
+}
+
+%headerListItemRules {
+  transition: all linear 300ms;
 }
 
 %headerListLinkRules {
@@ -37,16 +39,19 @@
   text-align: center;
   width: fit-content;
   margin: 0 auto;
-  padding: 5px 0 5px 0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   transition: all linear 300ms;
+  @include mq(tablet) {
+    font-size: 16px;
+  }
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 110%;
+    width: 115%;
+    max-width: 95vw;
     transform: translateX(-50%);
     outline: 1px solid;
   }
@@ -77,30 +82,33 @@ button.headerMenuClosedListBtn {
 }
 
 ul.headerMenuList {
-  width: 100%;
+  width: 95vw;
   transition: margin-bottom linear 300ms;
+  margin: -10px auto 0 auto;
+  @include mq(tablet) {
+    margin-top: -30px;
+  }
   &:has(li.headerMenuListItemOpen) {
     margin-bottom: 20px;
+    // @include mq(tablet) {
+    //   margin-bottom: 30px;
+    // }
   }
 
   li.headerMenuListItemOpen {
     @extend %headerListItemRules;
     opacity: 1;
     visibility: visible;
-    margin-bottom: 12px;
-    margin-top: -10px;
-
+    margin-bottom: 10px;
     &:last-of-type {
       margin-bottom: 0;
     }
     a.headerMenuListItemLinkActive,
     a.headerMenuListItemLinkInactive {
       line-height: 1;
-      padding: 5px 0;
+      padding: 7px 0 3px 0;
       img.headerMenuListItemImg {
-        // margin: 10px auto 6px auto;
-        // width: 120px;
-        margin: 10px auto 4px auto;
+        margin: 10px auto 0 auto;
         height: 80px;
       }
     }
@@ -124,7 +132,6 @@ ul.headerMenuList {
   a.headerMenuListItemLinkActive {
     @extend %headerListLinkRules;
     color: var(--linksHoverColor);
-    // background-color: red;
     &::after {
       outline-color: #0900d9b3;
     }
@@ -133,7 +140,6 @@ ul.headerMenuList {
   a.headerMenuListItemLinkInactive {
     @extend %headerListLinkRules;
     color: black;
-    // background-color: red;
     &::after {
       outline-color: #b6b6b6;
     }

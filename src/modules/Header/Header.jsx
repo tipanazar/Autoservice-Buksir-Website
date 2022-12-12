@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../shared/components/Button/Button";
@@ -34,14 +34,6 @@ export const Header = () => {
     }
   };
 
-  // const addTodo = useCallback(() => {
-  //   setTodos((t) => [...t, "New Todo"]);
-  // }, [todos]);
-
-  const playGif = useCallback(() => {
-    setCarMufflerToggler(!carMufflerToggler);
-  }, [carMufflerToggler]);
-
   return (
     <header className={s.wrapper}>
       <Link
@@ -66,8 +58,8 @@ export const Header = () => {
         </div>
         <Button
           className={s.playGifBtn}
-          // onClick={() => setCarMufflerToggler(!carMufflerToggler)}
-          onClick={playGif}
+          onClick={() => setCarMufflerToggler(!carMufflerToggler)}
+          // onClick={playGif}
         >
           <p>Ремонтуємо все що на колесах!</p>
           <Icon

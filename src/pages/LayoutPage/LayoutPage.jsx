@@ -12,20 +12,20 @@ export const LayoutPage = () => {
   return (
     <>
       <Header />
-      <section className={s.container}>
-        <LeftSidebar />
-        <section className={s.centerContainer}>
+      <main className={s.container}>
+        <LeftSidebar sidebarWrapperClass={s.sidebarWrapperClass} />
+        <div className={s.centerContainer}>
           <MainNavigation
             className={s.mainNavigationBlock}
             linksDisplayClass=""
             listItemDisplayClass=""
           />
-          <main>
+          <article>
             <Outlet />
-          </main>
-        </section>
-        <RightSidebar />
-      </section>
+          </article>
+        </div>
+        <RightSidebar sidebarWrapperClass={s.sidebarWrapperClass} />
+      </main>
       <Footer />
     </>
   );

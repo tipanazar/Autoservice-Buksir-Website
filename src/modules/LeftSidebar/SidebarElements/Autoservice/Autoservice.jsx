@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
@@ -9,16 +8,21 @@ import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
 
 export const Autoservice = ({ modalSwitcher, isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
-  // const location = useLocation();
-  // useEffect(() => {
-  //   location.pathname.split("/")[1] === "car-service" && setIsListOpen(true);
-  // }, [location.pathname]);
+  const [markup, setMarkup] = useState([]);
+  useEffect(() => {
+    if (isSmallScreen) {
+      setMarkup(listMarkup({ ...markupParams }));
+    }
+    //eslint-disable-next-line
+  }, [isListOpen]);
+
   const markupParams = {
     isSmallScreen,
     isListOpen,
     modalSwitcher,
     data: linksData.autoservice,
   };
+
   return isSmallScreen ? (
     <>
       <Button
@@ -42,7 +46,7 @@ export const Autoservice = ({ modalSwitcher, isSmallScreen = false }) => {
           width={15}
         />
       </Button>
-      <ul className="headerMenuList">{listMarkup({ ...markupParams })}</ul>
+      <ul className="headerMenuList">{markup}</ul>
     </>
   ) : (
     <div className="sidebarElementMainBlock">

@@ -1,11 +1,9 @@
 import { Autoservice } from "./SidebarElements/Autoservice";
 import { Partners } from "./SidebarElements/Partners/Partners";
 
-import s from "./LeftSidebar.module.scss";
-
-export const LeftSidebar = () => {
+export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
-    <ul className={s.wrapper}>
+    <ul className={sidebarWrapperClass}>
       <li>
         <Autoservice />
       </li>

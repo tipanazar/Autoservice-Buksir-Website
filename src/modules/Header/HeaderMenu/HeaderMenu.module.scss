@@ -8,8 +8,7 @@
   width: 100vw;
   bottom: 0;
   left: 0;
-  // opacity: 0;
-  transition: all linear 200ms;
+  transition: opacity linear 150ms, z-index linear 150ms;
   background: linear-gradient(
     180deg,
     rgb(71 165 71) -60px,

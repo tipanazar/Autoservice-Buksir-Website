@@ -2,11 +2,9 @@ import { CarTuning } from "./SidebarElements/CarTuning";
 import { OurFeatures } from "./SidebarElements/OurFeatures/OurFeatures";
 import { News } from "./SidebarElements/News";
 
-import s from "./RightSidebar.module.scss";
-
-export const RightSidebar = () => {
+export const RightSidebar = ({sidebarWrapperClass}) => {
   return (
-    <ul className={s.wrapper}>
+    <ul className={sidebarWrapperClass}>
       <li>
         <CarTuning />
       </li>

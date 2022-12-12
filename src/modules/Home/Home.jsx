@@ -76,7 +76,7 @@ export const Home = () => {
           {markup.aboutBuksir[2]}
         </p>
       </section>
-      <div className={s.thirdSection}>
+      <section className={s.thirdSection}>
         <b className={s.descriptionBoldText}>
           <span className={s.descriptionBoldTextAttention}>
             {markup.aboutParking[0]}
@@ -93,7 +93,7 @@ export const Home = () => {
           onClick={() => setFullscreenSrc(autoserviceOutside)}
         />
         <p>{markup.location}</p>
-      </div>
+      </section>
       <Contacts isBigDesign={false} isEnglish={isEnglish} />
       {fullscreenSrc && (
         <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
