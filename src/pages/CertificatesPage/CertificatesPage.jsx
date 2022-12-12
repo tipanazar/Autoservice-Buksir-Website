@@ -1,5 +1,7 @@
 import { Certificates } from "../../modules/Certificates";
 
-export const CertificatesPage = () => {
+const CertificatesPage = () => {
   return <Certificates />;
 };
+
+export default CertificatesPage;

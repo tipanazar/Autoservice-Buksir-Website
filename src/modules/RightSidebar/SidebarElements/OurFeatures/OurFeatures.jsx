@@ -5,7 +5,7 @@ import { Button } from "../../../../shared/components/Button";
 import checkEngineDash from "../../../../images/sidebars/checkEngineDash.jpg";
 import injector from "../../../../images/sidebars/injector.jpg";
 import wheelAlignment from "../../../../images/sidebars/wheelAlignment.jpg";
-import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
+import { ourFeatures } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
@@ -24,7 +24,7 @@ export const OurFeatures = ({ modalSwitcher, isSmallScreen = false }) => {
     isListOpen,
     isImageNeeds: true,
     modalSwitcher,
-    data: linksData.ourFeatures,
+    data: ourFeatures,
     imageParams: [
       {
         src: checkEngineDash,

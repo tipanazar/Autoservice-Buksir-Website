@@ -1,5 +1,7 @@
 import { SparePartsShop } from "../../modules/SparePartsShop";
 
-export const SparePartsShopPage = () => {
+const SparePartsShopPage = () => {
   return <SparePartsShop />;
 };
+
+export default SparePartsShopPage;

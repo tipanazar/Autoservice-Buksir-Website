@@ -1,14 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Image } from "../components/Image";
 
-const smallScreenNavLinkClassName = ({ isActive }) =>
-  isActive ? "headerMenuListItemLinkActive" : "headerMenuListItemLinkInactive";
-
-const bigScreenNavLinkClassName = ({ isActive }) =>
-  isActive
-    ? "sidebarElementListItemLinkActive"
-    : "sidebarElementListItemLinkInactive";
-
 export function listMarkup({
   isSmallScreen,
   isImageNeeds = false,
@@ -17,6 +9,15 @@ export function listMarkup({
   data,
   imageParams = null,
 }) {
+  const navLinkClassName = ({ isActive }) =>
+    isSmallScreen
+      ? isActive
+        ? "headerMenuListItemLinkActive"
+        : "headerMenuListItemLinkInactive"
+      : isActive
+      ? "sidebarElementListItemLinkActive"
+      : "sidebarElementListItemLinkInactive";
+
   if (isSmallScreen) {
     if (isImageNeeds) {
       if (isListOpen) {
@@ -24,7 +25,7 @@ export function listMarkup({
           return (
             <li className="headerMenuListItemOpen" key={idx}>
               <NavLink
-                className={smallScreenNavLinkClassName}
+                className={navLinkClassName}
                 to={item.path}
                 onClick={modalSwitcher}
               >
@@ -44,7 +45,7 @@ export function listMarkup({
           return (
             <li className="headerMenuListItemClosed" key={idx}>
               <NavLink
-                className={smallScreenNavLinkClassName}
+                className={navLinkClassName}
                 to={item.path}
                 onClick={modalSwitcher}
               >
@@ -63,10 +64,12 @@ export function listMarkup({
     } else {
       if (isListOpen) {
         return data.map((item, idx) => {
+          console.log(item.path);
+
           return (
             <li className="headerMenuListItemOpen" key={idx}>
               <NavLink
-                className={smallScreenNavLinkClassName}
+                className={navLinkClassName}
                 to={item.path}
                 onClick={modalSwitcher}
               >
@@ -80,7 +83,7 @@ export function listMarkup({
           return (
             <li className="headerMenuListItemClosed" key={idx}>
               <NavLink
-                className={smallScreenNavLinkClassName}
+                className={navLinkClassName}
                 to={item.path}
                 onClick={modalSwitcher}
               >
@@ -96,7 +99,7 @@ export function listMarkup({
       return data.map((item, idx) => {
         return (
           <li className="sidebarElementListItem" key={idx}>
-            <NavLink className={bigScreenNavLinkClassName} to={item.path}>
+            <NavLink className={navLinkClassName} to={item.path}>
               {item.text}
               {imageParams[idx] && (
                 <Image className="sidebarElementImage" {...imageParams[idx]} />
@@ -109,7 +112,7 @@ export function listMarkup({
       return data.map((item, idx) => {
         return (
           <li className="sidebarElementListItem" key={idx}>
-            <NavLink className={bigScreenNavLinkClassName} to={item.path}>
+            <NavLink className={navLinkClassName} to={item.path}>
               {item.text}
             </NavLink>
           </li>

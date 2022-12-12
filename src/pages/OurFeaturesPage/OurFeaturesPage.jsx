@@ -1,5 +1,4 @@
-import styles from './OurFeaturesPage.module.scss';
-
-export const OurFeaturesPage = () => {
-  return <div className={styles.wrapper}></div>;
+const OurFeaturesPage = () => {
+  return <div></div>;
 };
+export default OurFeaturesPage;

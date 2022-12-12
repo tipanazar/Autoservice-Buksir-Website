@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
-import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks";
+import { carService } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 
 export const CarService = ({ modalSwitcher, isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -20,7 +20,7 @@ export const CarService = ({ modalSwitcher, isSmallScreen = false }) => {
     isSmallScreen,
     isListOpen,
     modalSwitcher,
-    data: linksData.carService,
+    data: carService,
   };
 
   return isSmallScreen ? (

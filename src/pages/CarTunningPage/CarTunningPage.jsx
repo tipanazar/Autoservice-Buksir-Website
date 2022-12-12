@@ -1,5 +1,7 @@
-import styles from './CarTunningPage.module.scss';
+import styles from "./CarTunningPage.module.scss";
 
-export const CarTunningPage = () => {
+const CarTunningPage = () => {
   return <div className={styles.wrapper}></div>;
 };
+
+export default CarTunningPage;

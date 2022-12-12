@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import towSchema from "../../../../images/sidebars/towSchema.jpg";
-import linksData from "../../../../shared/json/sidebarAndHeaderMenuLinks.json";
+import {partners} from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
@@ -22,7 +22,7 @@ export const Partners = ({ modalSwitcher, isSmallScreen = false }) => {
     isListOpen,
     isImageNeeds: true,
     modalSwitcher,
-    data: linksData.partners,
+    data: partners,
     imageParams: [
       null,
       null,
