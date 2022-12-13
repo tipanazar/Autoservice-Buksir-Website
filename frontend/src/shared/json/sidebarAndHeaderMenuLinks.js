@@ -1,13 +1,7 @@
-import { lazy } from "react";
-
-// import { EngineRepair } from "../../Articles/EngineRepair/EngineRepair";
-const EngineRepair = lazy(import("../../Articles/EngineRepair/EngineRepair"));
-// console.log('render') 
 export const carService = [
   {
     text: "Магазин Запчастин",
     path: "/car-service/test",
-    Component: EngineRepair,
   },
   {
     text: "Магазин Запчастин",
