@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 
-export const Image = ({ src, alt, width, height, className, onClick }) => {
+export const Image = ({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  style,
+  onClick,
+}) => {
   return (
     <img
       className={className}
@@ -9,15 +17,17 @@ export const Image = ({ src, alt, width, height, className, onClick }) => {
       width={width}
       height={height}
       onClick={onClick}
+      style={style}
       loading="lazy"
     />
   );
 };
 
 Image.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  width: PropTypes.string,
-  height: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  style: PropTypes.object,
 };

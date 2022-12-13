@@ -64,8 +64,6 @@ export function listMarkup({
     } else {
       if (isListOpen) {
         return data.map((item, idx) => {
-          console.log(item.path);
-
           return (
             <li className="headerMenuListItemOpen" key={idx}>
               <NavLink

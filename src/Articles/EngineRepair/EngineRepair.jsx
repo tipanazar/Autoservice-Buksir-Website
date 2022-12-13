@@ -1,5 +1,6 @@
 import styles from "./EngineRepair.module.scss";
 
+console.log("render")
 export const EngineRepair = () => {
   
   return (
