@@ -5,6 +5,7 @@
   font-size: 19px;
   font-weight: 600;
   margin-bottom: 15px;
+  color: var(--mainTitleColor);
   @include mq(tablet) {
     font-size: 22px;
   }

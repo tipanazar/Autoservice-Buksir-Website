@@ -1,0 +1,106 @@
+%mainImageStyles {
+  border-radius: 3px;
+  box-shadow: var(--imageShadow);
+}
+
+.articleMainTitle {
+  font-size: 19px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--mainTitleColor);
+  margin-bottom: 2vw;
+
+  @include mq(tablet) {
+    font-size: 22px;
+  }
+  @include mq(desktop-big) {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+}
+
+.articleSecondaryTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mainTitleColor);
+  margin-bottom: 2vw;
+  @include mq(tablet) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  @include mq(desktop-big) {
+    margin-bottom: 20px;
+  }
+}
+
+.articleTextList {
+  padding-left: 2px;
+  margin-bottom: 10px;
+
+  .articleTextListItem {
+    margin-bottom: 10px;
+    @include mq(desktop-big) {
+      margin-bottom: 15px;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.articleText {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--boldTextColor);
+  margin-bottom: 10px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
+.articleBoldText {
+  font-weight: 600;
+  color: var(--boldTextColor);
+}
+
+.articleImage {
+  @extend %mainImageStyles;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 320px;
+  //   cursor: zoom-in;
+}
+
+.articleImageList {
+  margin: 20px auto;
+  max-width: 740px;
+  @include mq(tablet) {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px auto;
+  }
+  .articleImageListItem {
+    width: fit-content;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 320px;
+    @include mq(tablet) {
+      margin: 0;
+    }
+    &:first-of-type {
+      margin-bottom: 20px;
+      @include mq(tablet) {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .listItemImage {
+      @extend %mainImageStyles;
+      //   margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

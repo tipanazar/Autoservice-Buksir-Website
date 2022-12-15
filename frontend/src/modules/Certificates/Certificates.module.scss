@@ -5,7 +5,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--boldTextColor);
+  color: var(--mainTitleColor);
   @include mq(tablet) {
     font-size: 26px;
     margin-bottom: 30px;

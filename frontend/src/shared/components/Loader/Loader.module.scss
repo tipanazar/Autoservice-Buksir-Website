@@ -1,13 +1,15 @@
 @import "../../../sass/main.scss";
 
 .wrapper {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline-block;
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 100;
 
   &:after {

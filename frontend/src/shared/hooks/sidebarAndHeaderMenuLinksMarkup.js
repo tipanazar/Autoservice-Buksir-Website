@@ -29,7 +29,7 @@ export function listMarkup({
                 to={item.path}
                 onClick={modalSwitcher}
               >
-                {item.text}
+                {item.title}
                 {imageParams[idx] && (
                   <Image
                     className="headerMenuListItemImg"
@@ -49,7 +49,7 @@ export function listMarkup({
                 to={item.path}
                 onClick={modalSwitcher}
               >
-                {item.text}
+                {item.title}
                 {imageParams[idx] && (
                   <Image
                     className="headerMenuListItemImg"
@@ -71,7 +71,7 @@ export function listMarkup({
                 to={item.path}
                 onClick={modalSwitcher}
               >
-                {item.text}
+                {item.title}
               </NavLink>
             </li>
           );
@@ -85,7 +85,7 @@ export function listMarkup({
                 to={item.path}
                 onClick={modalSwitcher}
               >
-                {item.text}
+                {item.title}
               </NavLink>
             </li>
           );
@@ -98,7 +98,7 @@ export function listMarkup({
         return (
           <li className="sidebarElementListItem" key={idx}>
             <NavLink className={navLinkClassName} to={item.path}>
-              {item.text}
+              {item.title}
               {imageParams[idx] && (
                 <Image className="sidebarElementImage" {...imageParams[idx]} />
               )}
@@ -111,7 +111,7 @@ export function listMarkup({
         return (
           <li className="sidebarElementListItem" key={idx}>
             <NavLink className={navLinkClassName} to={item.path}>
-              {item.text}
+              {item.title}
             </NavLink>
           </li>
         );

@@ -1,8 +1,10 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { Loader } from "../shared/components/Loader";
 import { LayoutPage } from "../pages/LayoutPage";
+import { getTemplates } from "../redux/articles/articlesOperations";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const SparePartsShopPage = lazy(() =>
@@ -25,6 +27,11 @@ const OurFeaturesPage = lazy(() =>
 // const { NewsPage } = lazy(() => import("../pages/NewsPage"));
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTemplates());
+  }, [dispatch]);
+
   return (
     <Suspense fallback={<Loader backgroundColor="rgba(255, 255, 255, 0.5)" />}>
       <Routes>

@@ -31,7 +31,7 @@
       font-size: 18px;
       font-weight: 700;
       margin-right: 10px;
-      color: var(--boldTextColor);
+      color: var(--mainTitleColor);
       @include mq(tablet) {
         font-size: 20px;
       }

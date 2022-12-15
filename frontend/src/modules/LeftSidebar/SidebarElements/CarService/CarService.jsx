@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
-import { carService } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
+import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
 export const CarService = ({ modalSwitcher, isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
+  const templates = useSelector(getTemplates);
   useEffect(() => {
     if (isSmallScreen) {
       setMarkup(listMarkup({ ...markupParams }));
@@ -20,7 +22,7 @@ export const CarService = ({ modalSwitcher, isSmallScreen = false }) => {
     isSmallScreen,
     isListOpen,
     modalSwitcher,
-    data: carService,
+    data: templates["car-service"],
   };
 
   return isSmallScreen ? (

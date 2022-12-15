@@ -36,13 +36,13 @@
     @include mq(tablet) {
       display: flex;
       align-items: flex-end;
-      margin-bottom: 3vw;
+      margin-bottom: 2vw;
       border-bottom: 3px solid var(--navigationBlueColor);
       margin-top: -6px;
     }
 
     @include mq(desktop-big) {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
   }
 }
