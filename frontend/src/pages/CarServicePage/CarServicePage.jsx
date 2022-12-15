@@ -27,88 +27,75 @@ const CarServicePage = () => {
 
   // console.log(article)
 
-  // useEffect(() => {
-  //   if (article.path !== pathname) {
-  //     dispatch(getArticle(pathname));
-  //     console.log("request");
-  //   }
-  //   //eslint-disable-next-line
-  // }, []); //? добавить путь?!?!
+  useEffect(() => {
+    if (article.path !== pathname) {
+      dispatch(getArticle(pathname));
+      console.log("request");
+    }
+    //eslint-disable-next-line
+  }, [pathname, article.path]);
 
-  // return isLoading ? (
-  //   <Loader />
-  // ) : error ? (
-  //   <ErrorScreen text={error} style={{ margin: "40px auto 0 auto" }} />
-  // ) : (
-  //   <div dangerouslySetInnerHTML={{ __html: article.text }}></div>
-  // );
+  return isLoading ? (
+    <Loader />
+  ) : error ? (
+    <ErrorScreen text={error} style={{ margin: "40px auto 0 auto" }} />
+  ) : (
+    <div dangerouslySetInnerHTML={{ __html: article.text }}></div>
+  );
 
   return (
     <>
-      <h1 className="articleMainTitle">Ремонт ходової</h1>
-      <p className="articleText">
-        <b className="articleBoldText">Ходова частина </b>будь-якого автомобіля
-        є складною сукупністю механізмів, яка забезпечує зв'язок автомобіля з
-        дорожнім покриттям. Від стану ходової частини залежить рівень комфорту
-        при пересуванні та, що найважливіше, безпека водія та пасажирів.
-      </p>
-      <p className="articleText">
-        Ми проводимо весь перелік робіт, пов'язаний з діагностикою та ремонтом
-        ходової частини автомобіля.
-      </p>
-      <ul className="articleImageList">
-        <li className="articleImageListItem">
-          <img
-            className="articleListItemImage"
-            src="https://res.cloudinary.com/dv2ewzim4/image/upload/v1671129986/Buksir%20Website/car-service/138_hodovaya_a3eg0x.jpg"
-            alt="Ходова частина авто"
-          />
-        </li>
-        <li className="articleImageListItem">
-          <img
-            className="articleListItemImage"
-            src="https://res.cloudinary.com/dv2ewzim4/image/upload/v1671129986/Buksir%20Website/car-service/140_2_tw6tyf.jpg"
-            alt="Ходова частина авто"
-          />
-        </li>
-      </ul>
-      <p className="articleSecondaryTitle">
-        Щоб не допустити критичний знос вузлів, ми радимо звернути увагу на:
-      </p>
-      <ul
-        className="articleTextList"
-        style={{ listStyle: "circle", paddingLeft: 17 }}
-      >
-        <li className="articleTextListItem">
-          <b className="articleBoldText">Сторонні </b>стуки під час руху по
-          нерівній дорозі.
-        </li>
-        <li className="articleTextListItem">
-          <b className="articleBoldText">Вібрація </b>під час руху.
-        </li>
-        <li className="articleTextListItem">
-          <b className="articleBoldText">Поява </b>люфта при кермуванні.
-        </li>
-        <li className="articleTextListItem">
-          <b className="articleBoldText">Погане </b>керування під час руху на
-          високих швидкостях.
-        </li>
-        <li className="articleTextListItem">
-          <b className="articleBoldText">Великий </b>крен кузова при виконанні
-          маневру повороту.
-        </li>
-      </ul>
-      <p className="articleText">
-        Ми спеціалізуємося на ремонті ходової частини автомобілів, включаючи
-        зварювальні роботи та роботи з відновлення елементів підвіски.
-        <br />
-        Також ми використовуємо спеціалізовані інструменти, що дозволяють
-        дотримуватись необхідної технології та високої якості робіт при ремонті
-        ходової частини. Досвід наших майстрів дозволяє заощаджувати Ваші гроші
-        за рахунок оптимізації слюсарного ремонту.
-      </p>
+      
     </>
   );
 };
 
 export default CarServicePage;
+{
+  /* <h1 style="display: none;">Розвал cходження Славутич</h1>
+      <h2 class="articleMainTitle">Розвал-Cходження</h2>
+      <p class="articleText">
+        <b class="articleBoldText">
+          Ми виконуємо регулювання кутів установки коліс на легкових автомобілях
+          та мікроавтобусах висотою до 3м.
+        </b>
+      </p>
+      <p class="articleText">
+        Розвал-сходження - регулювання кутів установки коліс автомобіля. Саме
+        від точності налаштувань залежать такі показники як: керованість, час
+        зносу протектора шин, маневреність і стійкість автомобіля на дорозі. До
+        речі, правильне регулювання коліс дозволяє
+        <strong class="articleBoldText">&nbsp;зменшити витрату палива.</strong>
+      </p>
+      <img
+        class="articleImage"
+        src="https://res.cloudinary.com/dv2ewzim4/image/upload/v1671135867/Buksir%20Website/car-service/104_300x225_med9dh.jpg"
+        alt="Развал-Сходження"
+        width="200px"
+      />
+      <p class="articleText">
+        Результатом неправильного розвала-сходження може бути те, що ваш
+        автомобіль&nbsp;
+        <strong class="articleBoldText">
+          погано тримає дорогу (плаває)&nbsp;
+        </strong>
+        або
+        <strong class="articleBoldText">
+          &nbsp;кидає автомобіль убік.&nbsp;
+        </strong>
+        При <strong class="articleBoldText">гальмуванні</strong> автомобіль
+        може&nbsp;
+        <strong class="articleBoldText">також вести убік,&nbsp;</strong>
+        якщо розвал-сходження погано відрегульований. Ну і звичайно причиною
+        неправильного розвалу-сходження буде&nbsp;
+        <strong class="articleBoldText">
+          підвищений та нерівномірний знос гуми автомобіля.
+        </strong>
+      </p>
+      <p>
+        <strong class="articleBoldText">
+          Тому розвал-сходження це не та процедура, яку можна відкласти і на
+          якій варто економити.
+        </strong>
+      </p> */
+}

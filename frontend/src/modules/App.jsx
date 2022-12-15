@@ -41,10 +41,10 @@ const App = () => {
           <Route path="contacts" element={<ContactsPage />} />
           <Route path="certificates" element={<CertificatesPage />} />
           <Route path="car-service/:article" element={<CarServicePage />} />
-          <Route path="partners/:partner" element={<PartnersPage />} />
           <Route path="car-tunning/:article" element={<CarTunningPage />} />
-          {/* <Route path="news/:article" element={<NewsPage />} /> */}
           <Route path="our-feature/:article" element={<OurFeaturesPage />} />
+          <Route path="other/:other" element={<PartnersPage />} />
+          {/* <Route path="news/:article" element={<NewsPage />} /> */}
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

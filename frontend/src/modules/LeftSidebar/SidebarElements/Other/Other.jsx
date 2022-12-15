@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import towSchema from "../../../../images/sidebars/towSchema.jpg";
-import {partners} from "../../../../shared/json/sidebarAndHeaderMenuLinks";
+import { partners } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
 
-export const Partners = ({ modalSwitcher, isSmallScreen = false }) => {
+export const Other = ({ modalSwitcher, isSmallScreen = false }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
   useEffect(() => {
@@ -49,7 +49,7 @@ export const Partners = ({ modalSwitcher, isSmallScreen = false }) => {
           height={15}
           width={15}
         />
-        Партнери
+        Інше
         <Icon
           className="headerMenuListBtnIcon"
           iconId="listArrow-icon"
@@ -61,12 +61,12 @@ export const Partners = ({ modalSwitcher, isSmallScreen = false }) => {
     </>
   ) : (
     <div className="sidebarElementMainBlock">
-      <h4 className="sidebarElementTitle">Партнери</h4>
+      <h4 className="sidebarElementTitle">Інше</h4>
       <ul className="sidebarElementList">{listMarkup({ ...markupParams })}</ul>
     </div>
   );
 };
 
-Partners.propTypes = {
+Other.propTypes = {
   isSmallScreen: PropTypes.bool,
 };

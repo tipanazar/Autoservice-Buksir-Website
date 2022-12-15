@@ -1,5 +1,5 @@
 import { CarService } from "./SidebarElements/CarService";
-import { Partners } from "./SidebarElements/Partners/Partners";
+import { Other } from "./SidebarElements/Other/Other";
 
 export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
@@ -8,7 +8,7 @@ export const LeftSidebar = ({ sidebarWrapperClass }) => {
         <CarService />
       </li>
       <li>
-        <Partners />
+        <Other />
       </li>
     </ul>
   );

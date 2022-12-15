@@ -3,7 +3,7 @@ import { MainNavigation } from "../../../shared/components/MainNavigation/MainNa
 import { CarService } from "../../LeftSidebar/SidebarElements/CarService";
 import { CarTuning } from "../../RightSidebar/SidebarElements/CarTuning/CarTuning";
 import { OurFeatures } from "../../RightSidebar/SidebarElements/OurFeatures/OurFeatures";
-import { Partners } from "../../LeftSidebar/SidebarElements/Partners/Partners";
+import { Other } from "../../LeftSidebar/SidebarElements/Other/Other";
 
 import s from "./HeaderMenu.module.scss";
 
@@ -23,7 +23,7 @@ const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
         <CarService modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <CarTuning modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
-        <Partners modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        <Other modalSwitcher={modalSwitcher} isSmallScreen={true} />
       </MainNavigation>
     </div>
   );
