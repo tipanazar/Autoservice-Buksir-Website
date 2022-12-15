@@ -20,7 +20,7 @@ export const LayoutPage = () => {
             linksDisplayClass=""
             listItemDisplayClass=""
           />
-          <article style={{ position: "relative", height: "100%" }}>
+          <article id="articleWrapper" style={{ position: "relative", height: "100%" }}>
             <Outlet />
           </article>
         </div>

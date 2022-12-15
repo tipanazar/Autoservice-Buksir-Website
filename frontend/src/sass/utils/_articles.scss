@@ -3,6 +3,15 @@
   box-shadow: var(--imageShadow);
 }
 
+%mainFontStyles {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--boldTextColor);
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
 .articleMainTitle {
   font-size: 19px;
   text-align: center;
@@ -35,10 +44,12 @@
 
 .articleTextList {
   padding-left: 2px;
-  margin-bottom: 10px;
+  //! margin-bottom: 10px;
+  margin: 20px 0;
 
   .articleTextListItem {
     margin-bottom: 10px;
+    @extend %mainFontStyles;
     @include mq(desktop-big) {
       margin-bottom: 15px;
     }
@@ -49,9 +60,7 @@
 }
 
 .articleText {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--boldTextColor);
+  @extend %mainFontStyles;
   margin-bottom: 10px;
   &:last-of-type {
     margin-bottom: 0;
@@ -97,7 +106,7 @@
       }
     }
 
-    .listItemImage {
+    .articleListItemImage {
       @extend %mainImageStyles;
       //   margin: 0 auto;
       width: 100%;
