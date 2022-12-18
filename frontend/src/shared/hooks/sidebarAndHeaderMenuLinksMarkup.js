@@ -8,7 +8,7 @@ export function listMarkup({
   modalSwitcher = null,
   data,
 }) {
-  console.log("render")
+  // console.log("render")
   const navLinkClassName = ({ isActive }) =>
     isSmallScreen
       ? isActive

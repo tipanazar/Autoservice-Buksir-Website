@@ -9,7 +9,7 @@ import { Other } from "../../LeftSidebar/SidebarElements/Other/Other";
 import s from "./HeaderMenu.module.scss";
 
 const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
-    console.log("menu");
+    // console.log("menu");
   return (
     <div
       className={s.modalBodyBlock}

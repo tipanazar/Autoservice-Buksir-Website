@@ -34,7 +34,7 @@ export const Header = () => {
     }
   }, [isModalOpen]);
 
-  console.log("header")
+  // console.log("header")
 
   return (
     <header className={s.wrapper}>

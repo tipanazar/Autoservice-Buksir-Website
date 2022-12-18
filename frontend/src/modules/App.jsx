@@ -1,8 +1,7 @@
-import { Suspense, lazy, useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Loader } from "../shared/components/Loader";
 import { LayoutPage } from "../pages/LayoutPage";
 import { getTemplates } from "../redux/articles/articlesOperations";
 
@@ -31,21 +30,19 @@ const App = () => {
     dispatch(getTemplates());
   }, [dispatch]);
   return (
-    <Suspense fallback={<Loader backgroundColor="rgba(255, 255, 255, 0.5)" />}>
-      <Routes>
-        <Route path="/" element={<LayoutPage />}>
-          <Route index element={<HomePage />} />
-          <Route path="spare-parts-shop" element={<SparePartsShopPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
-          <Route path="certificates" element={<CertificatesPage />} />
-          <Route path="car-service/:article" element={<CarServicePage />} />
-          <Route path="car-tunning/:article" element={<CarTunningPage />} />
-          <Route path="our-features/:article" element={<OurFeaturesPage />} />
-          <Route path="other/:other" element={<PartnersPage />} />
-        </Route>
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/" element={<LayoutPage />}>
+        <Route index element={<HomePage />} />
+        <Route path="spare-parts-shop" element={<SparePartsShopPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="certificates" element={<CertificatesPage />} />
+        <Route path="car-service/:article" element={<CarServicePage />} />
+        <Route path="car-tunning/:article" element={<CarTunningPage />} />
+        <Route path="our-features/:article" element={<OurFeaturesPage />} />
+        <Route path="other/:other" element={<PartnersPage />} />
+      </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 
