@@ -1,47 +1,28 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
-import checkEngineDash from "../../../../images/sidebars/checkEngineDash.jpg";
-import injector from "../../../../images/sidebars/injector.jpg";
-import wheelAlignment from "../../../../images/sidebars/wheelAlignment.jpg";
-import { ourFeatures } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
+import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
-export const OurFeatures = ({ modalSwitcher, isSmallScreen = false }) => {
+export const OurFeatures = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
+  const templates = useSelector(getTemplates);
   useEffect(() => {
-    if (isSmallScreen) {
-      setMarkup(listMarkup({ ...markupParams }));
-    }
-    //eslint-disable-next-line
-  }, [isListOpen]);
+    if (templates) {
+      // setMarkup(listMarkup({ ...markupParams }));
+    }    //eslint-disable-next-line
+  }, [isListOpen, templates]);
 
   const markupParams = {
     isSmallScreen,
     isListOpen,
     isImageNeeds: true,
     modalSwitcher,
-    data: ourFeatures,
-    imageParams: [
-      {
-        src: checkEngineDash,
-        alt: "Діагностика",
-        width: "140px",
-      },
-      {
-        src: injector,
-        alt: "Промивання форсунок",
-        width: "140px",
-      },
-      {
-        src: wheelAlignment,
-        alt: "Схема",
-        width: "140px",
-      },
-    ],
+    data: templates && templates["our-features"],
   };
 
   return isSmallScreen ? (
@@ -72,11 +53,11 @@ export const OurFeatures = ({ modalSwitcher, isSmallScreen = false }) => {
   ) : (
     <div className="sidebarElementMainBlock">
       <h4 className="sidebarElementTitle">Наша Фішка</h4>
-      <ul className="sidebarElementList">{listMarkup({ ...markupParams })}</ul>
+      <ul className="sidebarElementList">{markup}</ul>
     </div>
   );
 };
 
 OurFeatures.propTypes = {
-  isSmallScreen: PropTypes.bool,
+  isSmallScreen: PropTypes.bool.isRequired,
 };

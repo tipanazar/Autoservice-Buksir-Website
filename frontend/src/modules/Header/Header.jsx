@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../shared/components/Button/Button";
@@ -19,7 +19,7 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [carMufflerToggler, setCarMufflerToggler] = useState(false);
 
-  const modalSwitcher = () => {
+  const modalSwitcher = useCallback(() => {
     if (isModalOpen) {
       body.style.overflow = "auto";
       setIsModalOpen(false);
@@ -32,7 +32,9 @@ export const Header = () => {
       setIsModalOpen(true);
       return;
     }
-  };
+  }, [isModalOpen]);
+
+  console.log("header")
 
   return (
     <header className={s.wrapper}>

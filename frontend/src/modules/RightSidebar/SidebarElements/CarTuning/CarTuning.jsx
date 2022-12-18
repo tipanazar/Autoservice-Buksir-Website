@@ -4,25 +4,26 @@ import PropTypes from "prop-types";
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
-import {carTunning} from "../../../../shared/json/sidebarAndHeaderMenuLinks";
+import { useSelector } from "react-redux";
+import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
-export const CarTuning = ({ modalSwitcher, isSmallScreen = false }) => {
+export const CarTuning = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
+  const templates = useSelector(getTemplates);
   useEffect(() => {
-    if (isSmallScreen) {
-      setMarkup(listMarkup({ ...markupParams }));
-    }
-    //eslint-disable-next-line
-  }, [isListOpen]);
+    if (templates) {
+      // setMarkup(listMarkup({ ...markupParams }));
+    }    //eslint-disable-next-line
+  }, [isListOpen, templates]);
 
   const markupParams = {
     isSmallScreen,
     isListOpen,
     modalSwitcher,
-    data: carTunning,
+    data: templates && templates["car-tuning"],
   };
-  
+
   return isSmallScreen ? (
     <>
       <Button
@@ -51,11 +52,11 @@ export const CarTuning = ({ modalSwitcher, isSmallScreen = false }) => {
   ) : (
     <div className="sidebarElementMainBlock">
       <h4 className="sidebarElementTitle">Тюнинг автомобілів</h4>
-      <ul className="sidebarElementList">{listMarkup({ ...markupParams })}</ul>
+      <ul className="sidebarElementList">{markup}</ul>
     </div>
   );
 };
 
 CarTuning.propTypes = {
-  isSmallScreen: PropTypes.bool,
+  isSmallScreen: PropTypes.bool.isRequired,
 };

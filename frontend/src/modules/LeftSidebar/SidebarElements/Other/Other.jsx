@@ -2,36 +2,29 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
-import towSchema from "../../../../images/sidebars/towSchema.jpg";
-import { partners } from "../../../../shared/json/sidebarAndHeaderMenuLinks";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
+import { useSelector } from "react-redux";
+import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
-export const Other = ({ modalSwitcher, isSmallScreen = false }) => {
+export const Other = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
+  const templates = useSelector(getTemplates);
+
   useEffect(() => {
-    if (isSmallScreen) {
-      setMarkup(listMarkup({ ...markupParams }));
+    if (templates) {
+      // setMarkup(listMarkup({ ...markupParams }));
     }
     //eslint-disable-next-line
-  }, [isListOpen]);
+  }, [isListOpen, templates]);
 
   const markupParams = {
     isSmallScreen,
     isListOpen,
     isImageNeeds: true,
     modalSwitcher,
-    data: partners,
-    imageParams: [
-      null,
-      null,
-      {
-        src: towSchema,
-        alt: "Схема буксирування",
-        width: "140px",
-      },
-    ],
+    data: templates && templates["other"],
   };
 
   return isSmallScreen ? (
@@ -62,11 +55,11 @@ export const Other = ({ modalSwitcher, isSmallScreen = false }) => {
   ) : (
     <div className="sidebarElementMainBlock">
       <h4 className="sidebarElementTitle">Інше</h4>
-      <ul className="sidebarElementList">{listMarkup({ ...markupParams })}</ul>
+      <ul className="sidebarElementList">{markup}</ul>
     </div>
   );
 };
 
 Other.propTypes = {
-  isSmallScreen: PropTypes.bool,
+  isSmallScreen: PropTypes.bool.isRequired,
 };

@@ -1,19 +1,19 @@
+import { memo } from "react";
+
 import { CarTuning } from "./SidebarElements/CarTuning";
 import { OurFeatures } from "./SidebarElements/OurFeatures/OurFeatures";
-import { News } from "./SidebarElements/News";
 
-export const RightSidebar = ({sidebarWrapperClass}) => {
+const RightSidebar = ({ sidebarWrapperClass }) => {
   return (
     <ul className={sidebarWrapperClass}>
       <li>
-        <CarTuning />
+        <CarTuning isSmallScreen={false} />
       </li>
-      {/* <li>
-        <News />
-      </li> */}
       <li>
-        <OurFeatures />
+        <OurFeatures isSmallScreen={false} />
       </li>
     </ul>
   );
 };
+
+export default memo(RightSidebar);

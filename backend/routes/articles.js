@@ -8,9 +8,20 @@ router.get("/get-templates", async (req, res, next) => {
   try {
     const templates = await ArticleTemplate.find();
     if (!templates.length) {
-      throw createError(404, "Помилка сайту: статті не знайдена.");
+      throw createError(404, "Помилка сайту: статті не знайдені.");
     }
-    res.json(templates);
+    let templatesObj = {
+      "car-service": [],
+      "car-tuning": [],
+      "our-features": [],
+      other: [],
+    };
+
+    for (let template of templates) {
+      templatesObj[template.path.split("/")[1]]?.push(template);
+    }
+
+    res.json(templatesObj);
   } catch (err) {
     next(err);
   }

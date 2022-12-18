@@ -7,8 +7,8 @@ export function listMarkup({
   isListOpen,
   modalSwitcher = null,
   data,
-  imageParams = null,
 }) {
+  console.log("render")
   const navLinkClassName = ({ isActive }) =>
     isSmallScreen
       ? isActive
@@ -30,10 +30,12 @@ export function listMarkup({
                 onClick={modalSwitcher}
               >
                 {item.title}
-                {imageParams[idx] && (
+                {item.imageLink && (
                   <Image
                     className="headerMenuListItemImg"
-                    {...imageParams[idx]}
+                    src={item.imageLink}
+                    alt={item.title}
+                    width="140px"
                   />
                 )}
               </NavLink>
@@ -50,10 +52,12 @@ export function listMarkup({
                 onClick={modalSwitcher}
               >
                 {item.title}
-                {imageParams[idx] && (
+                {item.imageLink && (
                   <Image
                     className="headerMenuListItemImg"
-                    {...imageParams[idx]}
+                    src={item.imageLink}
+                    alt={item.title}
+                    width="140px"
                   />
                 )}
               </NavLink>
@@ -99,8 +103,13 @@ export function listMarkup({
           <li className="sidebarElementListItem" key={idx}>
             <NavLink className={navLinkClassName} to={item.path}>
               {item.title}
-              {imageParams[idx] && (
-                <Image className="sidebarElementImage" {...imageParams[idx]} />
+              {item.imageLink && (
+                <Image
+                  className="sidebarElementImage"
+                  src={item.imageLink}
+                  alt={item.title}
+                  width="140px"
+                />
               )}
             </NavLink>
           </li>

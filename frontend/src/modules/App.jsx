@@ -24,14 +24,12 @@ const CarTunningPage = lazy(() =>
 const OurFeaturesPage = lazy(() =>
   import("../pages/OurFeaturesPage/OurFeaturesPage")
 );
-// const { NewsPage } = lazy(() => import("../pages/NewsPage"));
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTemplates());
   }, [dispatch]);
-
   return (
     <Suspense fallback={<Loader backgroundColor="rgba(255, 255, 255, 0.5)" />}>
       <Routes>
@@ -42,9 +40,8 @@ const App = () => {
           <Route path="certificates" element={<CertificatesPage />} />
           <Route path="car-service/:article" element={<CarServicePage />} />
           <Route path="car-tunning/:article" element={<CarTunningPage />} />
-          <Route path="our-feature/:article" element={<OurFeaturesPage />} />
+          <Route path="our-features/:article" element={<OurFeaturesPage />} />
           <Route path="other/:other" element={<PartnersPage />} />
-          {/* <Route path="news/:article" element={<NewsPage />} /> */}
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

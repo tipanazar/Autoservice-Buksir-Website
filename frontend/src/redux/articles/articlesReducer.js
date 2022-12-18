@@ -3,12 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getTemplates, getArticle } from "./articlesOperations";
 
 const initialState = {
-  templates: {
-    "car-service": [],
-    "car-tunning": [],
-    "our-features": [],
-    partners: [],
-  },
+  templates: null,
   article: {
     path: "",
     text: "",
@@ -27,10 +22,7 @@ const articlesSlice = createSlice({
     });
     builder.addCase(getTemplates.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      // console.log(payload)
-      for (let template of payload) {
-        state.templates[template.path.split("/")[1]]?.push(template);
-      }
+      state.templates = { ...payload };
     });
     builder.addCase(getTemplates.rejected, (state, { payload }) => {
       state.error = payload || "Помилка, спробуйте перезавантажити сторінку.";

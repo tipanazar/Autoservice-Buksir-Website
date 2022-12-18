@@ -38,14 +38,14 @@
     margin-bottom: 10px;
   }
   @include mq(desktop-big) {
-    margin-bottom: 20px;
+    margin: 20px 0 10px 0;
   }
 }
 
 .articleTextList {
   padding-left: 2px;
   //! margin-bottom: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
 
   .articleTextListItem {
     margin-bottom: 10px;

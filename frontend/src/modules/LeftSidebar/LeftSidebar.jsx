@@ -1,15 +1,19 @@
-import { CarService } from "./SidebarElements/CarService";
+import { memo } from "react";
+
+import CarService from "./SidebarElements/CarService/CarService";
 import { Other } from "./SidebarElements/Other/Other";
 
 export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
     <ul className={sidebarWrapperClass}>
       <li>
-        <CarService />
+        <CarService isSmallScreen={false} />
       </li>
       <li>
-        <Other />
+        <Other isSmallScreen={false} />
       </li>
     </ul>
   );
 };
+
+export default memo(LeftSidebar);
