@@ -30,7 +30,6 @@ router.get("/get-templates", async (req, res, next) => {
 router.get("/:category/:articleName", async (req, res, next) => {
   try {
     const { category, articleName } = req.params;
-
     const template = await ArticleTemplate.findOne({
       path: `/${category}/${articleName}`,
     });
@@ -39,6 +38,9 @@ router.get("/:category/:articleName", async (req, res, next) => {
         404,
         "Помилка сайту: статті не знайдено. Перевірте адресний рядок."
       );
+    } else if (!template.articleId.length) {
+      console.log("ArticleId length", template.articleId.length);
+      throw createError(404, "Помилка сайту: статті не знайдено.");
     }
 
     const article = await Article.findById({ _id: template.articleId });

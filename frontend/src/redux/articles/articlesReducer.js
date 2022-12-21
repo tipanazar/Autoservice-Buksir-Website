@@ -22,6 +22,12 @@ const articlesSlice = createSlice({
     });
     builder.addCase(getTemplates.fulfilled, (state, { payload }) => {
       state.isLoading = false;
+      payload.other.push({
+        title: "Буксирування Автомобіля",
+        path: "/other/buksyruvannya-avtomobilya",
+        imageLink:
+          "https://res.cloudinary.com/dv2ewzim4/image/upload/v1671657442/Buksir%20Website/other/hyundai_grand_starex_royale_1_td9lmw.jpg",
+      });
       state.templates = { ...payload };
     });
     builder.addCase(getTemplates.rejected, (state, { payload }) => {

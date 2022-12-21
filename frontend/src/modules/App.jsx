@@ -1,6 +1,6 @@
 import { lazy, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 import { LayoutPage } from "../pages/LayoutPage";
 import { getTemplates } from "../redux/articles/articlesOperations";
@@ -16,7 +16,10 @@ const CertificatesPage = lazy(() =>
 const CarServicePage = lazy(() =>
   import("../pages/CarServicePage/CarServicePage")
 );
-const PartnersPage = lazy(() => import("../pages/PartnersPage/PartnersPage"));
+const OtherPage = lazy(() => import("../pages/OtherPage/OtherPage"));
+const CarTowPage = lazy(() =>
+  import("../pages/OtherPage/CarTowPage/CarTowPage")
+);
 const CarTunningPage = lazy(() =>
   import("../pages/CarTunningPage/CarTunningPage")
 );
@@ -39,7 +42,11 @@ const App = () => {
         <Route path="car-service/:article" element={<CarServicePage />} />
         <Route path="car-tunning/:article" element={<CarTunningPage />} />
         <Route path="our-features/:article" element={<OurFeaturesPage />} />
-        <Route path="other/:other" element={<PartnersPage />} />
+        {/* <Route path="other/:other" element={<OtherPage />} /> */}
+        <Route path="other" element={<Outlet />}>
+          <Route path="buksyruvannya-avtomobilya" element={<CarTowPage />} />
+          <Route path=":other" element={<OtherPage />} />
+        </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

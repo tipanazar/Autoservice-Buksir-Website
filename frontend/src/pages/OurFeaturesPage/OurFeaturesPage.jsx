@@ -27,4 +27,5 @@ const OurFeaturesPage = () => {
     <div dangerouslySetInnerHTML={{ __html: article.text }}></div>
   );
 };
+
 export default OurFeaturesPage;
