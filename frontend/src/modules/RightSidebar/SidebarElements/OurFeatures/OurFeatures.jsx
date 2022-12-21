@@ -11,10 +11,12 @@ export const OurFeatures = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
   const templates = useSelector(getTemplates);
+  
   useEffect(() => {
-    if (templates) {
-      // setMarkup(listMarkup({ ...markupParams }));
-    }    //eslint-disable-next-line
+    if (templates && templates["our-features"].length) {
+      setMarkup(listMarkup({ ...markupParams }));
+    }
+    //eslint-disable-next-line
   }, [isListOpen, templates]);
 
   const markupParams = {

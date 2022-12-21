@@ -87,15 +87,10 @@ div.sidebarElementMainBlock {
           &::after {
             outline-color: #0900d9b3;
           }
-
-          // > time {
-          //   color: var(--linksHoverColor);
-          //   &::before,
-          //   &::after {
-          //     outline-color: #0900d996;
-          //   }
-          // }
         }
+      }
+      a > img.sidebarElementImage {
+        border-radius: 3px;
       }
     }
   }

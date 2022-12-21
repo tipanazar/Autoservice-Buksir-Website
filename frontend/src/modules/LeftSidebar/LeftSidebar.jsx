@@ -1,7 +1,5 @@
-import { memo } from "react";
-
-import CarService from "./SidebarElements/CarService/CarService";
-import { Other } from "./SidebarElements/Other/Other";
+import { CarService } from "./SidebarElements/CarService";
+import { Other } from "./SidebarElements/Other";
 
 export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
@@ -15,5 +13,3 @@ export const LeftSidebar = ({ sidebarWrapperClass }) => {
     </ul>
   );
 };
-
-export default memo(LeftSidebar);

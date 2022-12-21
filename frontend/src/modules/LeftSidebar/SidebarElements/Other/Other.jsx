@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
-import { useSelector } from "react-redux";
 import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
 export const Other = ({ modalSwitcher, isSmallScreen }) => {
@@ -13,8 +13,8 @@ export const Other = ({ modalSwitcher, isSmallScreen }) => {
   const templates = useSelector(getTemplates);
 
   useEffect(() => {
-    if (templates) {
-      // setMarkup(listMarkup({ ...markupParams }));
+    if (templates && templates["other"].length) {
+      setMarkup(listMarkup({ ...markupParams }));
     }
     //eslint-disable-next-line
   }, [isListOpen, templates]);

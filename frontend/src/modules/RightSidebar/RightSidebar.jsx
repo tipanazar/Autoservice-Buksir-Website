@@ -1,9 +1,7 @@
-import { memo } from "react";
-
 import { CarTuning } from "./SidebarElements/CarTuning";
-import { OurFeatures } from "./SidebarElements/OurFeatures/OurFeatures";
+import { OurFeatures } from "./SidebarElements/OurFeatures";
 
-const RightSidebar = ({ sidebarWrapperClass }) => {
+export const RightSidebar = ({ sidebarWrapperClass }) => {
   return (
     <ul className={sidebarWrapperClass}>
       <li>
@@ -15,5 +13,3 @@ const RightSidebar = ({ sidebarWrapperClass }) => {
     </ul>
   );
 };
-
-export default memo(RightSidebar);

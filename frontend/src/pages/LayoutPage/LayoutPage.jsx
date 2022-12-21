@@ -2,11 +2,11 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Loader } from "../../shared/components/Loader";
-import { Footer } from "../../modules/Footer/Footer";
-import { Header } from "../../modules/Header/Header";
-import LeftSidebar from "../../modules/LeftSidebar/LeftSidebar";
-import { MainNavigation } from "../../shared/components/MainNavigation/MainNavigation";
-import RightSidebar from "../../modules/RightSidebar/RightSidebar";
+import { Footer } from "../../modules/Footer";
+import { Header } from "../../modules/Header";
+import { LeftSidebar } from "../../modules/LeftSidebar";
+import { MainNavigation } from "../../shared/components/MainNavigation";
+import { RightSidebar } from "../../modules/RightSidebar";
 
 import s from "./LayoutPage.module.scss";
 

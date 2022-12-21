@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../shared/components/Button/Button";
 import { Image } from "../../shared/components/Image/Image";
 import { Icon } from "../../shared/components/Icon/Icon";
 import HeaderMenu from "../../modules/Header/HeaderMenu/HeaderMenu";
-// import { HeaderMenu } from "../../modules/Header/HeaderMenu";
-
 import headerLogo from "../../images/header/headerLogo.png";
 import headerMufflerGif from "../../images/header/headerMuffler.gif";
 import headerMuffler from "../../images/header/headerMuffler.jpg";
@@ -34,8 +32,6 @@ export const Header = () => {
     }
   }, [isModalOpen]);
 
-  // console.log("header")
-
   return (
     <header className={s.wrapper}>
       <Link
@@ -61,7 +57,6 @@ export const Header = () => {
         <Button
           className={s.playGifBtn}
           onClick={() => setCarMufflerToggler(!carMufflerToggler)}
-          // onClick={playGif}
         >
           <p>Ремонтуємо все що на колесах!</p>
           <Icon
@@ -84,9 +79,6 @@ export const Header = () => {
           fill="#555555"
         />
       </Button>
-      {/* {isModalOpen && (
-        <HeaderMenu modalSwitcher={modalSwitcher}  />
-      )} */}
       <HeaderMenu modalSwitcher={modalSwitcher} isModalOpen={isModalOpen} />
     </header>
   );

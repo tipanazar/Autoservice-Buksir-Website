@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import { Button } from "../../../../shared/components/Button";
 import { Icon } from "../../../../shared/components/Icon/Icon";
 import { listMarkup } from "../../../../shared/hooks/sidebarAndHeaderMenuLinksMarkup";
-import { useSelector } from "react-redux";
 import { getTemplates } from "../../../../redux/articles/articlesSelectors";
 
 export const CarTuning = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
   const templates = useSelector(getTemplates);
+  
   useEffect(() => {
-    if (templates) {
-      // setMarkup(listMarkup({ ...markupParams }));
-    }    //eslint-disable-next-line
+    if (templates && templates["car-tuning"].length) {
+      setMarkup(listMarkup({ ...markupParams }));
+    }
+    //eslint-disable-next-line
   }, [isListOpen, templates]);
 
   const markupParams = {
