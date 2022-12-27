@@ -20,8 +20,11 @@ const OtherPage = lazy(() => import("../pages/OtherPage/OtherPage"));
 const CarTowPage = lazy(() =>
   import("../pages/OtherPage/CarTowPage/CarTowPage")
 );
-const CarTunningPage = lazy(() =>
-  import("../pages/CarTunningPage/CarTunningPage")
+const CarTuningPage = lazy(() =>
+  import("../pages/CarTuningPage/CarTuningPage")
+);
+const CarAudioPage = lazy(() =>
+  import("../pages/CarTuningPage/CarAudioPage/CarAudioPage")
 );
 const OurFeaturesPage = lazy(() =>
   import("../pages/OurFeaturesPage/OurFeaturesPage")
@@ -40,9 +43,11 @@ const App = () => {
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="certificates" element={<CertificatesPage />} />
         <Route path="car-service/:article" element={<CarServicePage />} />
-        <Route path="car-tunning/:article" element={<CarTunningPage />} />
+        <Route path="car-tuning" element={<Outlet />}>
+          <Route path="avtoakustyka" element={<CarAudioPage />} />
+          <Route path=":article" element={<CarTuningPage />} />
+        </Route>
         <Route path="our-features/:article" element={<OurFeaturesPage />} />
-        {/* <Route path="other/:other" element={<OtherPage />} /> */}
         <Route path="other" element={<Outlet />}>
           <Route path="buksyruvannya-avtomobilya" element={<CarTowPage />} />
           <Route path=":other" element={<OtherPage />} />

@@ -7,14 +7,13 @@ import { getGlobalArticlesState } from "../../redux/articles/articlesSelectors";
 import { ErrorScreen } from "../../shared/components/ErrorScreen/ErrorScreen";
 import { Loader } from "../../shared/components/Loader";
 
-const CarTunningPage = () => {
+const CarTuningPage = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const { error, isLoading, article } = useSelector(getGlobalArticlesState);
   useEffect(() => {
     if (article.path !== pathname || (article.path === pathname && error)) {
       dispatch(getArticle(pathname));
-      console.log("request");
     }
     //eslint-disable-next-line
   }, [pathname, article.path]);
@@ -28,4 +27,4 @@ const CarTunningPage = () => {
   );
 };
 
-export default CarTunningPage;
+export default CarTuningPage;
