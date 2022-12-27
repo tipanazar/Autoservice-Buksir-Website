@@ -14,7 +14,6 @@ const CarServicePage = () => {
   useEffect(() => {
     if (article.path !== pathname || (article.path === pathname && error)) {
       dispatch(getArticle(pathname));
-      console.log("request");
     }
     //eslint-disable-next-line
   }, [pathname, article.path]);

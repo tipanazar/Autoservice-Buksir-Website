@@ -11,7 +11,7 @@ export const CarTuning = ({ modalSwitcher, isSmallScreen }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [markup, setMarkup] = useState([]);
   const templates = useSelector(getTemplates);
-  
+
   useEffect(() => {
     if (templates && templates["car-tuning"].length) {
       setMarkup(listMarkup({ ...markupParams }));

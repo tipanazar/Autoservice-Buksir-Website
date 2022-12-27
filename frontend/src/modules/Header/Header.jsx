@@ -5,9 +5,9 @@ import { Button } from "../../shared/components/Button/Button";
 import { Image } from "../../shared/components/Image/Image";
 import { Icon } from "../../shared/components/Icon/Icon";
 import HeaderMenu from "../../modules/Header/HeaderMenu/HeaderMenu";
-import headerLogo from "../../images/header/headerLogo.png";
+import headerLogo from "../../images/header/headerLogo.webp";
 import headerMufflerGif from "../../images/header/headerMuffler.gif";
-import headerMuffler from "../../images/header/headerMuffler.jpg";
+import headerMuffler from "../../images/header/headerMuffler.webp";
 
 import s from "./Header.module.scss";
 

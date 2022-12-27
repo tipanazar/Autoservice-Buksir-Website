@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Image } from "../../../shared/components/Image";
 
 const CarAudioPage = () => {
   return (
@@ -19,7 +20,7 @@ const CarAudioPage = () => {
         <li className="articleTextListItem">Сабвуфери;</li>
         <li className="articleTextListItem">Динаміки;</li>
       </ul>
-      <img
+      <Image
         className="articleImage"
         src="https://res.cloudinary.com/dv2ewzim4/image/upload/v1672159059/Buksir%20Website/car-tuning/avtozvuk2.jpg"
         alt="Автозвук"
@@ -31,7 +32,7 @@ const CarAudioPage = () => {
         прогулянку, а перебування в пробці стане менш стомлюючим і більш
         музичним.
       </p>
-      <img
+      <Image
         className="articleImage"
         src="https://res.cloudinary.com/dv2ewzim4/image/upload/v1672159059/Buksir%20Website/car-tuning/avtozvuk1.jpg"
         alt="Автозвук"

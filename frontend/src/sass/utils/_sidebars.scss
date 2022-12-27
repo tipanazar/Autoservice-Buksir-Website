@@ -11,6 +11,7 @@
 }
 
 %sidebarLinkRules {
+  position: relative;
   text-align: center;
   display: block;
   color: #000;
@@ -29,7 +30,7 @@
   }
 
   .sidebarElementImage {
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
   }
 }
@@ -62,7 +63,6 @@ div.sidebarElementMainBlock {
     width: 100%;
 
     li.sidebarElementListItem {
-      position: relative;
       width: 100%;
       margin-bottom: 7px;
       &:last-child {
