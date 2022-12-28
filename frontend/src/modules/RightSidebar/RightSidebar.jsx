@@ -4,10 +4,10 @@ import { OurFeatures } from "./SidebarElements/OurFeatures";
 export const RightSidebar = ({ sidebarWrapperClass }) => {
   return (
     <ul className={sidebarWrapperClass}>
-      <li>
+      <li className="sidebarElementMainBlock">
         <CarTuning isSmallScreen={false} />
       </li>
-      <li>
+      <li className="sidebarElementMainBlock">
         <OurFeatures isSmallScreen={false} />
       </li>
     </ul>

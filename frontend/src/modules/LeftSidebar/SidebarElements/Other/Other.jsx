@@ -53,10 +53,10 @@ export const Other = ({ modalSwitcher, isSmallScreen }) => {
       <ul className="headerMenuList">{markup}</ul>
     </>
   ) : (
-    <div className="sidebarElementMainBlock">
+    <>
       <h4 className="sidebarElementTitle">Інше</h4>
       <ul className="sidebarElementList">{markup}</ul>
-    </div>
+    </>
   );
 };
 

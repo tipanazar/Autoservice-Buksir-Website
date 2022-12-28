@@ -14,7 +14,7 @@ const SparePartsShopPage = () => {
     setFullscreenSrc(null);
   };
   return (
-    <article>
+    <>
       <h1 className={s.title}>
         Магазин автозапчастин "ЛАДА-ТАВРИЯ-ЛАНОС" у м.Славутич
       </h1>
@@ -47,7 +47,7 @@ const SparePartsShopPage = () => {
       {fullscreenSrc && (
         <FullscreenImg src={fullscreenSrc} closeModal={closeModal} />
       )}
-    </article>
+    </>
   );
 };
 

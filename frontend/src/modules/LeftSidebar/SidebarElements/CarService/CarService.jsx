@@ -51,10 +51,10 @@ export const CarService = ({ modalSwitcher, isSmallScreen }) => {
       <ul className="headerMenuList">{markup}</ul>
     </>
   ) : (
-    <div className="sidebarElementMainBlock">
+    <>
       <h4 className="sidebarElementTitle">Автосервіс</h4>
       <ul className="sidebarElementList">{markup}</ul>
-    </div>
+    </>
   );
 };
 

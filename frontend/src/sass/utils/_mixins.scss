@@ -9,7 +9,7 @@
       @content;
     }
   } @else if $range == mobile {
-    @media (min-width: 0) {
+    @media (min-width: $mobile) {
       @content;
     }
   } @else if $range == tablet-only {

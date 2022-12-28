@@ -1,2 +1,46 @@
+@import "../../sass/main.scss";
+
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  height: fit-content;
+  padding: 20px 10px;
+  line-height: 1.2;
+  width: 100%;
+  background-color: #080046;
+  color: white;
+  @include mq(mobile) {
+    font-size: 14px;
+    padding: 15px;
+  }
+  @include mq(tablet) {
+    justify-content: space-between;
+  }
+
+  .websiteInfoBlock {
+    display: flex;
+    flex-direction: column;
+    .copyrightInfo {
+      margin-bottom: 5px;
+    }
+    .websitePurpose {
+    }
+  }
+
+  .logoLink {
+    display: none;
+    color: white;
+    width: 90px;
+    @include mq(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footerLogo {
+      width: 100%;
+    }
+  }
 }
