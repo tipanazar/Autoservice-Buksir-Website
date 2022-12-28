@@ -20,6 +20,10 @@ const articleTemplateSchema = Schema({
     type: String,
     required: [true, "All fields are required"],
   },
+  imageLink: {
+    type: String,
+    required: [true, "All fields are required"],
+  },
 });
 
 const Article = model("articles", articleSchema);
