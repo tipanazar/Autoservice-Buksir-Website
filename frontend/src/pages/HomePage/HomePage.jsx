@@ -26,7 +26,7 @@ const HomePage = () => {
     <div className={s.wrapper} lang={isEnglish ? "en" : "uk"}>
       <section className={s.firstSection}>
         <div className={s.titleWrapper}>
-          <h1 style={{ display: "none" }}>Автосервіс в м.Славутич</h1>
+          <h1 style={{ display: "none" }}>Автосервіс автомагазин в м.Славутич</h1>
           <h2 className={s.mainTitle}>{markup.mainTitle}</h2>
           <Button
             className={s.languageBtn}
