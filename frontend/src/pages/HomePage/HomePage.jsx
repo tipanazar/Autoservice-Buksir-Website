@@ -26,7 +26,8 @@ const HomePage = () => {
     <div className={s.wrapper} lang={isEnglish ? "en" : "uk"}>
       <section className={s.firstSection}>
         <div className={s.titleWrapper}>
-          <h1 className={s.mainTitle}>{markup.mainTitle}</h1>
+          <h1 style={{ display: "none" }}>Автосервіс в м.Славутич</h1>
+          <h2 className={s.mainTitle}>{markup.mainTitle}</h2>
           <Button
             className={s.languageBtn}
             onClick={() => setIsEnglish(!isEnglish)}
@@ -54,22 +55,26 @@ const HomePage = () => {
       <section className={s.secondSection}>
         <h2 className={s.descriptionTitle}>{markup.descriptionTitle}</h2>
         <p>{markup.aboutBuksir[0]}</p>
-        <div className={s.imageWrapper}>
-          <Image
-            className={s.interiorImages}
-            src={autoserviceInside2}
-            width="250px"
-            alt="Інтер'єр автосервісу"
-            onClick={() => setFullscreenSrc(autoserviceInside2)}
-          />
-          <Image
-            className={s.interiorImages}
-            src={autoserviceInside1}
-            width="250px"
-            alt="Інтер'єр автосервісу"
-            onClick={() => setFullscreenSrc(autoserviceInside1)}
-          />
-        </div>
+        <ul className={s.imageWrapper}>
+          <li className={s.imageWrapperItem}>
+            <Image
+              className={s.interiorImages}
+              src={autoserviceInside2}
+              width="250px"
+              alt="Інтер'єр автосервісу"
+              onClick={() => setFullscreenSrc(autoserviceInside2)}
+            />
+          </li>
+          <li className={s.imageWrapperItem}>
+            <Image
+              className={s.interiorImages}
+              src={autoserviceInside1}
+              width="250px"
+              alt="Інтер'єр автосервісу"
+              onClick={() => setFullscreenSrc(autoserviceInside1)}
+            />
+          </li>
+        </ul>
         <p>
           {markup.aboutBuksir[1]}
           <br />
