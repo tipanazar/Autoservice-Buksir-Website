@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://buksir.in.ua/api/articles";
+axios.defaults.baseURL = "https://buksir.in.ua/api/articles";
 
 export const getTemplatesApi = async () => {
   return await axios.get("/get-templates");
