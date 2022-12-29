@@ -11,13 +11,10 @@ export const Footer = () => {
       <div className={s.websiteInfoBlock}>
         <p className={s.copyrightInfo}>
           &#169;&nbsp;2012&nbsp;-&nbsp;{new Date().getFullYear()}
-          {" "}
-          &#34;Буксир&#34;&nbsp;-&nbsp;Автосервис,&nbsp;автомагазин
+          &nbsp; &#34;Буксир&#34;&nbsp;-&nbsp;Автосервис,&nbsp;автомагазин
           в&nbsp;м.Славутич.
         </p>
-        <p className={s.websitePurpose}>
-          Сайт використовується виключно для інформації&nbsp;- як візитка.
-        </p>
+        <p>Сайт використовується виключно для інформації&nbsp;- як візитка.</p>
       </div>
       <Link className={s.logoLink} to="/">
         <Image

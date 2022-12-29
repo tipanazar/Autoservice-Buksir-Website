@@ -17,6 +17,13 @@
   }
   @include mq(tablet) {
     justify-content: space-between;
+    padding: 25px 20px;
+  }
+  @include mq(desktop) {
+    padding: 20px 30px;
+  }
+  @include mq(desktop-big) {
+    padding: 25px 50px;
   }
 
   .websiteInfoBlock {
@@ -25,18 +32,14 @@
     .copyrightInfo {
       margin-bottom: 5px;
     }
-    .websitePurpose {
-    }
   }
 
   .logoLink {
     display: none;
-    color: white;
-    width: 90px;
     @include mq(tablet) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: block;
+      width: 20%;
+      max-width: 150px;
     }
 
     .footerLogo {

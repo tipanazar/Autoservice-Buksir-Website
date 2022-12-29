@@ -4,15 +4,19 @@
   display: flex;
   flex-grow: 1;
   padding: 15px;
-  // padding-bottom: 50px;
+  padding-bottom: 50px;
+
   @include mq(tablet) {
     padding: 3vw;
+    padding-bottom: 5vw;
   }
   @include mq(desktop) {
     padding: 10px;
+    padding-bottom: 50px;
   }
   @include mq(desktop-big) {
     padding: 30px;
+    padding-bottom: 50px;
   }
 
   .sidebarWrapperClass {
