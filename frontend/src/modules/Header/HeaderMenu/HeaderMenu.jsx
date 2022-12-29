@@ -7,15 +7,13 @@ import { OurFeatures } from "../../RightSidebar/SidebarElements/OurFeatures/OurF
 import { Other } from "../../LeftSidebar/SidebarElements/Other/Other";
 
 import s from "./HeaderMenu.module.scss";
+import { Modal } from "../../../shared/components/Modal/Modal";
 
+const modalRoot = document.querySelector("div#modalRoot");
 const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
+  modalRoot.style.zIndex = isModalOpen ? 2 : -1;
   return (
-    <div
-      className={s.modalBodyBlock}
-      style={
-        isModalOpen ? { zIndex: 1, opacity: 1 } : { zIndex: -1, opacity: 0 }
-      }
-    >
+    <Modal modalWrapperClass={s.modalBodyBlock}>
       <MainNavigation
         modalSwitcher={modalSwitcher}
         listItemDisplayClass={s.listItemDisplayClass}
@@ -25,7 +23,7 @@ const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
         <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
         <Other modalSwitcher={modalSwitcher} isSmallScreen={true} />
       </MainNavigation>
-    </div>
+    </Modal>
   );
 };
 

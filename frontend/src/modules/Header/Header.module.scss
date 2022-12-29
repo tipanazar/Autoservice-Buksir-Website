@@ -6,7 +6,16 @@
   align-items: center;
   width: 100%;
   padding-left: 3vw;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  z-index: 99;
+  border-bottom: 3px solid #669766;
+  background: var(--mainBackgroundGradientMobile);
+  @include mq(tablet) {
+    background: var(--mainBackgroundGradientTablet);
+    border-bottom-color: #5d905d;
+  }
+  @include mq(desktop) {
+    background: var(--mainBackgroundGradientDesktop);
+  }
 
   @include mq(desktop) {
     border: 0;
@@ -29,6 +38,7 @@
     display: none;
     position: relative;
     margin: 5px 0;
+    // z-index: 99;
     @include mq(tablet) {
       display: block;
     }
@@ -91,6 +101,7 @@
     width: 8vw;
     min-width: 70px;
     height: 60px;
+    z-index: 99;
 
     @include mq(tablet) {
       min-height: 80px;

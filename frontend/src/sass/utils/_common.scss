@@ -12,7 +12,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   font-family: Montserrat, sans-serif;
-  background-color: var(--mainBackgrColor);
+  // background-color: var(--mainBackgrColor);
   min-height: 100vh;
   margin: 0;
 }
@@ -21,24 +21,12 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: inherit;
-  background: linear-gradient(
-    180deg,
-    rgb(71 165 71) 0%,
-    rgb(255, 255, 255) 45vh
-  );
+  background: var(--mainBackgroundGradientMobile);
   @include mq(tablet) {
-    background: linear-gradient(
-      180deg,
-      rgb(71 165 71) 0%,
-      rgb(255, 255, 255) 60vh
-    );
+    background: var(--mainBackgroundGradientTablet);
   }
   @include mq(desktop) {
-    background: linear-gradient(
-      180deg,
-      rgb(10, 124, 10) 0%,
-      rgb(255, 255, 255) 65vh
-    );
+    background: var(--mainBackgroundGradientDesktop);
   }
 }
 
@@ -48,8 +36,10 @@ div#modalRoot {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
-  visibility: hidden;
+  overflow: auto;
+  // display: none;
+  // z-index: 2;
+  // visibility: hidden;
 }
 
 img {
