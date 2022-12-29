@@ -1,2 +1,49 @@
+@import "../../sass/main.scss";
+
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  height: fit-content;
+  padding: 20px 10px;
+  line-height: 1.2;
+  width: 100%;
+  background-color: #080046;
+  color: white;
+  @include mq(mobile) {
+    font-size: 14px;
+    padding: 15px;
+  }
+  @include mq(tablet) {
+    justify-content: space-between;
+    padding: 25px 20px;
+  }
+  @include mq(desktop) {
+    padding: 20px 30px;
+  }
+  @include mq(desktop-big) {
+    padding: 25px 50px;
+  }
+
+  .websiteInfoBlock {
+    display: flex;
+    flex-direction: column;
+    .copyrightInfo {
+      margin-bottom: 5px;
+    }
+  }
+
+  .logoLink {
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      width: 20%;
+      max-width: 150px;
+    }
+
+    .footerLogo {
+      width: 100%;
+    }
+  }
 }

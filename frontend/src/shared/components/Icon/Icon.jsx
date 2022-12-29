@@ -1,4 +1,4 @@
-import PropTypes, { number, string } from "prop-types";
+import PropTypes from "prop-types";
 
 import sprite from "../../../images/sprite.svg";
 
@@ -21,6 +21,6 @@ Icon.propTypes = {
   iconId: PropTypes.string.isRequired,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  style: PropTypes.objectOf([PropTypes.string, PropTypes.number]),
+  style: PropTypes.shape([PropTypes.string, PropTypes.number]),
   fill: PropTypes.string,
 };

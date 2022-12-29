@@ -1,19 +1,46 @@
 %afterRules {
   position: absolute;
   content: "";
-  outline: 1px solid #003eff47;
   width: 90%;
   transform: translateX(-50%);
   height: 0;
   bottom: 0;
   left: 50%;
   transition: outline-color linear 70ms;
+  outline: 1px solid;
 }
 
-div.sidebarElementMainBlock {
-  width: 170px;
+%sidebarLinkRules {
+  position: relative;
+  text-align: center;
+  display: block;
+  color: #000;
+  font-weight: 500;
+  transition: color linear 70ms;
+  padding: 5px 6px 4px 6px;
+  font-size: 13px;
+
   @include mq(desktop-big) {
-    width: 200px;
+    padding: 6px 10px 5px 10px;
+    font-size: 14px;
+  }
+
+  &::after {
+    @extend %afterRules;
+  }
+
+  .sidebarElementImage {
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+
+li.sidebarElementMainBlock {
+  @include mq(desktop) {
+    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   h4.sidebarElementTitle {
@@ -34,52 +61,37 @@ div.sidebarElementMainBlock {
     flex-direction: column;
     align-items: center;
     padding-top: 3px;
-    margin-bottom: 30px;
     width: 100%;
+
     li.sidebarElementListItem {
-      position: relative;
       width: 100%;
       margin-bottom: 7px;
-      border-radius: 3px;
       &:last-child {
         margin-bottom: 0;
       }
 
-      a.sidebarElementListItemLink {
-        text-align: center;
-        display: block;
-        color: #000;
-        font-weight: 500;
-        transition: color linear 70ms;
-        padding: 5px 6px 4px 6px;
-        font-size: 13px;
-
-        @include mq(desktop-big) {
-          padding: 6px 10px 5px 10px;
-          font-size: 14px;
-        }
-
+      a.sidebarElementListItemLinkActive {
+        @extend %sidebarLinkRules;
+        color: var(--linksHoverColor);
         &::after {
-          @extend %afterRules;
+          outline-color: #0900d9b3;
         }
+      }
 
+      a.sidebarElementListItemLinkInactive {
+        @extend %sidebarLinkRules;
+        &::after {
+          outline-color: #003eff47;
+        }
         &:hover {
           color: var(--linksHoverColor);
-          > span {
-            color: var(--linksHoverColor);
-            &::before {
-              outline-color: #0900d996;
-            }
-          }
           &::after {
             outline-color: #0900d9b3;
           }
         }
-
-        .sidebarElementImage {
-          width: 90%;
-          margin: 10px auto;
-        }
+      }
+      a > img.sidebarElementImage {
+        border-radius: 3px;
       }
     }
   }

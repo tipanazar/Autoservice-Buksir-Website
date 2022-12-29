@@ -1,0 +1,212 @@
+@import "../../sass/main.scss";
+
+.wrapper {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--boldTextColor);
+  @include mq(tablet-only) {
+    font-size: 17px;
+    line-height: 1.2em;
+  }
+
+  @include mq(desktop) {
+    font-size: 16px;
+  }
+
+  .firstSection {
+    margin-bottom: 22px;
+  }
+
+  .thirdSection {
+    margin: 20px 0;
+    @include mq(desktop) {
+      margin: 25px 0;
+    }
+  }
+
+  .titleWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .mainTitle {
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 10px;
+      color: var(--mainTitleColor);
+      @include mq(tablet) {
+        font-size: 20px;
+      }
+
+      @include mq(desktop) {
+        font-size: 22px;
+      }
+
+      @include mq(desktop-big) {
+        font-size: 25px;
+      }
+    }
+
+    .languageBtn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: min-content;
+      min-width: 65px;
+      width: 15vw;
+      max-width: 125px;
+      padding: 5px 0;
+      border: 0;
+      background-color: rgba($color: #000000, $alpha: 0.05);
+      box-shadow: 0px 0px 8px 5px rgba(34, 60, 80, 0.1);
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1;
+      transition: box-shadow linear 70ms;
+
+      &:hover {
+        box-shadow: 0px 0px 8px 8px rgba(34, 60, 80, 0.1);
+      }
+
+      @include mq(tablet) {
+        font-size: 12px;
+      }
+      @include mq(desktop) {
+        font-size: 13px;
+      }
+
+      .icon {
+        height: 18px;
+        margin-bottom: 5px;
+        @include mq(tablet) {
+          height: 22px;
+        }
+        @include mq(desktop-big) {
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  .featuresList {
+    list-style: disc;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000;
+
+    @include mq(tablet-only) {
+      font-size: 16px;
+      padding-left: 20px;
+    }
+
+    @include mq(desktop) {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    @include mq(desktop-big) {
+      font-size: 17px;
+    }
+  }
+
+  .secondaryTitle {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--boldTextColor);
+
+    @include mq(desktop) {
+      font-size: 17px;
+    }
+  }
+
+  .descriptionTitle {
+    margin-bottom: 5px;
+    color: var(--boldTextColor);
+    text-align: center;
+    @include mq(tablet) {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+  }
+
+  .descriptionBoldText {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #000000;
+
+    .descriptionBoldTextAttention {
+      font-size: 17px;
+
+      @include mq(tablet) {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .imageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    @include mq(tablet) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .imageWrapperItem {
+      width: 90vw;
+      max-width: 320px;
+      box-shadow: var(--imageShadow);
+      &:first-child {
+        margin-bottom: 15px;
+      }
+
+      @include mq(tablet) {
+        width: 270px;
+        &:first-child {
+          margin-bottom: 0;
+          margin-right: 30px;
+        }
+      }
+
+      .interiorImages {
+        width: 100%;
+        border-radius: 3px;
+        cursor: zoom-in;
+      }
+    }
+  }
+
+  .parkingPrice {
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #000000;
+
+    @include mq(desktop) {
+      margin-top: 7px;
+    }
+    @include mq(desktop-big) {
+      margin-top: 3px;
+    }
+  }
+
+  .exteriorImg {
+    margin: 15px auto;
+    width: 95%;
+    max-width: 530px;
+    box-shadow: var(--imageShadow);
+    border-radius: 3px;
+    cursor: zoom-in;
+
+    @include mq(tablet) {
+      margin: 20px auto;
+    }
+  }
+}

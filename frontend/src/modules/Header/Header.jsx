@@ -1,16 +1,13 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../shared/components/Button/Button";
 import { Image } from "../../shared/components/Image/Image";
 import { Icon } from "../../shared/components/Icon/Icon";
-import { HeaderMenu } from "../../modules/Header/HeaderMenu";
-
-import headerLogo from "../../images/headerLogo.png";
-// import headerMufflerGif from "../../images/headerMuffler.gif";
-// import headerMuffler from "../../images/headerMuffler.jpg";
-import headerMufflerGif from "../../images/headerMuffler2.gif";
-import headerMuffler from "../../images/headerMuffler2.jpg";
+import HeaderMenu from "../../modules/Header/HeaderMenu/HeaderMenu";
+import headerLogo from "../../images/header/headerLogo.webp";
+import headerMufflerGif from "../../images/header/headerMuffler.gif";
+import headerMuffler from "../../images/header/headerMuffler.webp";
 
 import s from "./Header.module.scss";
 
@@ -20,7 +17,7 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [carMufflerToggler, setCarMufflerToggler] = useState(false);
 
-  const modalSwitcher = () => {
+  const modalSwitcher = useCallback(() => {
     if (isModalOpen) {
       body.style.overflow = "auto";
       setIsModalOpen(false);
@@ -33,54 +30,56 @@ export const Header = () => {
       setIsModalOpen(true);
       return;
     }
-  };
+  }, [isModalOpen]);
 
   return (
-    <>
-      <div className={s.wrapper}>
-        <Link
-          className={s.headerLogoLink}
-          to="/"
-          onClick={() => isModalOpen && modalSwitcher()}
-        >
+    <header className={s.wrapper}>
+      <Link
+        className={s.headerLogoLink}
+        to="/"
+        onClick={() => isModalOpen && modalSwitcher()}
+      >
+        <Image
+          className={s.headerLogo}
+          src={headerLogo}
+          alt="Header Logo"
+          height="55px"
+        />
+      </Link>
+      <div className={s.gifBlock}>
+        <div className={s.gifWrapper}>
           <Image
-            className={s.headerLogo}
-            src={headerLogo}
-            alt="Header Logo"
-            height="55px"
+            className={s.gif}
+            src={carMufflerToggler ? headerMufflerGif : headerMuffler}
+            alt="Car Muffler Image"
           />
-        </Link>
-        <div className={s.gifBlock}>
-          <div className={s.gifWrapper}>
-            <Image
-              className={s.gif}
-              src={carMufflerToggler ? headerMufflerGif : headerMuffler}
-              alt="Car Muffler Image"
-            />
-          </div>
-          <Button
-            className={s.playGifBtn}
-            onClick={() => setCarMufflerToggler(!carMufflerToggler)}
-          >
-            <p>Ремонтуємо все що на колесах!</p>
-            <Icon
-              className={s.playGifIcon}
-              iconId="headerGifButton-icon"
-              width={30}
-              height={30}
-              fill="#ffc66d"
-            />
-          </Button>
         </div>
-        <Button className={s.toggleMenuButton} onClick={modalSwitcher}>
+        <Button
+          className={s.playGifBtn}
+          onClick={() => setCarMufflerToggler(!carMufflerToggler)}
+        >
+          <p>Ремонтуємо все що на колесах!</p>
           <Icon
-            className={s.toggleMenuButtonIcon}
-            iconId={isModalOpen ? "closeModal-icon" : "openModal-icon"}
-            fill="#555555"
+            className={s.playGifIcon}
+            iconId="headerGifButton-icon"
+            width={30}
+            height={30}
+            fill="#ffc66d"
           />
         </Button>
       </div>
-      {isModalOpen && <HeaderMenu modalSwitcher={modalSwitcher} />}
-    </>
+      <Button
+        className={s.toggleMenuButton}
+        ariaLabel={isModalOpen ? "Закрити меню" : "Відкрити меню"}
+        onClick={modalSwitcher}
+      >
+        <Icon
+          className={s.toggleMenuButtonIcon}
+          iconId={isModalOpen ? "closeModal-icon" : "openModal-icon"}
+          fill="#555555"
+        />
+      </Button>
+      <HeaderMenu modalSwitcher={modalSwitcher} isModalOpen={isModalOpen} />
+    </header>
   );
 };

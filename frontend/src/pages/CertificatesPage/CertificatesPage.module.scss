@@ -1,0 +1,54 @@
+@import "../../sass/main.scss";
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--mainTitleColor);
+  @include mq(tablet) {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  @include mq(tablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+
+  .listItem {
+    .listItemImage {
+      box-shadow: var(--imageShadow);
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      max-width: 180px;
+      margin: 0 auto;
+      cursor: zoom-in;
+      @include mq(tablet) {
+        height: auto;
+        max-width: 200px;
+      }
+    }
+
+    .listItemText {
+      display: none;
+
+      @include mq(tablet) {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: #5e5d5d;
+        margin-top: 10px;
+      }
+    }
+  }
+}

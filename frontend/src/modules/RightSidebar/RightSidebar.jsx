@@ -1,23 +1,14 @@
 import { CarTuning } from "./SidebarElements/CarTuning";
 import { OurFeatures } from "./SidebarElements/OurFeatures";
-import { News } from "./SidebarElements/News";
 
-import s from "./RightSidebar.module.scss";
-
-export const RightSidebar = () => {
+export const RightSidebar = ({ sidebarWrapperClass }) => {
   return (
-    <ul className={s.wrapper}>
-      {/* <li>
-        <Autoservice />
-      </li> */}
-      <li>
-        <CarTuning />
+    <ul className={sidebarWrapperClass}>
+      <li className="sidebarElementMainBlock">
+        <CarTuning isSmallScreen={false} />
       </li>
-      <li>
-        <News />
-      </li>
-      <li>
-        <OurFeatures />
+      <li className="sidebarElementMainBlock">
+        <OurFeatures isSmallScreen={false} />
       </li>
     </ul>
   );

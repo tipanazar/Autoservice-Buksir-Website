@@ -1,0 +1,13 @@
+{
+  "uk": {
+    "title": "Телефон автосервісу/автомагазину:",
+    "operator": ["Міський:", "Vodafone:"],
+    "address": "м .Славутич, Привокзальна 11, маг. \"Лада-Таврія-Ланос\"."
+  },
+
+  "en": {
+    "title": "Car service/spare parts shop phone number:",
+    "operator": ["Landline:", "Vodafone:"],
+    "address": "Slavutych city, Pryvokzalna 11, shop \"Lada-Tavria-Lanos\"."
+  }
+}

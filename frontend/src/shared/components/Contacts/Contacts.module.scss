@@ -1,0 +1,125 @@
+@import "../../../sass/main.scss";
+
+%phoneList {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+%phoneListItem {
+  font-weight: 500;
+
+  &:first-child {
+    margin: 5px 0;
+  }
+}
+
+%mapLink {
+  display: block;
+  margin-bottom: 7px;
+  text-decoration: underline;
+  color: var(--linksColor);
+  width: fit-content;
+  transition: color linear 100ms, margin-left linear 100ms;
+
+  @include mq(tablet) {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    color: var(--linksHoverColor);
+    margin-left: 5px;
+  }
+}
+
+.phoneLinksBlockTitleBig {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--mainTitleColor);
+
+  @include mq(tablet) {
+    font-size: 24px;
+  }
+}
+
+.phoneListBig {
+  @extend %phoneList;
+  margin-bottom: 20px;
+
+  .phoneListItemBig {
+    @extend %phoneListItem;
+    font-size: 16px;
+
+    @include mq(tablet) {
+      font-size: 18px;
+    }
+  }
+}
+
+.mapLinkBig {
+  @extend %mapLink;
+  @include mq(tablet) {
+    font-size: 18px;
+  }
+}
+
+.phoneLinksBlockTitleSmall {
+  font-size: 18px;
+  font-weight: 600;
+
+  @include mq(tablet) {
+    font-size: 22px;
+  }
+}
+
+.phoneListSmall {
+  @extend %phoneList;
+  margin-bottom: 15px;
+
+  .phoneListItemSmall {
+    @extend %phoneListItem;
+    font-size: 15px;
+
+    @include mq(tablet) {
+      font-size: 17px;
+    }
+  }
+}
+
+.mapLinkSmall {
+  @extend %mapLink;
+  @include mq(tablet) {
+    font-size: 17px;
+  }
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 85vw;
+  max-height: 400px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px 1px rgba($color: #000000, $alpha: 0.2);
+  @include mq(desktop) {
+    border-radius: 3px;
+    width: 100%;
+  }
+}
+
+.phoneListItemLink {
+  font-weight: 400;
+  margin-left: 5px;
+  text-decoration: underline;
+  color: var(--linksColor);
+  transition: color linear 100ms, margin-left linear 100ms;
+
+  @include mq(tablet) {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    color: var(--linksHoverColor);
+    margin-left: 12px;
+  }
+}

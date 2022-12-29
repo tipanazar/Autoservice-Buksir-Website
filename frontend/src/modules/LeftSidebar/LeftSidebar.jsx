@@ -1,18 +1,14 @@
-// import { OurFeatures } from "./SidebarElements/OurFeatures";
-import { Autoservice } from "./SidebarElements/Autoservice";
-import { Partners } from "./SidebarElements/Partners";
+import { CarService } from "./SidebarElements/CarService";
+import { Other } from "./SidebarElements/Other";
 
-import s from "./LeftSidebar.module.scss";
-
-export const LeftSidebar = () => {
+export const LeftSidebar = ({ sidebarWrapperClass }) => {
   return (
-    <ul className={s.wrapper}>
-      <li>
-        <Autoservice />
+    <ul className={sidebarWrapperClass}>
+      <li className="sidebarElementMainBlock">
+        <CarService isSmallScreen={false} />
       </li>
-      <li>{/* <OurFeatures /> */}</li>
-      <li>
-        <Partners />
+      <li className="sidebarElementMainBlock">
+        <Other isSmallScreen={false} />
       </li>
     </ul>
   );
