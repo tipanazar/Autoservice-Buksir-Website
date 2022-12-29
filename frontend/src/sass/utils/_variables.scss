@@ -6,4 +6,20 @@
   --linksHoverColor: #000c7a;
   --navigationBlueColor: #00009fde;
   --mainTitleColor: #00177f;
+  --mainBackgroundGradientMobile: linear-gradient(
+    180deg,
+    rgb(71 165 71) 0%,
+    rgb(255, 255, 255) 45vh
+  );
+  --mainBackgroundGradientTablet: linear-gradient(
+    180deg,
+    rgb(71 165 71) 0%,
+    rgb(255, 255, 255) 60vh
+  );
+
+  --mainBackgroundGradientDesktop: linear-gradient(
+    180deg,
+    rgb(10, 124, 10) 0%,
+    rgb(255, 255, 255) 65vh
+  );
 }

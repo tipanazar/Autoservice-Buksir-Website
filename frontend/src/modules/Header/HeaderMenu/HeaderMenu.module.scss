@@ -1,28 +1,16 @@
 @import "../../../sass/main.scss";
 
 .modalBodyBlock {
-  position: fixed;
   overflow: auto;
   padding: 30px 0 50px 0;
-  height: calc(100vh - 62px);
-  width: 100vw;
-  bottom: 0;
-  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
   transition: opacity linear 150ms, z-index linear 150ms;
-  background: linear-gradient(
-    180deg,
-    rgb(71 165 71) -60px,
-    rgb(255, 255, 255) 45vh
-  );
+  background: var(--mainBackgroundGradientMobile);
   @include mq(tablet) {
-    padding-top: 50px;
-    max-height: calc(100vh - 82px);
-    height: calc(100vh - (9vw + 12px));
-    background: linear-gradient(
-      180deg,
-      rgb(71 165 71) -110px,
-      rgb(255, 255, 255) 60vh
-    );
+    background: var(--mainBackgroundGradientTablet);
+    padding-top: max(calc(9vw + 43px), 112px);
   }
   @include mq(desktop) {
     display: none;
