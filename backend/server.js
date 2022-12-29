@@ -8,7 +8,7 @@ mongoose
   .connect(DB_HOST)
   .then(() =>
     app.listen(PORT, () => {
-      return console.log("Database connection successful");
+      console.log("Database connection successful");
     })
   )
   .catch((err) => {
