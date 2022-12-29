@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { LayoutPage } from "../pages/LayoutPage";
-import HomePage from "../pages/HomePage/HomePage";
+import { HomePage } from "../pages/HomePage/HomePage";
 import { getTemplates } from "../redux/articles/articlesOperations";
 
 const SparePartsShopPage = lazy(() =>
