@@ -11,21 +11,17 @@ import headerMuffler from "../../images/header/headerMuffler.webp";
 
 import s from "./Header.module.scss";
 
-const body = document.querySelector("body");
-
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [carMufflerToggler, setCarMufflerToggler] = useState(false);
 
   const modalSwitcher = useCallback(() => {
     if (isModalOpen) {
-      body.style.overflow = "auto";
       setIsModalOpen(false);
       return;
     }
 
     if (!isModalOpen) {
-      body.style.overflow = "hidden";
       document.documentElement.scrollTop = 0;
       setIsModalOpen(true);
       return;

@@ -1,14 +1,23 @@
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import PropTypes from "prop-types";
 
-const modalRoot = document.querySelector("div#modalRoot");
-const body = document.querySelector("body");
+import { getBodyElement, getModalRoot } from "../../hooks/getDomElement";
 
-export const Modal = ({ src, closeModal, modalWrapperClass, mainBlockStyle, children }) => {
-  // useEffect(() => {
-  //   modalRoot.style.visibility = "visible";
-  //   body.style.overflow = "hidden";
-  //   document.addEventListener("keydown", close);
-  // });
+const modalRoot = getModalRoot();
+const body = getBodyElement();
+export const Modal = ({
+  closeModal,
+  wrapperClassName,
+  closeFuncRef,
+  children,
+}) => {
+  useEffect(() => {
+    body.style.overflow = "hidden";
+    modalRoot.style.zIndex = 3;
+    modalRoot.style.opacity = 1;
+    document.addEventListener("keydown", close);
+  });
 
   const close = (ev) => {
     if (
@@ -17,16 +26,25 @@ export const Modal = ({ src, closeModal, modalWrapperClass, mainBlockStyle, chil
       ev === "closeModal"
     ) {
       document.removeEventListener("keydown", close);
-      // modalRoot.style.visibility = "hidden";
       body.style.overflow = "auto";
+      modalRoot.style.zIndex = -1;
+      modalRoot.style.opacity = 0;
       closeModal();
     }
   };
+  closeFuncRef.current = close;
 
   return createPortal(
-    <div className={modalWrapperClass} style={mainBlockStyle} onClick={close}>
+    <div className={wrapperClassName} onClick={() => close("closeModal")}>
       {children}
     </div>,
     modalRoot
   );
+};
+
+Modal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  wrapperClassName: PropTypes.string.isRequired,
+  closeFuncRef: PropTypes.shape({ current: PropTypes.func }),
+  children: PropTypes.node.isRequired,
 };

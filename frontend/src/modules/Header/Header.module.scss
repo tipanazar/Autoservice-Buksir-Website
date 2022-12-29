@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   padding-left: 3vw;
-  z-index: 99;
+  z-index: 2;
   border-bottom: 3px solid #669766;
   background: var(--mainBackgroundGradientMobile);
   @include mq(tablet) {
@@ -38,7 +38,6 @@
     display: none;
     position: relative;
     margin: 5px 0;
-    // z-index: 99;
     @include mq(tablet) {
       display: block;
     }

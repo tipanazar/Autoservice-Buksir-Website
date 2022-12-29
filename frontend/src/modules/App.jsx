@@ -6,7 +6,6 @@ import { LayoutPage } from "../pages/LayoutPage";
 import HomePage from "../pages/HomePage/HomePage";
 import { getTemplates } from "../redux/articles/articlesOperations";
 
-// const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const SparePartsShopPage = lazy(() =>
   import("../pages/SparePartsShopPage/SparePartsShopPage")
 );

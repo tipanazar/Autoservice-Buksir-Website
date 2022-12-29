@@ -1,3 +1,14 @@
+%mainModalStyles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  opacity: 0;
+  z-index: -1;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -12,7 +23,6 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   font-family: Montserrat, sans-serif;
-  // background-color: var(--mainBackgrColor);
   min-height: 100vh;
   margin: 0;
 }
@@ -31,15 +41,12 @@ div#root {
 }
 
 div#modalRoot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  // display: none;
-  // z-index: 2;
-  // visibility: hidden;
+  @extend %mainModalStyles;
+}
+
+div#headerModalRoot {
+  @extend %mainModalStyles;
+  transition: z-index linear 70ms, opacity linear 100ms;
 }
 
 img {
