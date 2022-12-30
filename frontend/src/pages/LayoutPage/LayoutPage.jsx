@@ -15,7 +15,7 @@ export const LayoutPage = () => {
     <>
       <Header />
       <main className={s.container}>
-        <LeftSidebar sidebarWrapperClass={s.sidebarWrapperClass} />
+        <LeftSidebar sidebarWrapperClass={s.sidebarWrapper} />
         <div className={s.centerContainer}>
           <MainNavigation
             className={s.mainNavigationBlock}
@@ -30,7 +30,7 @@ export const LayoutPage = () => {
             </Suspense>
           </article>
         </div>
-        <RightSidebar sidebarWrapperClass={s.sidebarWrapperClass} />
+        <RightSidebar sidebarWrapperClass={s.sidebarWrapper} />
       </main>
       <Footer />
     </>

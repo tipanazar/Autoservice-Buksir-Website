@@ -19,7 +19,7 @@
     padding-bottom: 50px;
   }
 
-  .sidebarWrapperClass {
+  .sidebarWrapper{
     display: none;
     @include mq(desktop) {
       display: block;
