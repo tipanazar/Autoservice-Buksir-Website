@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { Article, ArticleTemplate } = require("../models");
-const { createError } = require("../helpers");
+const { Article, ArticleTemplate } = require("./Article");
+const { createError } = require("./createError");
 
 router.get("/get-templates", async (req, res, next) => {
   try {
