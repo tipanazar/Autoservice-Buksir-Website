@@ -12,10 +12,15 @@ import {
 } from "../../../shared/hooks/getDomElement";
 
 import s from "./HeaderMenu.module.scss";
+import { useSelector } from "react-redux";
+import { getGlobalArticlesState } from "../../../redux/articles/articlesSelectors";
+import { Loader } from "../../../shared/components/Loader";
+import { ErrorScreen } from "../../../shared/components/ErrorScreen/ErrorScreen";
 
 const headerModalRoot = getHeaderModalRoot();
 const body = getBodyElement();
 const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
+  const { templatesError, isTemplatesLoading } = useSelector(getGlobalArticlesState);
   useEffect(() => {
     if (isModalOpen) {
       body.style.overflow = "hidden";
@@ -35,10 +40,22 @@ const HeaderMenu = ({ modalSwitcher, isModalOpen }) => {
         modalSwitcher={modalSwitcher}
         listItemDisplayClass={s.listItemDisplayClass}
       >
-        <CarService modalSwitcher={modalSwitcher} isSmallScreen={true} />
-        <CarTuning modalSwitcher={modalSwitcher} isSmallScreen={true} />
-        <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
-        <Other modalSwitcher={modalSwitcher} isSmallScreen={true} />
+        {isTemplatesLoading ? (
+          <div style={{ position: "relative", height: "300px" }}>
+            <Loader bottom={0} />
+          </div>
+        ) : templatesError ? (
+          <ErrorScreen
+            text={`Помилка завантаження статей: ${templatesError}`}
+          />
+        ) : (
+          <>
+            <CarService modalSwitcher={modalSwitcher} isSmallScreen={true} />
+            <CarTuning modalSwitcher={modalSwitcher} isSmallScreen={true} />
+            <OurFeatures modalSwitcher={modalSwitcher} isSmallScreen={true} />
+            <Other modalSwitcher={modalSwitcher} isSmallScreen={true} />
+          </>
+        )}
       </MainNavigation>
     </div>,
     headerModalRoot

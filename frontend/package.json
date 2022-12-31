@@ -1,5 +1,7 @@
 {
-  "name": "frontend",
+  "name": "buksir",
+  "homepage": "https://buksir.in.ua",
+  "author": "https://github.com/tipanazar",
   "version": "0.1.0",
   "private": false,
   "dependencies": {

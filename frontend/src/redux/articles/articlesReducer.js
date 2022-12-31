@@ -8,8 +8,10 @@ const initialState = {
     path: "",
     text: "",
   },
-  isLoading: false,
-  error: null,
+  isTemplatesLoading: false,
+  isArticleLoading: false,
+  articleError: null,
+  templatesError: null,
 };
 
 const towingService = {
@@ -30,31 +32,33 @@ const articlesSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getTemplates.pending, (state) => {
-      state.isLoading = true;
-      state.error = null;
+      state.isTemplatesLoading = true;
+      state.templatesError = null;
     });
     builder.addCase(getTemplates.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
-      payload.other.push(towingService);
-      payload["car-tuning"].push(carAudio);
+      payload.other?.push(towingService);
+      payload["car-tuning"]?.push(carAudio);
       state.templates = { ...payload };
+      state.isTemplatesLoading = false;
     });
     builder.addCase(getTemplates.rejected, (state, { payload }) => {
-      state.error = payload || "Помилка, спробуйте перезавантажити сторінку.";
-      state.isLoading = false;
+      state.templatesError =
+        payload || "Помилка, спробуйте перезавантажити сторінку.";
+      state.isTemplatesLoading = false;
     });
 
     builder.addCase(getArticle.pending, (state) => {
-      state.isLoading = true;
-      state.error = null;
+      state.isArticleLoading = true;
+      state.articleError = null;
     });
     builder.addCase(getArticle.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
       state.article = { ...payload };
+      state.isArticleLoading = false;
     });
     builder.addCase(getArticle.rejected, (state, { payload }) => {
-      state.error = payload || "Помилка, спробуйте перезавантажити сторінку.";
-      state.isLoading = false;
+      state.articleError =
+        payload || "Помилка, спробуйте перезавантажити сторінку.";
+      state.isArticleLoading = false;
     });
   },
 });
