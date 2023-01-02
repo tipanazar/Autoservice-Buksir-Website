@@ -31,7 +31,7 @@ export const CarService = ({ modalSwitcher, isSmallScreen }) => {
         className={
           isListOpen ? "headerMenuOpenListBtn" : "headerMenuClosedListBtn"
         }
-        ariaLabel="Відкрити список статей категорії автосервис"
+        ariaLabel="Відкрити список статей категорії автосервіс"
         onClick={() => setIsListOpen(!isListOpen)}
       >
         <Icon
