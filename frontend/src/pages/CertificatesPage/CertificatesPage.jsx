@@ -22,7 +22,7 @@ const CertificatesPage = () => {
 
   return (
     <>
-      <h5 className={s.title}>Сертифікати автосервису</h5>
+      <h5 className={s.title}>Сертифікати автосервісу</h5>
       <ul className={s.list}>
         <li className={s.listItem}>
           <Image
