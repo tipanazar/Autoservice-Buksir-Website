@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /static/media/
+Disallow: /certificates
+
+Sitemap: https://buksir.in.ua/sitemap.txt
